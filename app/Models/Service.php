@@ -11,7 +11,12 @@ class Service extends Model
         'service_name',
         'service_logo',
         'shop_id',
+        'service_price',
     ];
 
     use HasFactory;
+
+    public function booking(){
+        return $this->belongsToMany(Booking::class);
+    }
 }

@@ -14,6 +14,8 @@
         <input type="text" name="service_name">
         <label for="">service logo</label>
         <input type="file" name="service_logo">
+        <label for="">service price</label>
+        <input type="number" name="service_price">
 
         <button type="submit">Insert</button>
     </form>
@@ -24,6 +26,7 @@
             <th scope="col">service id</th>
             <th scope="col">service name</th>
             <th scope="col">service logo</th>
+            <th scope="col">service price</th>
             <th scope="col">delete</th>
         </tr>
         </thead>
@@ -36,6 +39,7 @@
                 <td>
                     <img src="{{asset('storage/image/'.$service->service_logo)}}" alt="Error" style="height: 90px" >
                 </td>
+                <td>{{ $service->service_price }}</td>
                 <td>
                     <form action="{{route('deleteService', ['id' => $service->id])}}" method="post">
                     @csrf

@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('memberships', function (Blueprint $table) {
             $table->id();
-            $table->string('service_name');
-            $table->string('service_logo');
-            $table->integer('service_price');
-            $table->unsignedBigInteger('shop_id');
-            $table->foreign('shop_id')->references('id')->on('users')
+            $table->string('membership_name');
+            $table->string('membership_type');
+            $table->unsignedBigInteger('user_id');
+            $table->string('membership_phone');
+            $table->string('membership_email');
+
+            $table->foreign('user_id')->references('id')->on('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->timestamps();
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('memberships');
     }
 };

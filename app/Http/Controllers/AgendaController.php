@@ -54,11 +54,7 @@ class AgendaController extends Controller
         return view('agendas.index', compact('agendas'));
     }
 
-    public function searchAgenda(Request $request)
-    {
-        $cari = $request->cari;
-        $agendas = Agenda::where('date', 'like', '%'.$cari.'%')->paginate(10);
-        $agendas->appends($request->all());
-        return view('user-booking', compact('agendas', 'request'));
-    }
+
+
+
 }

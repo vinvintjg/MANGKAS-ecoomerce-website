@@ -23,6 +23,7 @@ class Booking extends Model
         'booking_payment_method',
         'booking_payment_photo',
         'booking_membership',
+        'service',
     ];
 
     public function agenda()
@@ -43,5 +44,9 @@ class Booking extends Model
     public function shop()
     {
         return $this->belongsTo(User::class, 'shop_id');
+    }
+
+    public function service(){
+        return $this->belongsToMany(Service::class);
     }
 }

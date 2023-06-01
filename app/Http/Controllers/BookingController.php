@@ -10,20 +10,24 @@ use App\Models\Service;
 use App\Models\Shop;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
-        public function getCreateBookingPage(){
+    public function getCreateBookingPage(){
         $bookings = Booking::all();
-        return view('create-booking', ['bookings' => $bookings]);
+        return view('user-booking', ['bookings' => $bookings]);
     }
 
     public function createBooking(Request $request){
 
-        Booking::create([
+        $extension1 = $request->file('booking_payment_photo')->getClientOriginalExtension();
+        $fileName1 = $request->agenda_id . '_' .$request->booking_name . $extension1; //rename
+        $request->file('booking_payment_photo')->storeAs('public/image/', $fileName1); //save
+
+        $booking = Booking::create([
             'agenda_id' => $request->agenda_id,
-            'user_id' => $request->user_id,
-            'hairstylist_id' => $request->hairstylist_id,
+            'user_id' => Auth::user()->id,
             'shop_id'=> $request->shop_id,
             'booking_name' => $request->booking_name,
             'booking_phone' => $request->booking_phone,
@@ -32,9 +36,10 @@ class BookingController extends Controller
             'booking_note' => $request->booking_note,
             'booking_payment_total' => $request->booking_payment_total,
             'booking_payment_method' => $request->booking_payment_method,
-            'booking_payment_photo' => $request->booking_payment_photo,
-            'booking_membership' => $request->booking_membership,
+            'booking_payment_photo' => $fileName1,
         ]);
+
+        $booking->service()->attach($request->service);
 
         return redirect(route('getBookings'));
     }
@@ -46,7 +51,7 @@ class BookingController extends Controller
         $users = User::all();
         $shops = Shop::all();
 
-        return view('create-booking',
+        return view('user-booking-detail',
         ['bookings' => $bookings,
         'agendas' => $agendas,
         'hairstylists' => $hairstylists,
@@ -67,6 +72,7 @@ class BookingController extends Controller
         $bookings = Booking::where('shop_id', $shopId)->get();
 
         return view('user-booking', [
+            'shopId' => $shopId,
             'shops' => $shops,
             'services' => $services,
             'hairstylists' => $hairstylists,
@@ -81,5 +87,17 @@ class BookingController extends Controller
         Booking::destroy($id);
 
         return redirect(route('getBookings'));
+    }
+
+    public function filter(Request $request){
+
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+
+        $agendas = Agenda::whereDate('date', '>=', $start_date)
+                        ->whereDate('date', '<=', $end_date)
+                        ->get();
+
+        return view('user-booking', ['agendas' => $agendas]);
     }
 }

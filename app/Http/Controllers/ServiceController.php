@@ -22,6 +22,7 @@ class ServiceController extends Controller
             'service_name' => $request->service_name,
             'service_logo' => $fileName1,
             'shop_id' => Auth::user()->id,
+            'service_price' => $request->service_price,
         ]);
 
         return redirect(route('getServices'));

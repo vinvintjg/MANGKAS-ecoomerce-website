@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ShopController;
 
@@ -81,8 +82,13 @@ Route::delete('/delete-agenda/{id}', [AgendaController::class, 'deleteAgenda'])-
 
 Route::get('/create-booking', [BookingController::class, 'getCreateBookingPage'])->name('getCreateBookingPage');
 Route::post('/create-booking', [BookingController::class, 'createBooking'])->name('createBooking');
-Route::get('/create-booking', [BookingController::class, 'getBookings'])->name('getBookings');
+Route::get('/mangkas-booking-detail', [BookingController::class, 'getBookings'])->name('getBookings');
 Route::delete('/delete-booking/{id}', [BookingController::class, 'deleteBooking'])->name('deleteBooking');
+
+Route::get('/mangkas-home', [MembershipController::class, 'getCreateMembershipPage'])->name('getCreateMembershipPage');
+Route::post('/mangkas-home', [MembershipController::class, 'createMembership'])->name('createMembership');
+Route::get('/create-membership', [MembershipController::class, 'getMemberships'])->name('getMemberships');
+Route::delete('/delete-membership/{id}', [MembershipController::class, 'deleteMembership'])->name('deleteMembership');
 
 Route::get('/mangkas-shop', [ShopController::class, 'getCreateShop'])->name('getCreateShop');
 
@@ -93,4 +99,6 @@ Route::get('/mangkas-shop-detail/{id}', [ShopController::class, 'getShopById'])-
 Route::get('/agendas', [AgendaController::class, 'index'])->name('agendas.index');
 
 Route::get('/s', [AgendaController::class, 'searchAgenda'])->name('search1');
+
+Route::get('/filter', [BookingController::class, 'filter'])->name('filter');
 require __DIR__.'/auth.php';
