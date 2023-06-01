@@ -16,5 +16,15 @@ class Hairstylist extends Model
         'shop_id',
     ];
 
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+
+    public function agendas()
+    {
+        return $this->hasMany(Agenda::class);
+    }
+
     use HasFactory;
 }

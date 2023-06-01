@@ -45,7 +45,10 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function books(){
-        return $this->hasMany(Book::class);
+    use Notifiable;
+    
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
     }
 }

@@ -13,6 +13,32 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('agenda_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('hairstylist_id');
+            $table->unsignedBigInteger('shop_id');
+            $table->string('booking_name');
+            $table->string('booking_phone');
+            $table->string('booking_gender');
+            $table->string('booking_haircut');
+            $table->string('booking_note');
+            $table->integer('booking_payment_total');
+            $table->string('booking_payment_method');
+            $table->string('booking_payment_photo');
+            $table->string('booking_membership');
+
+            $table->foreign('shop_id')->references('id')->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreign('agenda_id')->references('id')->on('agendas')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreign('hairstylist_id')->references('id')->on('hairstylists')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

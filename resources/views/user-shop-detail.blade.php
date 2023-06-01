@@ -11,6 +11,8 @@
     <h1>Shop Detail</h1>
     <h2>Shop ID: {{ $shops->id }}</h2>
     <h3>Shop Name: {{ $shops->shop_name }}</h3>
+    <img src="{{asset('storage/image/'.$shops->shop_photo_1)}}" alt="Error" style="height: 50px" >
+
     {{-- Add other shop details here --}}
 
 
@@ -78,7 +80,30 @@
                 </tr>
             @endforeach
         </tbody>
-    </table> --}}
+    </table>
+
+    <h1>Haircut</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">haircut name</th>
+            <th scope="col">haircut logo</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach ($haircuts as $haircut)
+                <tr>
+                <td>{{ $haircut->haircut_name }}</td>
+                <td>
+                    <img src="{{asset('storage/image/'.$haircut->haircut_logo)}}" alt="Error" style="height: 90px" >
+                </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+    <a href="{{route('getBookingById', ['id'=>$shops->id])}}"><button type="submit" class="btn btn-success col-md">Booking</button></a>
+
 
 
 </body>

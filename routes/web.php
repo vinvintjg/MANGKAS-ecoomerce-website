@@ -2,12 +2,16 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ShopController;
 
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\HaircutController;
 use App\Http\Controllers\HairstylistController;
+
+use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +44,11 @@ Route::post('/create-product', [ProductController::class, 'createProduct'])->nam
 Route::get('/create-product', [ProductController::class, 'getProducts'])->name('getProducts');
 Route::delete('/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('deleteProduct');
 
+Route::get('/create-faq', [FaqController::class, 'getCreateFaqPage'])->name('getCreateFaqPage');
+Route::post('/create-faq', [FaqController::class, 'createFaq'])->name('createFaq');
+Route::get('/create-faq', [FaqController::class, 'getFaqs'])->name('getFaqs');
+Route::delete('/delete-faq/{id}', [FaqController::class, 'deleteFaq'])->name('deleteFaq');
+
 Route::get('/create-shop', [ShopController::class, 'getCreateShopPage'])->name('getCreateShopPage');
 Route::post('/create-shop', [ShopController::class, 'createShop'])->name('createShop');
 Route::get('/create-shop', [ShopController::class, 'getShops'])->name('getShops');
@@ -65,9 +74,23 @@ Route::post('/create-hairstylist', [HairstylistController::class, 'createHairsty
 Route::get('/create-hairstylist', [HairstylistController::class, 'getHairstylists'])->name('getHairstylists');
 Route::delete('/delete-hairstylist/{id}', [HairstylistController::class, 'deleteHairstylist'])->name('deleteHairstylist');
 
+Route::get('/create-agenda', [AgendaController::class, 'getCreateAgendaPage'])->name('getCreateAgendaPage');
+Route::post('/create-agenda', [AgendaController::class, 'createAgenda'])->name('createAgenda');
+Route::get('/create-agenda', [AgendaController::class, 'getAgendas'])->name('getAgendas');
+Route::delete('/delete-agenda/{id}', [AgendaController::class, 'deleteAgenda'])->name('deleteAgenda');
+
+Route::get('/create-booking', [BookingController::class, 'getCreateBookingPage'])->name('getCreateBookingPage');
+Route::post('/create-booking', [BookingController::class, 'createBooking'])->name('createBooking');
+Route::get('/create-booking', [BookingController::class, 'getBookings'])->name('getBookings');
+Route::delete('/delete-booking/{id}', [BookingController::class, 'deleteBooking'])->name('deleteBooking');
 
 Route::get('/mangkas-shop', [ShopController::class, 'getCreateShop'])->name('getCreateShop');
 
+Route::get('/mangkas-booking/{id}', [BookingController::class, 'getBookingById'])->name('getBookingById');
+
 Route::get('/mangkas-shop-detail/{id}', [ShopController::class, 'getShopById'])->name('getShopById');
 
+Route::get('/agendas', [AgendaController::class, 'index'])->name('agendas.index');
+
+Route::get('/s', [AgendaController::class, 'searchAgenda'])->name('search1');
 require __DIR__.'/auth.php';
