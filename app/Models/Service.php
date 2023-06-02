@@ -16,7 +16,7 @@ class Service extends Model
 
     use HasFactory;
 
-    public function booking(){
-        return $this->belongsToMany(Booking::class);
+    public function bookings(){
+        return $this->belongsToMany(Booking::class, 'booking_service');
     }
 }

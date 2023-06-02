@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('agenda_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('shop_id');
+            $table->string('booking_service');
             $table->string('booking_name');
             $table->string('booking_phone');
             $table->string('booking_gender');

@@ -7,48 +7,36 @@
     <title>Create Page</title>
 </head>
 <body>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">agenda_id</th>
-            <th scope="col">user_id</th>
-            <th scope="col">shop_id</th>
-            <th scope="col">booking_name</th>
-            <th scope="col">booking_phone</th>
-            <th scope="col">booking_gender</th>
-            <th scope="col">booking_haircut</th>
-            <th scope="col">booking_note</th>
-            <th scope="col">booking_payment_total</th>
-            <th scope="col">booking_payment_method</th>
-            <th scope="col">booking_payment_photo</th>
-            <th scope="col">delete</th>
-        </tr>
-        </thead>
-        <tbody>
-            @foreach ($bookings as $booking)
-                <tr>
-                <td>{{ $booking->agenda_id }}</td>
-                <td>{{ $booking->user_id }}</td>
-                <td>{{ $booking->shop_id }}</td>
-                <td>{{ $booking->booking_name }}</td>
-                <td>{{ $booking->booking_phone }}</td>
-                <td>{{ $booking->booking_gender }}</td>
-                <td>{{ $booking->booking_haircut }}</td>
-                <td>{{ $booking->booking_note }}</td>
-                <td>{{ $booking->booking_payment_total }}</td>
-                <td>{{ $booking->booking_payment_method }}</td>
-                <td>{{ $booking->booking_payment_photo }}</td>
-                <td>
-                    <form action="{{route('deleteBooking', ['id' => $booking->id])}}" method="post">
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="btn btn-danger col-md">Cancel</button>
-                    </form>
-                </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+
+    @foreach ($bookings as $booking)
+        <p>booking_id : {{ $booking->id }}</p>
+        <h4>PROFIL</h4>
+        <p>booking_name : {{ $booking->booking_name }}</p>
+        <p>booking_phone : {{ $booking->booking_phone }}</p>
+        <p>booking_gender : {{ $booking->booking_gender }}</p>
+        <h4>SHOP</h4>
+        <p>shop_name : {{ $booking->shop->shop_name }}</p>
+        <p>shop_address : {{ $booking->shop->shop_address }}</p>
+        <h4>DETAIL</h4>
+        <p>booking_service : {{ $booking->booking_service }}</p>
+        <p>booking_haircut : {{ $booking->haircut->haircut_name }}</p>
+        <p>date : {{ $booking->agenda->date }}</p>
+        <p>hour : {{ $booking->agenda->hour }}</p>
+        <p>booking_note : {{ $booking->booking_note }}</p>
+        <h4>PAYEMNT</h4>
+        <p>booking_payment_total : {{ $booking->booking_payment_total }}</p>
+        <p>booking_payment_method : {{ $booking->booking_payment_method }}</p>
+        <img height="100px" src="{{asset('storage/image/'.$booking->booking_payment_photo)}}" alt="">
+        <p>
+            <form action="{{route('deleteBooking', ['id' => $booking->id])}}" method="post">
+            @csrf
+            @method('delete')
+            <button type="submit" class="btn btn-danger col-md">Cancel</button>
+            </form>
+        </p>
+        <br><br><br>
+    </tr>
+    @endforeach
 
 </body>
 </html>

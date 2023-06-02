@@ -20,7 +20,7 @@ class BookingController extends Controller
     }
 
     public function createBooking(Request $request){
-
+        $services = Service::all();
         $extension1 = $request->file('booking_payment_photo')->getClientOriginalExtension();
         $fileName1 = $request->agenda_id . '_' .$request->booking_name . $extension1; //rename
         $request->file('booking_payment_photo')->storeAs('public/image/', $fileName1); //save
@@ -37,9 +37,23 @@ class BookingController extends Controller
             'booking_payment_total' => $request->booking_payment_total,
             'booking_payment_method' => $request->booking_payment_method,
             'booking_payment_photo' => $fileName1,
+            'booking_service' => json_encode($request->booking_service),
         ]);
 
-        $booking->service()->attach($request->service);
+        // foreach ($services as $service) {
+        //     $booking->service()->attach($service);
+        //     // $booking->service()->attach(json_decode($request->booking_service));
+        // }
+
+        // dd($request->all());
+
+        $agenda = Agenda::find($request->agenda_id);
+        if ($agenda) {
+            $agenda->status = 'Unavailable';
+            $agenda->save();
+        }
+
+        // dd($request->all());
 
         return redirect(route('getBookings'));
     }

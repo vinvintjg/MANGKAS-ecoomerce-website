@@ -29,22 +29,17 @@
         </select>
 
         <label for="Service">Service</label>
-        {{-- @foreach ($services as $service)
-        <input type="checkbox" name="" value="<?= $service['service_id'] ?>">
-        <label for="" >{{$service->service_name}}</label>
-        @endforeach --}}
 
         {{-- @foreach ($services as $service)
-        @php $no = 1; $no++; @endphp
-        <input type="checkbox" id="<?=$no?>" value="<?= $service['service_id'] ?>" name="service[]">
-        <label for="<?=$no?>" ><?= $service['service_name'] ?></label>
+        <input type="checkbox" value="{{ $service->id }}" name="booking_service[]" class="service-checkbox">
+        <label>{{ $service['service_name'] }}</label>
         @endforeach --}}
 
         @foreach ($services as $service)
-    <input type="checkbox" id="service_{{ $loop->index + 1 }}" value="{{ $service['service_id'] }}" name="services[]">
-    <label for="service_{{ $loop->index + 1 }}">{{ $service['service_name'] }}</label>
-@endforeach
-
+            <input type="checkbox" value="{{ $service->id }}" name="booking_service[]" class="service-checkbox">
+            <label>{{ $service['service_name'] }}</label>
+            <br>
+        @endforeach
 
         <h2>Services</h2>
 
@@ -71,18 +66,22 @@
             </thead>
             <tbody>
                 @foreach ($agendas as $agenda)
+                @if ($agenda->status !== 'Unavailable')
                     <tr class="agenda_row" data-date="{{ date('Y-m-d', strtotime($agenda->date)) }}">
                         <td>
                             <input type="radio" name="agenda_id" value="{{ $agenda->id }}"> {{ $agenda->hairstylist->hairstylist_name }} {{ date('H:i', strtotime($agenda->hour)) }} {{ date('d M', strtotime($agenda->date)) }}
                         </td>
                     </tr>
+                @endif
                 @endforeach
             </tbody>
         </table>
 
         <h2>Payment</h2>
+        <h2>Total Harga: <span id="total-price"></span></h2>
+
         <label for="booking_payment_total">Payment Detail</label>
-        <input type="number" name="booking_payment_total">
+        <input type="text" name="booking_payment_total" id="booking_payment_total" readonly style="display: none;">
 
         <label for="booking_payment_method">Transaction Method</label>
         <input type="text" name="booking_payment_method">
@@ -114,5 +113,54 @@
                 agendaRows[i].style.display = 'none';
             }
         }
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var services = [
+            @foreach($services as $service)
+                {
+                    id: '{{$service->id}}',
+                    price: '{{$service->service_price}}'
+                },
+            @endforeach
+        ];
+
+        function calculateTotalPrice() {
+            var totalPrice = 0;
+            $('.service-checkbox:checked').each(function() {
+                var serviceId = $(this).val();
+                var foundService = services.find(function(service) {
+                    return service.id === serviceId;
+                });
+
+                if (foundService) {
+                    var servicePrice = parseInt(foundService.price);
+                    totalPrice += servicePrice;
+                }
+            });
+
+            $('#total-price').text(totalPrice);
+            $('#booking_payment_total').val(totalPrice);
+        }
+
+        $('.service-checkbox').on('change', function() {
+            calculateTotalPrice();
+        });
+
+        $('.service-checkbox').each(function() {
+            var serviceId = $(this).val();
+            var foundService = services.find(function(service) {
+                return service.id === serviceId;
+            });
+
+            if (foundService) {
+                var servicePrice = parseInt(foundService.price);
+                $(this).data('price', servicePrice);
+            }
+        });
+
+        calculateTotalPrice();
     });
 </script>

@@ -14,4 +14,9 @@ class Haircut extends Model
     ];
 
     use HasFactory;
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

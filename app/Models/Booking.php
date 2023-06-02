@@ -14,6 +14,7 @@ class Booking extends Model
         'user_id',
         'hairstylist_id',
         'shop_id',
+        'booking_service',
         'booking_name',
         'booking_phone',
         'booking_gender',
@@ -36,17 +37,22 @@ class Booking extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function hairstylist()
+    public function hairstylists()
     {
-        return $this->belongsTo(Hairstylist::class);
+        return $this->belongsTo(Hairstylist::class, 'hairstylist_id');
+    }
+
+    public function haircut()
+    {
+        return $this->belongsTo(Haircut::class, 'booking_haircut');
     }
 
     public function shop()
     {
-        return $this->belongsTo(User::class, 'shop_id');
+        return $this->belongsTo(Shop::class, 'shop_id');
     }
 
     public function service(){
-        return $this->belongsToMany(Service::class);
+        return $this->belongsToMany(Service::class, 'booking_service');
     }
 }
