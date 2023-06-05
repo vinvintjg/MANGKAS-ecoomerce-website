@@ -17,18 +17,6 @@ class UsersTableSeeder extends Seeder
     public function run(): void
     {
         //
-        $factory->define(App\Models\User::class, function (Faker $faker) {
-            return [
-                'name' => $faker->name,
-                'phone' => $faker->unique()->phoneNumber,
-                'email' => $faker->unique()->safeEmail,
-                'email_verified_at' => now(),
-                'password' => bcrypt('password'),
-                'role' => 'user',
-                'remember_token' => Str::random(10),
-            ];
-        });
-
-        $users = factory(App\Models\User::class, 10)->create();
+        
     }
 }

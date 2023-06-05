@@ -37,7 +37,7 @@ class Booking extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function hairstylists()
+    public function hairstylist()
     {
         return $this->belongsTo(Hairstylist::class, 'hairstylist_id');
     }

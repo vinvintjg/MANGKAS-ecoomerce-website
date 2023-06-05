@@ -25,9 +25,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user-home');
 });
 
 Route::get('/dashboard', function () {
@@ -40,15 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/create-product', [ProductController::class, 'getCreateProductPage'])->name('getCreateProductPage');
-Route::post('/create-product', [ProductController::class, 'createProduct'])->name('createProduct');
-Route::get('/create-product', [ProductController::class, 'getProducts'])->name('getProducts');
-Route::delete('/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('deleteProduct');
-
-Route::get('/create-faq', [FaqController::class, 'getCreateFaqPage'])->name('getCreateFaqPage');
-Route::post('/create-faq', [FaqController::class, 'createFaq'])->name('createFaq');
-Route::get('/create-faq', [FaqController::class, 'getFaqs'])->name('getFaqs');
-Route::delete('/delete-faq/{id}', [FaqController::class, 'deleteFaq'])->name('deleteFaq');
+Route::middleware(['admin', 'staff'])->group(function() {
 
 Route::get('/create-shop', [ShopController::class, 'getCreateShopPage'])->name('getCreateShopPage');
 Route::post('/create-shop', [ShopController::class, 'createShop'])->name('createShop');
@@ -80,25 +73,51 @@ Route::post('/create-agenda', [AgendaController::class, 'createAgenda'])->name('
 Route::get('/create-agenda', [AgendaController::class, 'getAgendas'])->name('getAgendas');
 Route::delete('/delete-agenda/{id}', [AgendaController::class, 'deleteAgenda'])->name('deleteAgenda');
 
+});
+
+Route::middleware('admin')->group(function () {
+    Route::get('/create-product', [ProductController::class, 'getCreateProductPage'])->name('getCreateProductPage');
+    Route::post('/create-product', [ProductController::class, 'createProduct'])->name('createProduct');
+    Route::get('/create-product', [ProductController::class, 'getProducts'])->name('getProducts');
+    Route::delete('/delete-product/{id}', [ProductController::class, 'deleteProduct'])->name('deleteProduct');
+
+    Route::get('/create-faq', [FaqController::class, 'getCreateFaqPage'])->name('getCreateFaqPage');
+    Route::post('/create-faq', [FaqController::class, 'createFaq'])->name('createFaq');
+    Route::get('/create-faq', [FaqController::class, 'getFaqs'])->name('getFaqs');
+    Route::delete('/delete-faq/{id}', [FaqController::class, 'deleteFaq'])->name('deleteFaq');
+
+});
+
+Route::middleware('auth')->group(function(){
+Route::get('/create-membership', [MembershipController::class, 'getMemberships'])->name('getMemberships');
+Route::delete('/delete-membership/{id}', [MembershipController::class, 'deleteMembership'])->name('deleteMembership');
+
+Route::get('/mangkas-booking/{id}', [BookingController::class, 'getBookingById'])->name('getBookingById');
+
 Route::get('/create-booking', [BookingController::class, 'getCreateBookingPage'])->name('getCreateBookingPage');
 Route::post('/create-booking', [BookingController::class, 'createBooking'])->name('createBooking');
 Route::get('/mangkas-booking-detail', [BookingController::class, 'getBookings'])->name('getBookings');
 Route::delete('/delete-booking/{id}', [BookingController::class, 'deleteBooking'])->name('deleteBooking');
 
+// Route::get('/agendas', [AgendaController::class, 'index'])->name('agendas.index');
+
+// Route::get('/s', [AgendaController::class, 'searchAgenda'])->name('search1');
+
+Route::get('/filter', [BookingController::class, 'filter'])->name('filter');
+});
+
 Route::get('/mangkas-home', [MembershipController::class, 'getCreateMembershipPage'])->name('getCreateMembershipPage');
 Route::post('/mangkas-home', [MembershipController::class, 'createMembership'])->name('createMembership');
-Route::get('/create-membership', [MembershipController::class, 'getMemberships'])->name('getMemberships');
-Route::delete('/delete-membership/{id}', [MembershipController::class, 'deleteMembership'])->name('deleteMembership');
 
 Route::get('/mangkas-shop', [ShopController::class, 'getCreateShop'])->name('getCreateShop');
 
-Route::get('/mangkas-booking/{id}', [BookingController::class, 'getBookingById'])->name('getBookingById');
-
 Route::get('/mangkas-shop-detail/{id}', [ShopController::class, 'getShopById'])->name('getShopById');
 
-Route::get('/agendas', [AgendaController::class, 'index'])->name('agendas.index');
-
-Route::get('/s', [AgendaController::class, 'searchAgenda'])->name('search1');
-
-Route::get('/filter', [BookingController::class, 'filter'])->name('filter');
 require __DIR__.'/auth.php';
+
+
+use App\Http\Controllers\ChattingController;
+
+Route::get('/mangkas-chatting', [ChattingController::class, 'getCreateChattingPage'])->name('getCreateChattingPage');
+Route::post('/mangkas-chatting', [ChattingController::class, 'createChatting'])->name('createChatting');
+Route::get('/mangkas-chatting', [ChattingController::class, 'getChattings'])->name('getChattings');

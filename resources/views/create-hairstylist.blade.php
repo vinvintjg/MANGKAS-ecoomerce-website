@@ -17,7 +17,7 @@
         <label for="">hairstylist description</label>
         <input type="text" name="hairstylist_description">
         <label for="">hairstylist rate</label>
-        <input type="text" name="hairstylist_rate">
+        <input type="number" name="hairstylist_rate" step="any">
         <label for="">hairstylist review</label>
         <input type="text" name="hairstylist_review">
 

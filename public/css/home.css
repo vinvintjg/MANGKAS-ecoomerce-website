@@ -1,0 +1,128 @@
+header{
+    /* position: absolute; */
+    width: 100%;
+    height: 744px;
+    left: 0px;
+    top: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../assets/main-header.png");
+}
+
+/* header::before{
+    content: "";
+    background-color: black;
+    opacity: 0.3;
+} */
+.hero{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 236px 0px  123px 0px;
+}
+
+.hero-font{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .hero-font h1{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 96px;
+    text-align: center;
+
+    color: #FFFFFF;
+} */
+
+
+.hero-font  h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 96px;
+    text-align: center;
+
+    color: #FFFFFF;
+  }
+
+  strong {
+    border-right: 2px solid;
+    animation: caret 1s steps(1) infinite;
+    color: #FFFFFF;
+    height: 100%;
+    border-color: #FFFFFF;
+  }
+
+  @keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+.hero-font span{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #AB8856;
+}
+
+header button{
+    /* margin-left: 2rem; */
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+
+    /* width: 125px; */
+    height: 46px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid #AB8856;
+    border-radius: 15px;
+
+    flex: none;
+    order: 6;
+    flex-grow: 0;
+    color: #AB8856;
+}
+
+header button a{
+    align-items: center;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #AB8856;
+    width: 100%;
+    height: 100%;
+}
+
+header button:hover{
+    background-color: #AB8856;
+    color: #ffffff;
+}
+
+header button a:hover{
+    background-color: #AB8856;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: #ffffff;
+    padding: auto;
+}
+
+
+@media all and (max-width: 600px) {
+
+    header{
+        /* text-align: center; */
+        width: 100%;
+        height: 50rem;
+
+    }
+
+  }

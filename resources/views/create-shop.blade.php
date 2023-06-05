@@ -21,11 +21,11 @@
         <label for="">shop_photo_4</label>
         <input type="file" name="shop_photo_4">
         <label for="">shop_price_low</label>
-        <input type="numeric" name="shop_price_low">
+        <input type="number" name="shop_price_low">
         <label for="">shop_price_high</label>
-        <input type="numeric" name="shop_price_high">
+        <input type="number" name="shop_price_high">
         <label for="">shop_rate</label>
-        <input type="numeric" name="shop_rate">
+        <input type="number" name="shop_rate" step="any">
         <label for="">shop location</label>
         <input type="text" name="shop_location">
         <label for="">shop_description</label>

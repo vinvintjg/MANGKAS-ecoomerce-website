@@ -67,7 +67,7 @@ class ShopController extends Controller
             'shop_location' => $request->shop_location,
             'shop_description' => $request->shop_description,
             'shop_address' => $request->shop_address,
-            'shop_id' => Auth::user()->id,
+            'shopid' => Auth::user()->id,
         ]);
 
         return redirect(route('getShops'));
@@ -75,7 +75,8 @@ class ShopController extends Controller
 
     public function getShops(){
         $user_id = Auth::user()->id;
-        $shops = Shop::where('shop_id', $user_id)->get();
+        // $shops = Shop::where('shop_id', $user_id)->get(); this
+        $shops = Shop::where('shopid', $user_id)->get();
         return view('create-shop', ['shops' => $shops]);
     }
 
@@ -89,7 +90,7 @@ class ShopController extends Controller
     public function getShopById($id) {
 
         $shops = Shop::find($id);
-        $shopId = $shops->shop_id;
+        $shopId = $shops->shopid;
 
         $services = Service::where('shop_id', $shopId)->get();
         $hairstylists = Hairstylist::where('shop_id', $shopId)->get();

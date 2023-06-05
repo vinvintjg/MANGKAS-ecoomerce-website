@@ -59,24 +59,30 @@ class BookingController extends Controller
     }
 
     public function getBookings(){
-        $bookings = Booking::all();
+        $user_id = Auth::user()->id;
+        $bookings = Booking::where('user_id', $user_id)->get();
+        // $agendas = Agenda::where('user_id', $user_id)->get();
+        // $hairstylists = Hairstylist::where('user_id', $user_id)->get();
+        // $users = User::where('user_id', $user_id)->get();
+
+        // $bookings = Booking::all();
         $agendas = Agenda::all();
         $hairstylists = Hairstylist::all();
-        $users = User::all();
-        $shops = Shop::all();
+        // $users = User::all();
+        // $shops = Shop::all();
 
         return view('user-booking-detail',
         ['bookings' => $bookings,
         'agendas' => $agendas,
-        'hairstylists' => $hairstylists,
-        'users' => $users,
-        'shops' => $shops]);
+        'hairstylists' => $hairstylists
+        // 'users' => $users,
+    ]);
     }
 
     public function getBookingById($id) {
 
         $shops = Shop::find($id);
-        $shopId = $shops->shop_id;
+        $shopId = $shops->shopid;
 
         $services = Service::where('shop_id', $shopId)->get();
         $hairstylists = Hairstylist::where('shop_id', $shopId)->get();

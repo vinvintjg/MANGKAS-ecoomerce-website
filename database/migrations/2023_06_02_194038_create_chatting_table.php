@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hairstylists', function (Blueprint $table) {
+        Schema::create('chattings', function (Blueprint $table) {
             $table->id();
-            $table->string('hairstylist_name');
-            $table->string('hairstylist_logo');
-            $table->string('hairstylist_description');
-            $table->float('hairstylist_rate');
-            $table->integer('hairstylist_review');
-            $table->unsignedBigInteger('shop_id');
-            $table->foreign('shop_id')->references('id')->on('users')
+            $table->unsignedBigInteger('sender');
+            $table->unsignedBigInteger('receiver');
+            $table->string('chatting_text');
+
+            $table->foreign('sender')->references('id')->on('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreign('receiver')->references('id')->on('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->timestamps();
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hairstylists');
+        Schema::dropIfExists('chattings');
     }
 };

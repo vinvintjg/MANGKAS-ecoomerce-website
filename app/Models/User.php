@@ -46,9 +46,14 @@ class User extends Authenticatable
     ];
 
     use Notifiable;
-    
+
     public function bookings()
     {
         return $this->hasMany(Booking::class);
+    }
+
+    public function chatting()
+    {
+        return $this->hasMany(Chatting::class);
     }
 }

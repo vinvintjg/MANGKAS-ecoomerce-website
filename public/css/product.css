@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+
+  /* body{
+    font-family: var(--font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-color: var(--bg-color);
+  } */
+
+  /* ----------- SLIDER ------------ */
+  .swiper{
+    width: 100%;
+    background-color: #12110A;
+    height: 795px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .swiper-wrapper{
+    width: 150%;
+    height: 30em;
+    display: flex;
+    align-items: center;
+  }
+
+  .card{
+    width: 345px;
+    height: 375px;
+    background-color: #785F3C;
+    border-radius: 15px;
+    box-shadow: 0 0 2em rgba(0, 0, 0, .2);
+    padding: 2rem 1em;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 2em;
+  }
+
+  /* .swiper-slide:not(.swiper-slide-active){
+    filter: blur(1px);
+  } */
+
+  .card_star img{
+    Width: 21px;
+    Height: 20px;
+    margin-left: 7px;
+  }
+
+  .card_content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .swiper-slide h1{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height */
+
+    text-align: center;
+
+    /* WHITE */
+
+    color: #FFFFFF;
+  }
+
+  .card_title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    top: .2em;
+  }
+  .pro-head{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items:center ;
+  }
+  .pro-head-title{
+    padding-left: 143px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 96px;
+    text-align: center;
+    align-items: center;
+
+    color: #AB8856;
+  }
+  .pro-more{
+    position: relative;
+    right: -330px;
+  }
+
+  .pro-more button{
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+
+    /* width: 125px; */
+    height: 46px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid #AB8856;
+    border-radius: 15px;
+
+    flex: none;
+    order: 6;
+    flex-grow: 0;
+    color: #AB8856;
+}
+
+.pro-more button a{
+    align-items: center;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #AB8856;
+}
+
+.pro-more button:hover{
+    background-color: #AB8856;
+    color: #ffffff;
+}
+
+.pro-more button a:hover{
+    background-color: #AB8856;
+    border: none;
+    box-sizing: border-box;
+
+    border: 2px solid #AB8856;
+    border-radius: 15px;
+    color: #ffffff;
+}

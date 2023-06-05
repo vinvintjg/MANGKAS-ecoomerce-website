@@ -19,12 +19,17 @@ class Shop extends Model
         'shop_location',
         'shop_description',
         'shop_address',
-        'shop_id',
+        'shopid',
     ];
 
     use HasFactory;
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class, 'shop_id');
     }
 }

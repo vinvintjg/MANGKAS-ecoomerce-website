@@ -14,9 +14,9 @@
         <p>booking_name : {{ $booking->booking_name }}</p>
         <p>booking_phone : {{ $booking->booking_phone }}</p>
         <p>booking_gender : {{ $booking->booking_gender }}</p>
-        <h4>SHOP</h4>
-        <p>shop_name : {{ $booking->shop->shop_name }}</p>
-        <p>shop_address : {{ $booking->shop->shop_address }}</p>
+        {{-- <h4>SHOP</h4> --}}
+        {{-- <p>shop_name : {{ $booking->shop->shop_name }}</p> --}}
+        {{-- <p>shop_address : {{ $booking->shop->shop_address }}</p --}}
         <h4>DETAIL</h4>
         <p>booking_service : {{ $booking->booking_service }}</p>
         <p>booking_haircut : {{ $booking->haircut->haircut_name }}</p>

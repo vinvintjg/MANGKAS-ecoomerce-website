@@ -20,12 +20,12 @@ return new class extends Migration
             $table->string('shop_photo_4')->nullable();
             $table->integer('shop_price_low');
             $table->integer('shop_price_high');
-            $table->integer('shop_rate');
+            $table->float('shop_rate');
             $table->string('shop_location');
             $table->string('shop_description');
             $table->string('shop_address');
-            $table->unsignedBigInteger('shop_id');
-            $table->foreign('shop_id')->references('id')->on('users')
+            $table->unsignedBigInteger('shopid')->unique();
+            $table->foreign('shopid')->references('id')->on('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
 
