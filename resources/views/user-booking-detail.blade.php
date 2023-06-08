@@ -18,7 +18,7 @@
         {{-- <p>shop_name : {{ $booking->shop->shop_name }}</p> --}}
         {{-- <p>shop_address : {{ $booking->shop->shop_address }}</p --}}
         <h4>DETAIL</h4>
-        <p>booking_service : {{ $booking->booking_service }}</p>
+        {{-- <p>booking_service : {{ $booking->booking_service }}</p> --}}
         <p>booking_haircut : {{ $booking->haircut->haircut_name }}</p>
         <p>date : {{ $booking->agenda->date }}</p>
         <p>hour : {{ $booking->agenda->hour }}</p>

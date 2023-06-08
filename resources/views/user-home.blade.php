@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <link rel="icon" href="assets/logo_navbar.png" type="image/png">
+    <link rel="icon" href="assets/icon-mangkas.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,300;1,600&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href={{asset('css/product.css')}}>
     <link rel="stylesheet" href={{asset('css/shop.css')}}>
     <link rel="stylesheet" href={{asset('css/member.css')}}>
+    <link rel="stylesheet" href={{asset('css/footer.css')}}>
     <title>HOME PAGE</title>
 </head>
 <body>
@@ -31,13 +32,13 @@
         </div>
         <a class="hamburger" id="nav-icon">&#9776;</a>
         <div class="nav-font" id="nav-mobile">
-            <a href="#"><li>HOME</li></a>
-            <a href="#"><li>ABOUT</li></a>
-            <a href="#"><li>PRODUCT</li></a>
-            <a href="#"><li>SHOP</li></a>
-            <a href="#"><li>FAQ</li></a>
-            <a href="#"><li>CONTACT</li></a>
-            <button><a href="#"><li class="navlog">LOGIN</li></a></button>
+            <a href="/"><li>HOME</li></a>
+            <a href="#aboutscroll"><li>ABOUT</li></a>
+            <a href="{{ route('getProductsMangkas') }}"><li>PRODUCT</li></a>
+            <a href="{{ route('getCreateShop') }}"><li>SHOP</li></a>
+            {{-- <a href=""><li>FAQ</li></a>
+            <a href=""><li>CONTACT</li></a> --}}
+            <button class="brown login-button"><a href="{{ route('login') }}">LOGIN</a></button>
         </div>
         </div>
     </nav>
@@ -48,7 +49,7 @@
                 <span class="">WELCOME TO MANGKAS</span>
                 <h1>Look Sharp Feel Sharper <br>
                     With Our Cuts</h1>
-                <button class=""><a href="#">MEMBERSHIP NOW</a></button>
+                <button class=""><a href="#member-mangkas">MEMBERSHIP NOW</a></button>
             </div>
         </div>
     </header>
@@ -103,8 +104,8 @@
         </div>
     </head>
 
-    <section>
-        <div class="about">
+    <section id="aboutscroll">
+        <div class="about" id="about-scroll">
             <div class="abo-logo">
                 <img src="assets/abo-people.png" alt="">
             </div>
@@ -132,7 +133,7 @@
                 Product
             </div>
             <div class="pro-more">
-                <button class=""><a href="#">See More...</a></button>
+                <button class=""><a href="{{ route('getProductsMangkas') }}">See More...</a></button>
             </div>
         </div>
         <div class="swiper-wrapper">
@@ -231,7 +232,7 @@
                 Shop
             </div>
             <div class="pro-more">
-                <button class=""><a href="#">See More...</a></button>
+                <button class=""><a href="{{ route('getProductsMangkas') }}">See More...</a></button>
             </div>
         </div>
         <button class="pre-btn"><img src="assets/arrow-right.png" alt=""></button>
@@ -260,7 +261,7 @@
                         </div>
                     </div>
                     <div class="shop-button">
-                        <button class=""><a href="#">BOOKING</a></button>
+                        <button class=""><a href="{{ route('getCreateShop') }}">BOOKING</a></button>
                     </div>
                 </div>
             </div>
@@ -288,7 +289,7 @@
                         </div>
                     </div>
                     <div class="shop-button">
-                        <button class=""><a href="#">BOOKING</a></button>
+                        <button class=""><a href="{{ route('getCreateShop') }}">BOOKING</a></button>
                     </div>
                 </div>
             </div>
@@ -315,7 +316,7 @@
                         </div>
                     </div>
                     <div class="shop-button">
-                        <button class=""><a href="#">BOOKING</a></button>
+                        <button class=""><a href="{{ route('getCreateShop') }}">BOOKING</a></button>
                     </div>
                 </div>
             </div>
@@ -342,7 +343,7 @@
                         </div>
                     </div>
                     <div class="shop-button">
-                        <button class=""><a href="#">BOOKING</a></button>
+                        <button class=""><a href="{{ route('getCreateShop') }}">BOOKING</a></button>
                     </div>
                 </div>
             </div>
@@ -369,7 +370,7 @@
                         </div>
                     </div>
                     <div class="shop-button">
-                        <button class=""><a href="#">BOOKING</a></button>
+                        <button class=""><a href="{{ route('getCreateShop') }}">BOOKING</a></button>
                     </div>
                 </div>
             </div>
@@ -396,14 +397,14 @@
                         </div>
                     </div>
                     <div class="shop-button">
-                        <button class=""><a href="#">BOOKING</a></button>
+                        <button class=""><a href="{{ route('getCreateShop') }}">BOOKING</a></button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="member">
+    <section class="member" id="member-mangkas">
         <div class="member-title">Membership</div>
         <div class="member-form">
             <form action="{{ route('createMembership') }}" method="POST" enctype="multipart/form-data">
@@ -412,16 +413,16 @@
                 <div class="form-input" for="membership_name">
                     <input type="text" name="membership_name" placeholder="Fill Your Name">
                 </div>
-                <select name="membership_type" id="membership_type">
-                    <option value="-1" name="membership_type">Choose...</option>
-                    <option value="silver" name="membership_type">silver</option>
-                    <option value="bronze" name="membership_type">bronze</option>
-                    <option value="gold" name="membership_type">gold</option>
-                    <option value="platinum" name="membership_type">platinum</option>
-                </select>
-                <div class="form-label" id="user_id">User Id</div>
-                <div class="form-input" for="user_id">
-                    <input type="text" name="user_id" placeholder="Fill Your User Id">
+                <div class="form-label" id="">Membership Type</div>
+                <div class="select-wrapper">
+                    <select name="membership_type" class="form-input" id="membership_type">
+                        <option value="-1" name="membership_type" class="form-input" for="membership_type">Choose...</option>
+                        <option value="silver" name="membership_type" class="form-input" for="membership_type">silver</option>
+                        <option value="bronze" name="membership_type" class="form-input" for="membership_type">bronze</option>
+                        <option value="gold" name="membership_type" for="membership_type">gold</option>
+                        <option value="platinum" name="membership_type" for="membership_type">platinum</option>
+                    </select>
+                    <span class="dropdown-icon">&#9660;</span>
                 </div>
                 <div class="form-label" id="membership_phone">membership_phone</div>
                 <div class="form-input" for="membership_phone">
@@ -432,39 +433,50 @@
                     <input type="text" name="membership_email" placeholder="Fill Your Email">
                 </div>
                 <div class="button-form">
-                    <button type="submit">Insert</button>
+                    <button type="submit">Join Now</button>
                 </div>
             </form>
         </div>
     </section>
 
-
-
-
-<br><br><br><br><br>
-
-    <form action="{{ route('createMembership') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-
-        <label for="">membership_name</label>
-        <input type="text" name="membership_name">
-        <label for="">membership_type</label>
-        <select name="membership_type" id="membership_type">
-            <option value="-1" name="membership_type">Choose...</option>
-            <option value="silver" name="membership_type">silver</option>
-            <option value="bronze" name="membership_type">bronze</option>
-            <option value="gold" name="membership_type">gold</option>
-            <option value="platinum" name="membership_type">platinum</option>
-        </select>
-        <label for="">user_id</label>
-        <input type="text" name="user_id">
-        <label for="">membership_phone</label>
-        <input type="text" name="membership_phone">
-        <label for="">membership_email</label>
-        <input type="text" name="membership_email">
-
-        <button type="submit">Insert</button>
-    </form>
+    <footer class="footer">
+        <div class="foot-top">
+            <div class="foot-logo">
+                <img src="assets/logo_navbar.png" alt="logo">
+            </div>
+            <div class="foot-text">
+                <div class="foot-text-1">
+                    <a href=""><div class="foot-text-text">HOME</div></a>
+                    <a href=""><div class="foot-text-text">SHOP</div></a>
+                    <a href=""><div class="foot-text-text">PRODUCT</div></a>
+                </div>
+                <div class="foot-text-1">
+                    <a href=""><div class="foot-text-text">FAQ</div></a>
+                    <a href=""><div class="foot-text-text">LIVE CHAT</div></a>
+                    <a href=""><div class="foot-text-text">CONTACT</div></a>
+                </div>
+                <div class="foot-text-1">
+                    <a href=""><div class="foot-text-text">SIGN IN</div></a>
+                    <a href=""><div class="foot-text-text">MEMBERSHIP</div></a>
+                </div>
+            </div>
+            <div class="foot-media">
+                <div class="foot-media-text">
+                    FOLLOW US ON:
+                </div>
+                <div class="foot-media-logo">
+                    <a href="#"><img src="assets/media-1.png" alt="logo"></a>
+                    <a href="#"><img src="assets/media-2.png" alt="logo"></a>
+                    <a href="#"><img src="assets/media-3.png" alt="logo"></a>
+                    <a href="#"><img src="assets/media-4.png" alt="logo"></a>
+                    <a href="#"><img src="assets/media-5.png" alt="logo"></a>
+                </div>
+            </div>
+        </div>
+        <div class="foot-bot">
+            @2023 Mangkas.com by PT Mangkas | All right reserved.
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -472,3 +484,5 @@
     <script src="{{url('js/navbar.js')}}"></script>
 </body>
 </html>
+
+

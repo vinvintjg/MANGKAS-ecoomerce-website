@@ -3,6 +3,9 @@
     padding: 0;
     margin: 0;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 nav{
     background: linear-gradient(180deg, rgba(18, 17, 10, 0.8) 43.33%, rgba(18, 17, 10, 0) 100%);
@@ -136,6 +139,25 @@ nav a{
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+
+button a {
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    color: #AB8856;
+    width: 100vw;
+    /* padding: 1rem 2rem 1rem 2rem; */
+}
+
+button a:hover {
+    color: white;
+    width: 100%;
+}
+
+li .navlog{
+     padding: 1rem 2rem 1rem 2rem;
 }
 
 @media all and (max-width: 1315px) {

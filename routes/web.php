@@ -31,6 +31,10 @@ Route::get('/', function () {
     return view('user-home');
 });
 
+Route::get('/mangkas-faq', function () {
+    return view('user-faq');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -112,6 +116,8 @@ Route::post('/mangkas-home', [MembershipController::class, 'createMembership'])-
 Route::get('/mangkas-shop', [ShopController::class, 'getCreateShop'])->name('getCreateShop');
 
 Route::get('/mangkas-shop-detail/{id}', [ShopController::class, 'getShopById'])->name('getShopById');
+
+Route::get('/mangkas-product', [ProductController::class, 'getProductsMangkas'])->name('getProductsMangkas');
 
 require __DIR__.'/auth.php';
 

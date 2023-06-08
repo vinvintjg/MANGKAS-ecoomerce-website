@@ -41,11 +41,43 @@
 
 .form-input{
     width: 100%;
-
+    color: #F8F8F8;
 }
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #2A2922 inset !important;
+    caret-color: white !important;
+    color: #F8F8F8;
+  }
+
+input:-webkit-autofill,
+*:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  caret-color: white !important;
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .select-wrapper .dropdown-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #AB8856;
+  }
+
 
 .form-input input{
     width: 100%;
+    color: #F8F8F8;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 4px 16px;
@@ -81,12 +113,77 @@
     border-radius: 15px;
   }
 
-  .form-input input:valid  {
+  select .form-input input:valid  {
     /* border-color: brown; */
     color: #F8F8F8;
   }
 
-
-  .button-form{
-    
+  #membership_type {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 4px 16px;
+    border: none;
+    height: 40px;
+    border: 2px solid #AB8856;
+    color: #F8F8F8;
   }
+
+  #membership_type option {
+    background-color: #2A2922;
+    color: #F8F8F8;
+  }
+
+  #membership_type::-ms-expand {
+    display: none; /* Hide the default arrow in Internet Explorer */
+  }
+
+  #membership_type select::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid black; /* Adjust the color and size as needed */
+  }
+
+select{
+    appearance: none;
+}
+
+  .form-input option{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 4px 16px;
+    border: none;
+    height: 40px;
+    border: 2px solid #AB8856;
+}
+
+.button-form{
+    text-align: center;
+}
+.button-form button{
+    margin-top: 50px;
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+
+    /* width: 125px; */
+    height: 46px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid #AB8856;
+    border-radius: 15px;
+    color: #AB8856;
+}
+
+.button-form button:hover{
+    background-color: #AB8856;
+    color: #F8F8F8
+}

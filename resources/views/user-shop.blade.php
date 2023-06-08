@@ -1,9 +1,197 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.navbar')
+@section('content')
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href={{asset('css/product.css')}}>
+    <link rel="stylesheet" href={{asset('css/shop.css')}}>
+</head>
+
+<div class="mangkas-product">
+    <div class="big-title">Shop</div>
+
+    <div class="mangkas-card">
+
+    @foreach ($shops as $shop)
+    <div class="shop-card-1 card card-jarak-1">
+        <div class="shop-img">
+            <img src="{{asset('storage/image/'.$shop->shop_photo_1)}}" alt="card image">
+        </div>
+        <div class="shop-text">
+            <div class="shop-top-text">
+                {{ $shop->shop_name }}
+            </div>
+            <div class="shop-mid-text">
+                <div class="shop-rate">
+                    <img src="assets/star-rate.png" alt="star">
+                        4.5
+                </div>
+                <div class="shop-location">
+                    {{ $shop->shop_location }}
+                </div>
+            </div>
+            <div class="shop-bot-text">
+                <div class="shop-service">
+                        Hair Style &bull; Beard Trim &bull; Hair Grooming
+                </div>
+            </div>
+            <div class="shop-button">
+            <button class=""><a href="{{route('getShopById', ['id'=>$shop->id])}}">BOOKING</a></button>
+        </div>
+        </div>
+
+        {{-- <div class="card_image">
+            <img src="{{asset('storage/image/'.$product->product_logo)}}" alt="card image">
+        </div>
+        <br><br><br>
+        <h2>{{ $product->product_name }}</h2>
+        <h3>IDR {{ $product->product_price }}</h3>
+        <div class="card_star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate-0.png" alt="star">
+        </div> --}}
+    </div>
+    @endforeach
+    @foreach ($shops as $shop)
+    <div class="shop-card-1 card card-jarak-1">
+        <div class="shop-img">
+            <img src="{{asset('storage/image/'.$shop->shop_photo_1)}}" alt="card image">
+        </div>
+        <div class="shop-text">
+            <div class="shop-top-text">
+                {{ $shop->shop_name }}
+            </div>
+            <div class="shop-mid-text">
+                <div class="shop-rate">
+                    <img src="assets/star-rate.png" alt="star">
+                        4.5
+                </div>
+                <div class="shop-location">
+                    {{ $shop->shop_location }}
+                </div>
+            </div>
+            <div class="shop-bot-text">
+                <div class="shop-service">
+                        Hair Style &bull; Beard Trim &bull; Hair Grooming
+                </div>
+            </div>
+            <div class="shop-button">
+            <button class=""><a href="{{route('getShopById', ['id'=>$shop->id])}}">BOOKING</a></button>
+        </div>
+        </div>
+
+        {{-- <div class="card_image">
+            <img src="{{asset('storage/image/'.$product->product_logo)}}" alt="card image">
+        </div>
+        <br><br><br>
+        <h2>{{ $product->product_name }}</h2>
+        <h3>IDR {{ $product->product_price }}</h3>
+        <div class="card_star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate-0.png" alt="star">
+        </div> --}}
+    </div>
+    @endforeach
+    @foreach ($shops as $shop)
+    <div class="shop-card-1 card card-jarak-1">
+        <div class="shop-img">
+            <img src="{{asset('storage/image/'.$shop->shop_photo_1)}}" alt="card image">
+        </div>
+        <div class="shop-text">
+            <div class="shop-top-text">
+                {{ $shop->shop_name }}
+            </div>
+            <div class="shop-mid-text">
+                <div class="shop-rate">
+                    <img src="assets/star-rate.png" alt="star">
+                        4.5
+                </div>
+                <div class="shop-location">
+                    {{ $shop->shop_location }}
+                </div>
+            </div>
+            <div class="shop-bot-text">
+                <div class="shop-service">
+                        Hair Style &bull; Beard Trim &bull; Hair Grooming
+                </div>
+            </div>
+            <div class="shop-button">
+            <button class=""><a href="{{route('getShopById', ['id'=>$shop->id])}}">BOOKING</a></button>
+        </div>
+        </div>
+
+        {{-- <div class="card_image">
+            <img src="{{asset('storage/image/'.$product->product_logo)}}" alt="card image">
+        </div>
+        <br><br><br>
+        <h2>{{ $product->product_name }}</h2>
+        <h3>IDR {{ $product->product_price }}</h3>
+        <div class="card_star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate.png" alt="star">
+            <img src="assets/star-rate-0.png" alt="star">
+        </div> --}}
+    </div>
+    @endforeach
+
+
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="foot-top">
+        <div class="foot-logo">
+            <img src="assets/logo_navbar.png" alt="logo">
+        </div>
+        <div class="foot-text">
+            <div class="foot-text-1">
+                <a href=""><div class="foot-text-text">HOME</div></a>
+                <a href=""><div class="foot-text-text">SHOP</div></a>
+                <a href=""><div class="foot-text-text">PRODUCT</div></a>
+            </div>
+            <div class="foot-text-1">
+                <a href=""><div class="foot-text-text">FAQ</div></a>
+                <a href=""><div class="foot-text-text">LIVE CHAT</div></a>
+                <a href=""><div class="foot-text-text">CONTACT</div></a>
+            </div>
+            <div class="foot-text-1">
+                <a href=""><div class="foot-text-text">SIGN IN</div></a>
+                <a href=""><div class="foot-text-text">MEMBERSHIP</div></a>
+            </div>
+        </div>
+        <div class="foot-media">
+            <div class="foot-media-text">
+                FOLLOW US ON:
+            </div>
+            <div class="foot-media-logo">
+                <a href="#"><img src="assets/media-1.png" alt="logo"></a>
+                <a href="#"><img src="assets/media-2.png" alt="logo"></a>
+                <a href="#"><img src="assets/media-3.png" alt="logo"></a>
+                <a href="#"><img src="assets/media-4.png" alt="logo"></a>
+                <a href="#"><img src="assets/media-5.png" alt="logo"></a>
+            </div>
+        </div>
+    </div>
+    <div class="foot-bot">
+        @2023 Mangkas.com by PT Mangkas | All right reserved.
+    </div>
+</footer>
+
+
+
+@endsection
+
+
+{{-- @extends('layouts.navbar')
+@section('content')
+<head>
     <title>Shop Page</title>
 </head>
 <body>
@@ -20,6 +208,7 @@
         </tr>
         </thead>
         <tbody>
+            <br><br><br>
             @foreach ($shops as $shop)
             <tr>
                 <td>{{ $shop->shop_name }}</td>
@@ -38,4 +227,4 @@
     </table>
 
 </body>
-</html>
+@yield('content') --}}

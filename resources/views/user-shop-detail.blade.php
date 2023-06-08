@@ -1,22 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.navbar')
+@section('content')
 
-    <h1>Shop Detail</h1>
+<head>
+    <link rel="stylesheet" href={{asset('css/shop-detail.css')}}>
+</head>
+    <div class="section-shode-top">
+        <div class="shode-display">
+            <div class="shode-display-top">
+                <img src="{{asset('storage/image/'.$shops->shop_photo_1)}}" alt="Error">
+            </div>
+            <div class="shode-display-bottom">
+                <img src="{{asset('storage/image/'.$shops->shop_photo_2)}}" alt="Error">
+                <img src="{{asset('storage/image/'.$shops->shop_photo_3)}}" alt="Error">
+                <img src="{{asset('storage/image/'.$shops->shop_photo_4)}}" alt="Error">
+            </div>
+        </div>
+
+        <div class="shode-desc">
+            <div class="shode-name"> {{ $shops->shop_name }}</div>
+            <div class="shode-rate">
+                <div class="shode-rate-this">
+                    <img src="{{asset('assets/star-rate.png')}}" alt="star">
+                    <img src="{{asset('assets/star-rate.png')}}"alt="star">
+                    <img src="{{asset('assets/star-rate.png')}}" alt="star">
+                    <img src="{{asset('assets/star-rate.png')}}" alt="star">
+                    <img src="{{asset('assets/star-rate-0-5.png')}}"alt="star">
+                    {{ $shops->shop_rate }}
+                </div>
+                <div class="shode-loc-logo">
+                    <img src="{{asset('assets/location-logo.png')}}" alt="Error">
+                </div>
+                <div class="shode-loc-name">
+                    {{ $shops->shop_location }}
+                </div>
+            </div>
+            <div class="shode-price">
+                IDR {{ $shops->shop_price_low }} - {{ $shops->shop_price_high }}
+            </div>
+            <div class="shode-long-desc">
+                <p>Lörem ipsum joment fynålungen medan spedat äggkonto. Fatönade sasamma, alltså döjäning kovis diliga. Tinde tessa gening prende samt poll jyvin. Astroktiga ösi pretösa tös om nigt. Ässa kroning megar. Kron giganade laligt. Ränade diangar, även om fåjengar, bemäsade dektig vigurade. </p>
+                <p>Multitotörat kvasisocial teleplastisk. Kombucha terade, med geosk väggord. Decikang mijässa heterongar. Notedat fotovalens minetygt ididogon pydona antiska. Svennekoloni makoligen vad trektigt ifall vihet. Bedade oligt, krod: stenona. Fot tetången, pararedösam tykadat. </p>
+            </div>
+            <div class="shop-address-desc">
+                Addres : {{ $shops->shop_address}}
+            </div>
+            <div class="button-form">
+                <button class=""><a href="{{route('getBookingById', ['id'=>$shops->id])}}">BOOK NOW</a></button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="section-shode-ser-fav">
+        <div class="shode-ser">
+            <div class="shode-title-ser-fav">
+                Barbershop Services
+            </div>
+            <div class="shode-content-ser">
+                @foreach ($services as $service)
+                <div class="shode-content-ser-1">
+                    <img src="{{asset('storage/image/'.$service->service_logo)}}" alt="">
+                    <div class="content-ser-isi">
+                        {{ $service->service_name }}
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        <div class="shode-fav">
+            <div class="shode-title-ser-fav">
+                Barbershop Facility
+            </div>
+            <div class="shode-content-ser">
+                @foreach ($facilities as $facility)
+                <div class="shode-content-ser-1">
+                    <img src="{{asset('storage/image/'.$facility->facility_logo)}}" alt="">
+                    <div class="content-ser-isi">
+                        {{ $facility->facility_name }}
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <div class="section-hair">
+        <div class="section-hair-title">
+            Our Hairstylist
+        </div>
+        <div class="hair-content">
+            @foreach ($hairstylists as $hairstylist)
+            <div class="hair-card">
+                <div class="hair-image">
+                    <img src="{{asset('storage/image/'.$hairstylist->hairstylist_logo)}}" alt="">
+                </div>
+                <div class="hair-text">
+                    {{ $hairstylist->hairstylist_name }}
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+
+
+    <div class="section-hair">
+        <div class="section-hair-title">
+            Haircut Style
+        </div>
+        <div class="hair-content">
+            @foreach ($haircuts as $haircut)
+            <div class="hair-card">
+                <div class="hair-image">
+                    <img src="{{asset('storage/image/'.$haircut->haircut_logo)}}" alt="">
+                </div>
+                <div class="hair-text">
+                    {{ $haircut->haircut_name }}
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+
+    <div class="frame-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63468.48521907333!2d106.75725949999999!3d-6.1601685999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7c9d110d719%3A0x300c5e82dd4b8a0!2sJakarta%20Barat%2C%20Kec.%20Kb.%20Jeruk%2C%20Kota%20Jakarta%20Barat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1686201148335!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+    <footer class="footer">
+        <div class="foot-top">
+            <div class="foot-logo">
+                <img src="assets/logo_navbar.png" alt="logo">
+            </div>
+            <div class="foot-text">
+                <div class="foot-text-1">
+                    <a href=""><div class="foot-text-text">HOME</div></a>
+                    <a href=""><div class="foot-text-text">SHOP</div></a>
+                    <a href=""><div class="foot-text-text">PRODUCT</div></a>
+                </div>
+                <div class="foot-text-1">
+                    <a href=""><div class="foot-text-text">FAQ</div></a>
+                    <a href=""><div class="foot-text-text">LIVE CHAT</div></a>
+                    <a href=""><div class="foot-text-text">CONTACT</div></a>
+                </div>
+                <div class="foot-text-1">
+                    <a href=""><div class="foot-text-text">SIGN IN</div></a>
+                    <a href=""><div class="foot-text-text">MEMBERSHIP</div></a>
+                </div>
+            </div>
+            <div class="foot-media">
+                <div class="foot-media-text">
+                    FOLLOW US ON:
+                </div>
+                <div class="foot-media-logo">
+                    <a href="#"><img src="assets/media-1.png" alt="logo"></a>
+                    <a href="#"><img src="assets/media-2.png" alt="logo"></a>
+                    <a href="#"><img src="assets/media-3.png" alt="logo"></a>
+                    <a href="#"><img src="assets/media-4.png" alt="logo"></a>
+                    <a href="#"><img src="assets/media-5.png" alt="logo"></a>
+                </div>
+            </div>
+        </div>
+        <div class="foot-bot">
+            @2023 Mangkas.com by PT Mangkas | All right reserved.
+        </div>
+    </footer>
+
+
+
+    {{-- <h2>Shop Detail</h2>
     <h2>Shop ID: {{ $shops->id }}</h2>
     <h3>Shop Name: {{ $shops->shop_name }}</h3>
-    <img src="{{asset('storage/image/'.$shops->shop_photo_1)}}" alt="Error" style="height: 50px" >
+    <img src="{{asset('storage/image/'.$shops->shop_photo_1)}}" alt="Error" style="height: 50px" > --}}
 
     {{-- Add other shop details here --}}
 
 
-    <h1>Service</h1>
+    {{-- <h2>Service</h2>
     <table class="table">
         <thead>
         <tr>
@@ -36,7 +196,7 @@
         </tbody>
     </table>
 
-    <h1>Facility</h1>
+    <h2>Facility</h2>
     <table class="table">
         <thead>
         <tr>
@@ -56,7 +216,7 @@
         </tbody>
     </table>
 
-    <h1>Hairstylist</h1>
+    <h2>Hairstylist</h2>
     <table class="table">
         <thead>
         <tr>
@@ -82,7 +242,7 @@
         </tbody>
     </table>
 
-    <h1>Haircut</h1>
+    <h2>Haircut</h2>
     <table class="table">
         <thead>
         <tr>
@@ -100,11 +260,11 @@
                 </tr>
             @endforeach
         </tbody>
-    </table>
+    </table> --}}
 
-    <a href="{{route('getBookingById', ['id'=>$shops->id])}}"><button type="submit" class="btn btn-success col-md">Booking</button></a>
+    {{-- <a href="{{route('getBookingById', ['id'=>$shops->id])}}"><button type="submit" class="btn btn-success col-md">Booking</button></a> --}}
 
 
 
-</body>
-</html>
+
+@endsection

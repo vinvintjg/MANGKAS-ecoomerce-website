@@ -77,18 +77,66 @@ document.addEventListener('DOMContentLoaded', function(event) {
         rotate: 0,
         stretch: 0,
         depth: 300,
-        modifier: 1,
+        modifier: 1.2,
         slideShadows: false,
     },
     pagination: {
         el: ".swiper-pagination",
     },
     autoplay: {
-        delay: 2500,
+        delay: 1000,
         disableOnInteraction: false,
       },
-        speed: 800,
+        speed: 1800,
         grabCursor: true,
         mousewheel: true,
         keyboard: true,
       });
+
+
+const productContainers = [...document.querySelectorAll('.product-container')];
+const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+productContainers.forEach((item, i) => {
+  let containerDimensions = item.getBoundingClientRect();
+  let containerWidth = containerDimensions.width;
+  let cardWidth = 280; // Lebar setiap kartu (sesuaikan dengan kebutuhan Anda)
+  let visibleCards = 1; // Jumlah kartu yang akan ditampilkan per geseran (sesuaikan dengan kebutuhan Anda)
+
+  nxtBtn[i].addEventListener('click', () => {
+    let scrollAmount = Math.floor(item.scrollLeft / cardWidth) * cardWidth+100 + visibleCards * cardWidth+100;
+    if (scrollAmount > item.scrollWidth - containerWidth) {
+      scrollAmount = 0; // Kembali ke pojok kiri jika mencapai akhir
+    }
+    item.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  preBtn[i].addEventListener('click', () => {
+    let scrollAmount = Math.floor(item.scrollLeft / cardWidth) * cardWidth+100 - visibleCards * cardWidth+100;
+    item.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+});
+
+
+const items = document.querySelectorAll('.accordion button');
+
+function toggleAccordion() {
+  const itemToggle = this.getAttribute('aria-expanded');
+
+  for (i = 0; i < items.length; i++) {
+    items[i].setAttribute('aria-expanded', 'false');
+  }
+
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+
+items.forEach((item) => item.addEventListener('click', toggleAccordion));

@@ -1,47 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create Page</title>
-</head>
-<body>
+@extends('layouts.navbar')
+@section('content')
 
+<head>
+    <link rel="stylesheet" href={{asset('css/shop-detail.css')}}>
+</head>
+    <div class="section-formulir">
     <form action="{{ route('createBooking') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <h2>Personal</h2>
-        <label for="booking_name">booking_name</label>
+        <h2>Personal</h2><hr>
+        <label for="booking_name">Booking Name</label>
         <input type="text" name="booking_name">
-        <label for="booking_phone">booking_phone</label>
+        <label for="booking_phone">Booking Phone</label>
         <input type="text" name="booking_phone">
-        <label for="booking_gender">booking_gender</label>
+        <label for="booking_gender">Booking Gender</label>
         <select name="booking_gender" id="booking_gender">
             <option value="-1" name="booking_gender">Choose...</option>
             <option value="boy" name="booking_gender">male</option>
             <option value="female" name="booking_gender">female</option>
         </select>
 
-        <h2>Barbershop</h2>
+        <h2>Barbershop</h2><hr>
         <label for="">Barbershop</label>
         <select name="shop_id" id="shop_id">
             <option value="<?= $shopId ?>" name="shop_id"><?= $shops['shop_name'] ?></option>
         </select>
-
+        <br><br>
         <label for="Service">Service</label>
-
+<br>
         {{-- @foreach ($services as $service)
         <input type="checkbox" value="{{ $service->id }}" name="booking_service[]" class="service-checkbox">
         <label>{{ $service['service_name'] }}</label>
         @endforeach --}}
-
+        <div class="serv-1-baris">
         @foreach ($services as $service)
             <input type="checkbox" value="{{ $service->id }}" name="booking_service[]" class="service-checkbox">
-            <label>{{ $service['service_name'] }}</label>
+            <label class="serv-1-padd">{{ $service['service_name'] }}</label>
             <br>
         @endforeach
+        </div>
 
-        <h2>Services</h2>
+        <h2>Services</h2><hr>
 
         <label for="booking_haircut">Haircut Style</label>
         <select name="booking_haircut" id="booking_haircut">
@@ -50,7 +48,7 @@
         @endforeach
         </select>
 
-        <label for="booking_note">booking_note</label>
+        <label for="booking_note">Booking Note</label>
         <input type="text" name="booking_note">
 
         <br><br>
@@ -77,7 +75,7 @@
             </tbody>
         </table>
 
-        <h2>Payment</h2>
+        <h2>Payment</h2><hr>
         <h2>Total Harga: <span id="total-price"></span></h2>
 
         <label for="booking_payment_total">Payment Detail</label>
@@ -89,14 +87,11 @@
         <label for="booking_payment_photo">Upload Bukti Transaksi</label>
         <input type="file" name="booking_payment_photo">
 
-
-        <button type="submit">Insert</button>
+        <br><br>
+        <button type="submit">SUBMIT</button>
     </form>
 
-
-
-</body>
-</html>
+    </div>
 <script>
     const filterInput = document.getElementById('filter_date');
     const agendaRows = document.getElementsByClassName('agenda_row');
@@ -164,3 +159,6 @@
         calculateTotalPrice();
     });
 </script>
+
+
+@endsection

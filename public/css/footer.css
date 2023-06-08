@@ -1,0 +1,98 @@
+.footer{
+    height:246px;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    background-color: #12110A;
+}
+
+
+.foot-top{
+    padding: 40px 112px;
+    background-color: #12110A;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.foot-text{
+    color: #AB8856;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: start;
+    width: 50%;
+}
+
+.foot-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot-logo img{
+    height: 65px;
+    width: 146px;
+
+}
+
+.foot-text-1{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.foot-text-text{
+    margin-top: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: start;
+    /* identical to box height */
+
+
+    /* BROWN */
+
+    color: #AB8856;
+}
+
+.foot-media{
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.foot-media-text{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    padding-bottom: 1rem;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+.foot-media-logo{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.foot-media-logo a{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.foot-bot{
+    height: 47px;
+    background-color: #AB8856;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5)
+
+}

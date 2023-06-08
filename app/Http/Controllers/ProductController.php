@@ -35,6 +35,11 @@ class ProductController extends Controller
         return view('create-product', ['products' => $products]);
     }
 
+    public function getProductsMangkas(){
+        $products = Product::all();
+        return view('user-product', ['products' => $products]);
+    }
+
     public function deleteProduct($id){
 
         Product::destroy($id);

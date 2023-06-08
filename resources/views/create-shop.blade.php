@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shop Page</title>
 </head>
-<body>
+<body> --}}
+
+{{-- @extends('layouts.navbar')
+@section('content') --}}
     <form action="{{ route('createShop') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
@@ -89,5 +92,7 @@
         </tbody>
     </table>
 
-</body>
-</html>
+{{-- </body>
+</html> --}}
+
+{{-- @yield('content') --}}
