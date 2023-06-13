@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('booking_phone');
             $table->string('booking_gender');
             $table->string('booking_haircut');
+            // $table->string('booking_hairstylist');
             $table->string('booking_note');
             $table->integer('booking_payment_total');
             $table->string('booking_payment_method');

@@ -333,12 +333,6 @@ input{
     width: 100%;
 }
 
-.serv-1-baris{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-
 .serv-1-padd{
     padding-right: 1rem;
 }

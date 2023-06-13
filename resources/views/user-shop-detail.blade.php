@@ -124,28 +124,28 @@
     </div>
 
     <div class="frame-map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63468.48521907333!2d106.75725949999999!3d-6.1601685999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7c9d110d719%3A0x300c5e82dd4b8a0!2sJakarta%20Barat%2C%20Kec.%20Kb.%20Jeruk%2C%20Kota%20Jakarta%20Barat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1686201148335!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    
+        <iframe src="https://www.google.com/maps/embed?pb={{ urlencode($shops->shop_address) }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
     <footer class="footer">
         <div class="foot-top">
             <div class="foot-logo">
-                <img src="assets/logo_navbar.png" alt="logo">
+                <img src="{{asset('assets/logo_navbar.png')}}" alt="logo">
             </div>
             <div class="foot-text">
                 <div class="foot-text-1">
-                    <a href=""><div class="foot-text-text">HOME</div></a>
-                    <a href=""><div class="foot-text-text">SHOP</div></a>
-                    <a href=""><div class="foot-text-text">PRODUCT</div></a>
+                    <a href="/mangkas-home"><div class="foot-text-text">HOME</div></a>
+                    <a href="/mangkas-shop"><div class="foot-text-text">SHOP</div></a>
+                    <a href="/mangkas-product"><div class="foot-text-text">PRODUCT</div></a>
                 </div>
                 <div class="foot-text-1">
-                    <a href=""><div class="foot-text-text">FAQ</div></a>
-                    <a href=""><div class="foot-text-text">LIVE CHAT</div></a>
-                    <a href=""><div class="foot-text-text">CONTACT</div></a>
+                    <a href="/mangkas-faq"><div class="foot-text-text">FAQ</div></a>
+                    <a href="/mangkas-chat"><div class="foot-text-text">LIVE CHAT</div></a>
+                    <a href="/mangkas-contact"><div class="foot-text-text">CONTACT</div></a>
                 </div>
                 <div class="foot-text-1">
-                    <a href=""><div class="foot-text-text">SIGN IN</div></a>
-                    <a href=""><div class="foot-text-text">MEMBERSHIP</div></a>
+                    <a href="/login"><div class="foot-text-text">SIGN IN</div></a>
+                    <a href="/mangkas-home"><div class="foot-text-text">MEMBERSHIP</div></a>
                 </div>
             </div>
             <div class="foot-media">
@@ -153,11 +153,11 @@
                     FOLLOW US ON:
                 </div>
                 <div class="foot-media-logo">
-                    <a href="#"><img src="assets/media-1.png" alt="logo"></a>
-                    <a href="#"><img src="assets/media-2.png" alt="logo"></a>
-                    <a href="#"><img src="assets/media-3.png" alt="logo"></a>
-                    <a href="#"><img src="assets/media-4.png" alt="logo"></a>
-                    <a href="#"><img src="assets/media-5.png" alt="logo"></a>
+                    <a href="https://www.facebook.com/"><img src="{{asset('assets/media-1.png')}}" alt="logo"></a>
+                    <a href="https://web.whatsapp.com/"><img src="{{asset('assets/media-2.png')}}" alt="logo"></a>
+                    <a href="https://www.instagram.com/"><img src="{{asset('assets/media-3.png')}}" alt="logo"></a>
+                    <a href="https://www.tiktok.com/"><img src="{{asset('assets/media-4.png')}}" alt="logo"></a>
+                    <a href="https://www.twitter.com/"><img src="{{asset('assets/media-5.png')}}" alt="logo"></a>
                 </div>
             </div>
         </div>

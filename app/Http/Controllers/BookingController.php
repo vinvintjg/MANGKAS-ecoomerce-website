@@ -33,6 +33,7 @@ class BookingController extends Controller
             'booking_phone' => $request->booking_phone,
             'booking_gender' => $request->booking_gender,
             'booking_haircut' => $request->booking_haircut,
+            // 'booking_hairstylist' => $request->booking_hairstylist,
             'booking_note' => $request->booking_note,
             'booking_payment_total' => $request->booking_payment_total,
             'booking_payment_method' => $request->booking_payment_method,

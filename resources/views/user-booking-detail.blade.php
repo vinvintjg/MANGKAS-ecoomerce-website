@@ -9,6 +9,9 @@
 <body>
 
     @foreach ($bookings as $booking)
+
+    
+
         <p>booking_id : {{ $booking->id }}</p>
         <h4>PROFIL</h4>
         <p>booking_name : {{ $booking->booking_name }}</p>

@@ -1,0 +1,161 @@
+.big-title{
+    width: 476px;
+    height: 96px;
+    left: calc(50% - 476px/2);
+    top: 160px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 96px;
+    /* identical to box height */
+    display: flex;
+    text-align: center;
+    width: 100%;
+
+    justify-content: center;
+
+    /* BROWN */
+
+    color: #AB8856;
+}
+
+.section-formulir{
+    background-color: #12110A;
+    padding: 172px 121px 0px 121px;
+}
+
+.form-label{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 31px;
+    display: flex;
+
+    color: #AB8856;
+    padding-bottom: 8px;
+    padding-top: 16px;
+}
+
+hr{
+    border: 1px solid #AB8856;
+}
+.form-section-label{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 31px;
+    display: flex;
+
+    color: #AB8856;
+    padding-bottom: 8px;
+    padding-top: 16px;
+}
+
+
+.form-input{
+    width: 100%;
+    color: #F8F8F8;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 4px 16px;
+    border: none;
+    height: 40px;
+    border: 2px solid #AB8856;
+}
+
+.form-input::placeholder{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 31px;
+    text-align: start;
+
+    color: rgba(255, 255, 255, 0.3);
+
+}
+
+input .form-input:focus {
+    /* border-color: brown; */
+    color: #F8F8F8;
+    border: 2px solid #AB8856;
+    border-radius: 15px;
+  }
+
+  input .form-input:active {
+    /* border-color: brown; */
+    color: #F8F8F8;
+    border: 2px solid #AB8856;
+
+    border-radius: 15px;
+  }
+
+  .form-input option{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 4px 16px;
+    border: none;
+    height: 40px;
+    border: 2px solid #AB8856;
+}
+
+option{
+    background-color: #2A2922;
+    /* color: #F8F8F8; */
+    color: #12110A;
+}
+
+
+.serv-1-line{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.serv-1-baris{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+input[type="checkbox"].form-input {
+    margin-right: 18px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border-color:1px solid #AB8856;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Mengubah tampilan checkbox saat di-klik */
+  input[type="checkbox"].form-input:checked {
+    border-color:#AB8856;
+    background-color: #AB8856;
+  }
+
+  /* Mengatur tampilan checkbox saat tidak di-klik */
+  input[type="checkbox"].form-input:not(:checked)::before {
+    background-color: transparent;
+    border-color:1px solid #AB8856;
+  }
+
+  /* Mengatur tampilan checkbox saat di-klik */
+  input[type="checkbox"].form-input:checked::before {
+    background-color: #AB8856;
+    content: "";
+    display: block;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    background-image: url("https://cdn4.iconfinder.com/data/icons/status-1/128/Status_check_mark_yes-512.png"); /* Ganti dengan path gambar centang putih */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 180%;
+  }
