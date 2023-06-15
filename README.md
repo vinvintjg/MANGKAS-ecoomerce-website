@@ -16,6 +16,11 @@ https://www.apachefriends.org/download.html
 - Composer
 https://getcomposer.org/Composer-Setup.exe
 
+Step-step Installation:
+- Open CMD and select where location document you want to put this file
+- type this
+<pre>git clone https://github.com/vinvintjg/MANGKAS-ecoomerce-website.git</pre>
+
 
 ## About Laravel
 
