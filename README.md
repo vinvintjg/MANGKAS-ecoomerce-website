@@ -20,7 +20,7 @@ Step-step Installation:
 - Open CMD and select where location document you want to put this file
 - Type this in your CMD
 <pre>git clone https://github.com/vinvintjg/MANGKAS-ecoomerce-website.git</pre>
-- Open The file
+- Open The file use Visual Studio Code
 - In Visual Studio Code there are several things that you need to install in terminal
 <pre>
 composer install
