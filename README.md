@@ -8,7 +8,14 @@
 </p>
 
 ## Guide Installation
-There are some application you must prepare for this website
+There are some application and tools you must prepare for this website:
+- Visual Studio Code
+https://code.visualstudio.com/download
+- XAMPP 8.2.4
+https://www.apachefriends.org/download.html
+- Composer
+https://getcomposer.org/Composer-Setup.exe
+
 
 ## About Laravel
 
