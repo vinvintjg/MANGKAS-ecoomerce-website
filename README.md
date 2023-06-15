@@ -18,9 +18,20 @@ https://getcomposer.org/Composer-Setup.exe
 
 Step-step Installation:
 - Open CMD and select where location document you want to put this file
-- type this
+- Type this in your CMD
 <pre>git clone https://github.com/vinvintjg/MANGKAS-ecoomerce-website.git</pre>
-
+- Open The file
+- In Visual Studio Code there are several things that you need to install in terminal
+<pre>
+composer install
+composer update
+cp .env.example .env
+php artisan key:generate
+php artisan migrate:fresh –seed
+php artisan serve
+</pre>
+- Run this link to your browser
+<pre>http://127.0.0.1:8000/</pre>
 
 ## About Laravel
 
