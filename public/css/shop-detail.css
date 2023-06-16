@@ -1,38 +1,36 @@
-
-
-.section-shode-top{
+.section-shode-top {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    background-color: #12110A;
+    background-color: #12110a;
     padding: 172px 121px 0px 121px;
 }
 
-.shode-display{
+.shode-display {
     display: flex;
     justify-content: start;
     flex-direction: column;
     align-items: center;
 }
 
-.shode-display-top img{
+.shode-display-top img {
     width: 662px;
     border-radius: 4%;
 }
 
-.shode-display-bottom{
+.shode-display-bottom {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-.shode-display-bottom img{
+.shode-display-bottom img {
     width: 206px;
     border-radius: 4%;
     margin: 0.6rem;
 }
 
-.shode-desc{
+.shode-desc {
     display: flex;
     justify-content: start;
     align-items: start;
@@ -40,7 +38,7 @@
     padding: 1.5rem 56px;
 }
 
-.shode-name{
+.shode-name {
     margin-bottom: 7px;
     font-style: normal;
     font-weight: 600;
@@ -52,9 +50,9 @@
 
     /* WHITE */
 
-    color: #FFFFFF;
+    color: #ffffff;
 }
-.shode-rate{
+.shode-rate {
     margin-bottom: 18px;
     display: flex;
     justify-content: center;
@@ -62,27 +60,26 @@
     flex-direction: row;
 }
 
-.shode-rate-this{
+.shode-rate-this {
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: row;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-.shode-rate-this img{
-     height: 19.79166603088379px;
+.shode-rate-this img {
+    height: 19.79166603088379px;
     width: 20.83333396911621px;
     margin-right: 5px;
-
 }
 
-.shode-loc-logo img{
+.shode-loc-logo img {
     margin-left: 58px;
     height: 19.79166603088379px;
 }
 
-.shode-loc-name{
+.shode-loc-name {
     margin-left: 15px;
     font-style: normal;
     font-weight: 400;
@@ -94,10 +91,10 @@
 
     /* WHITE */
 
-    color: #FFFFFF
+    color: #ffffff;
 }
 
-.shode-price{
+.shode-price {
     margin-bottom: 19px;
     font-style: normal;
     font-weight: 500;
@@ -109,11 +106,11 @@
 
     /* WHITE */
 
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-.shode-long-desc{
-    font-family: 'Poppins';
+.shode-long-desc {
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
@@ -124,20 +121,19 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
-.shop-address-desc{
+.shop-address-desc {
     text-align: start;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     text-align: justify;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-
-.button-form{
+.button-form {
     text-align: center;
 }
-.button-form button{
+.button-form button {
     margin-top: 50px;
     background-color: transparent;
     border: none;
@@ -147,25 +143,25 @@
     height: 46px;
     padding-left: 1rem;
     padding-right: 1rem;
-    border: 2px solid #AB8856;
+    border: 2px solid #ab8856;
     border-radius: 15px;
-    color: #AB8856;
+    color: #ab8856;
 }
 
-.button-form button:hover{
-    background-color: #AB8856;
-    color: #F8F8F8
+.button-form button:hover {
+    background-color: #ab8856;
+    color: #f8f8f8;
 }
 
-.section-shode-ser-fav{
+.section-shode-ser-fav {
     display: flex;
     justify-content: start;
     flex-direction: row;
-    background-color: #12110A;
+    background-color: #12110a;
     padding: 64px 130px;
 }
 
-.shode-ser{
+.shode-ser {
     display: flex;
     justify-content: start;
     align-items: start;
@@ -173,7 +169,7 @@
     margin-right: 270px;
 }
 
-.shode-title-ser-fav{
+.shode-title-ser-fav {
     font-style: normal;
     font-weight: 600;
     font-size: 32px;
@@ -185,10 +181,10 @@
 
     /* WHITE */
 
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-.shode-content-ser{
+.shode-content-ser {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -196,7 +192,7 @@
     flex-wrap: wrap;
     height: 130px;
 }
-.shode-content-ser-1{
+.shode-content-ser-1 {
     display: flex;
     justify-content: start;
     flex-direction: row;
@@ -204,12 +200,11 @@
     padding-bottom: 19px;
     margin-right: 80px;
 }
-.shode-content-ser-1 img{
-    width: 24px;;
+.shode-content-ser-1 img {
+    width: 24px;
+}
 
- }
-
- .content-ser-isi{
+.content-ser-isi {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -219,23 +214,21 @@
 
     /* WHITE */
 
-    color: #FFFFFF;
- }
+    color: #ffffff;
+}
 
-
- .section-hair{
-    background-color: #12110A;
+.section-hair {
+    background-color: #12110a;
     display: flex;
     justify-content: center;
     flex-direction: column;
- }
+}
 
-
-.hair-image img{
+.hair-image img {
     width: 277px;
 }
 
-.hair-text{
+.hair-text {
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -244,62 +237,57 @@
     padding-top: 5px;
     /* identical to box height */
 
-
-    color: #FFFFFF;
-
+    color: #ffffff;
 }
 
-.hair-card{
+.hair-card {
     height: 369px;
     width: 351px;
     border-radius: 15px;
     padding: 24px 32px 24px 32px;
     margin: 50px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #AB8856;
-
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        #ab8856;
 }
 
-.hair-content{
+.hair-content {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-.section-hair-title{
+.section-hair-title {
     font-weight: 600;
     font-size: 32px;
     line-height: 48px;
     margin-bottom: 40px;
     /* identical to box height */
 
-
     text-align: center;
 
     /* WHITE */
 
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-
-.section-formulir{
+.section-formulir {
     padding: 10rem 15rem;
     color: white;
-    background-color: #12110A;
-
+    background-color: #12110a;
 }
 
-h2{
+h2 {
     margin-bottom: 2rem;
     margin-top: 2rem;
-    color: #AB8856;
+    color: #ab8856;
 }
 
-hr{
-    color: #AB8856 solid 4px;
+hr {
+    color: #ab8856 solid 4px;
 }
 
-label{
-    font-family: 'Poppins';
+label {
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -311,11 +299,10 @@ label{
 
     /* BROWN */
 
-    color: #AB8856;
+    color: #ab8856;
 }
 
-
-input{
+input {
     /* width: 459.48px;
     height: 40px;
     left: 10.52px;
@@ -325,14 +312,14 @@ input{
     border-radius:15px; */
 }
 
-.frame-map{
-    background-color: #12110A;
+.frame-map {
+    background-color: #12110a;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-.serv-1-padd{
+.serv-1-padd {
     padding-right: 1rem;
 }

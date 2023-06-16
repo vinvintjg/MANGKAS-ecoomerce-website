@@ -1,22 +1,21 @@
-.footer{
-    height:246px;
+.footer {
+    height: 246px;
     display: flex;
     justify-content: end;
     flex-direction: column;
-    background-color: #12110A;
+    background-color: #12110a;
 }
 
-
-.foot-top{
+.foot-top {
     padding: 40px 112px;
-    background-color: #12110A;
+    background-color: #12110a;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
 }
 
-.foot-text{
-    color: #AB8856;
+.foot-text {
+    color: #ab8856;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -24,25 +23,24 @@
     width: 50%;
 }
 
-.foot-logo{
+.foot-logo {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.foot-logo img{
+.foot-logo img {
     height: 65px;
     width: 146px;
-
 }
 
-.foot-text-1{
+.foot-text-1 {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
 }
 
-.foot-text-text{
+.foot-text-text {
     margin-top: 8px;
     font-weight: 700;
     font-size: 16px;
@@ -50,20 +48,19 @@
     text-align: start;
     /* identical to box height */
 
-
     /* BROWN */
 
-    color: #AB8856;
+    color: #ab8856;
 }
 
-.foot-media{
+.foot-media {
     display: flex;
     width: 25%;
     justify-content: center;
     flex-direction: column;
 }
 
-.foot-media-text{
+.foot-media-text {
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
@@ -72,27 +69,26 @@
 
     color: rgba(255, 255, 255, 0.5);
 }
-.foot-media-logo{
+.foot-media-logo {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-.foot-media-logo a{
+.foot-media-logo a {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-.foot-bot{
+.foot-bot {
     height: 47px;
-    background-color: #AB8856;
+    background-color: #ab8856;
     font-weight: 600;
     font-size: 20px;
     line-height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, 0.5)
-
+    color: rgba(255, 255, 255, 0.5);
 }

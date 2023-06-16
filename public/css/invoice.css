@@ -1,0 +1,90 @@
+* {
+    font-family: poppins, "sans-serif";
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin-top:20px;
+    color: #484b51;
+    display: flex;
+    justify-content: center;
+
+}
+.invoice-section{
+    width: 50%;
+}
+
+
+.invoice-head{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: row;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+    color: #ab8856;
+}
+
+.invoice-logo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+hr {
+    border: 0.7px solid #ab8856;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.invoice-left{
+    width: 50%;
+}
+
+.invoice-right{
+    width: 50%;
+    text-align: end;
+}
+
+h4{
+    color: #ab8856;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 31px;
+}
+
+p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 31px;
+}
+
+
+.button-form {
+    text-align: center;
+}
+.button-form button {
+    margin-top: 50px;
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+
+    /* width: 125px; */
+    height: 46px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid #ab8856;
+    border-radius: 15px;
+    color: #ab8856;
+}
+
+.button-form button:hover {
+    background-color: #ab8856;
+    color: #f8f8f8;
+    cursor: pointer;
+}

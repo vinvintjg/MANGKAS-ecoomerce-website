@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
     <link rel="icon" href="assets/icon-mangkas.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,300;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,300;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href={{asset('css/navbar.css')}}>
-    <link rel="stylesheet" href={{asset('css/home.css')}}>
-    <link rel="stylesheet" href={{asset('css/service.css')}}>
-    <link rel="stylesheet" href={{asset('css/about.css')}}>
-    <link rel="stylesheet" href={{asset('css/product.css')}}>
-    <link rel="stylesheet" href={{asset('css/shop.css')}}>
-    <link rel="stylesheet" href={{asset('css/member.css')}}>
-    <link rel="stylesheet" href={{asset('css/footer.css')}}>
+    <link rel="stylesheet" href={{ asset('css/navbar.css') }}>
+    <link rel="stylesheet" href={{ asset('css/home.css') }}>
+    <link rel="stylesheet" href={{ asset('css/service.css') }}>
+    <link rel="stylesheet" href={{ asset('css/about.css') }}>
+    <link rel="stylesheet" href={{ asset('css/product.css') }}>
+    <link rel="stylesheet" href={{ asset('css/shop.css') }}>
+    <link rel="stylesheet" href={{ asset('css/member.css') }}>
+    <link rel="stylesheet" href={{ asset('css/footer.css') }}>
     <title>HOME PAGE</title>
 </head>
+
 <body>
 
     <!-- Navigation -->
     <nav>
         <div class="navbar">
-        <div class="nav-logo">
-            <img src="assets/logo_navbar.png" alt="logo">
-        </div>
-        <a class="hamburger" id="nav-icon">&#9776;</a>
-        <div class="nav-font" id="nav-mobile">
-            <a href="/"><li>HOME</li></a>
-            <a href="#aboutscroll"><li>ABOUT</li></a>
-            <a href="{{ route('getProductsMangkas') }}"><li>PRODUCT</li></a>
-            <a href="{{ route('getCreateShop') }}"><li>SHOP</li></a>
-            {{-- <a href=""><li>FAQ</li></a>
+            <div class="nav-logo">
+                <img src="assets/logo_navbar.png" alt="logo">
+            </div>
+            <a class="hamburger" id="nav-icon">&#9776;</a>
+            <div class="nav-font" id="nav-mobile">
+                <a href="/">
+                    <li>HOME</li>
+                </a>
+                <a href="#aboutscroll">
+                    <li>ABOUT</li>
+                </a>
+                <a href="{{ route('getProductsMangkas') }}">
+                    <li>PRODUCT</li>
+                </a>
+                <a href="{{ route('getCreateShop') }}">
+                    <li>SHOP</li>
+                </a>
+                {{-- <a href=""><li>FAQ</li></a>
             <a href=""><li>CONTACT</li></a> --}}
-            @if (Auth::check())
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
+                @if (Auth::check())
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
 
-                <button :href="route('logout')" class="brown login-button"
-                        onclick="event.preventDefault();
+                        <button :href="route('logout')" class="brown login-button"
+                            onclick="event.preventDefault();
                                     this.closest('form').submit();">
-                    {{ __('LOGOUT') }}
-                </button>
-            </form>
-            @else
-                <button class="brown login-button"><a href="{{ route('login') }}">LOGIN</a></button>
-            @endif
-        </div>
+                            {{ __('LOGOUT') }}
+                        </button>
+                    </form>
+                @else
+                    <button class="brown login-button"><a href="{{ route('login') }}">LOGIN</a></button>
+                @endif
+            </div>
         </div>
     </nav>
     {{-- Header Section --}}
@@ -67,52 +82,57 @@
     </header>
 
     <!-- Products Section -->
+
     <head>
         <div class="head">
-        <div class="ser-card">
-            <div class="ser-logo">
-                <img src="assets/ser-style.png" alt="">
+            <div class="ser-card">
+                <div class="ser-logo">
+                    <img src="assets/ser-style.png" alt="">
+                </div>
+                <div class="ser-title">
+                    <span>HAIR STYLE</span>
+                </div>
+                <div class="ser-font">
+                    <p>Hair style is the way a person arranges their hair using various techniques and tools, such as
+                        scissors, combs, gel, or hair dye, to create their taste and lifestyle.</p>
+                </div>
             </div>
-            <div class="ser-title">
-                <span>HAIR STYLE</span>
+            <div class="ser-card ser-card2">
+                <div class="ser-logo">
+                    <img src="assets/ser-beard.png" alt="">
+                </div>
+                <div class="ser-title">
+                    <span>BEARD TRIM</span>
+                </div>
+                <div class="ser-font">
+                    <p>Bread trim is a technique used to remove the crust from bread by using a knife or a special tool
+                        called a bread trimmer, resulting in a clean andcappearance.</p>
+                </div>
             </div>
-            <div class="ser-font">
-                <p>Hair style is the way a person arranges their hair using various techniques and tools, such as scissors, combs, gel, or hair dye, to create their taste and lifestyle.</p>
+            <div class="ser-card">
+                <div class="ser-logo">
+                    <img src="assets/ser-spa.png" alt="">
+                </div>
+                <div class="ser-title">
+                    <span>HAIR SPA</span>
+                </div>
+                <div class="ser-font">
+                    <p>Hair grooming refers to the process of taking care of one's hair by using various techniques and
+                        products, such as shampoo, conditioner, hair oil.</p>
+                </div>
             </div>
-        </div>
-        <div class="ser-card ser-card2">
-            <div class="ser-logo">
-                <img src="assets/ser-beard.png" alt="">
+            <div class="ser-card ser-card2">
+                <div class="ser-logo">
+                    <img src="assets/ser-color.png" alt="">
+                </div>
+                <div class="ser-title">
+                    <span>HAIR COLOR</span>
+                </div>
+                <div class="ser-font">
+                    <p>A hair color service can provide a range of benefits, such as enhancing one's natural features,
+                        covering up gray hair, and creating a new and exciting look.</p>
+                </div>
             </div>
-            <div class="ser-title">
-                <span>BEARD TRIM</span>
-            </div>
-            <div class="ser-font">
-                <p>Bread trim is a technique used to remove the crust from bread by using a knife or a special tool called a bread trimmer, resulting in a clean andcappearance.</p>
-            </div>
-        </div>
-        <div class="ser-card">
-            <div class="ser-logo">
-                <img src="assets/ser-spa.png" alt="">
-            </div>
-            <div class="ser-title">
-                <span>HAIR SPA</span>
-            </div>
-            <div class="ser-font">
-                <p>Hair grooming refers to the process of taking care of one's hair by using various techniques and products, such as shampoo, conditioner, hair oil.</p>
-            </div>
-        </div>
-        <div class="ser-card ser-card2">
-            <div class="ser-logo">
-                <img src="assets/ser-color.png" alt="">
-            </div>
-            <div class="ser-title">
-                <span>HAIR COLOR</span>
-            </div>
-            <div class="ser-font">
-                <p>A hair color service can provide a range of benefits, such as enhancing one's natural features, covering up gray hair, and creating a new and exciting look.</p>
-            </div>
-        </div>
         </div>
     </head>
 
@@ -133,7 +153,11 @@
                     Trimming your style, Sharpening your confidence
                 </div>
                 <div class="abo-bottom">
-                    Mangkas is a premier hair cutting service that provides online booking facilities for its customers. At Mangkas, we believe in providing the highest level of service and quality to our clients. With a team of highly trained and experienced barbers, we strive to give our customers the perfect cut every time. Our online booking system makes it easy for you to schedule your appointment at your convenience.
+                    Mangkas is a premier hair cutting service that provides online booking facilities for its customers.
+                    At Mangkas, we believe in providing the highest level of service and quality to our clients. With a
+                    team of highly trained and experienced barbers, we strive to give our customers the perfect cut
+                    every time. Our online booking system makes it easy for you to schedule your appointment at your
+                    convenience.
                 </div>
             </div>
         </div>
@@ -237,7 +261,7 @@
         </div>
     </section>
 
-{{-- SHOP --}}
+    {{-- SHOP --}}
     <section class="shop">
         <div class="pro-head">
             <div class="pro-head-title">
@@ -428,9 +452,12 @@
                 <div class="form-label" id="">Membership Type</div>
                 <div class="select-wrapper">
                     <select name="membership_type" class="form-input" id="membership_type">
-                        <option value="-1" name="membership_type" class="form-input" for="membership_type">Choose...</option>
-                        <option value="silver" name="membership_type" class="form-input" for="membership_type">silver</option>
-                        <option value="bronze" name="membership_type" class="form-input" for="membership_type">bronze</option>
+                        <option value="-1" name="membership_type" class="form-input" for="membership_type">
+                            Choose...</option>
+                        <option value="silver" name="membership_type" class="form-input" for="membership_type">
+                            silver</option>
+                        <option value="bronze" name="membership_type" class="form-input" for="membership_type">
+                            bronze</option>
                         <option value="gold" name="membership_type" for="membership_type">gold</option>
                         <option value="platinum" name="membership_type" for="membership_type">platinum</option>
                     </select>
@@ -454,22 +481,38 @@
     <footer class="footer">
         <div class="foot-top">
             <div class="foot-logo">
-                <img src="{{asset('assets/logo_navbar.png')}}" alt="logo">
+                <img src="{{ asset('assets/logo_navbar.png') }}" alt="logo">
             </div>
             <div class="foot-text">
                 <div class="foot-text-1">
-                    <a href="/mangkas-home"><div class="foot-text-text">HOME</div></a>
-                    <a href="/mangkas-shop"><div class="foot-text-text">SHOP</div></a>
-                    <a href="/mangkas-product"><div class="foot-text-text">PRODUCT</div></a>
+                    <a href="/mangkas-home">
+                        <div class="foot-text-text">HOME</div>
+                    </a>
+                    <a href="/mangkas-shop">
+                        <div class="foot-text-text">SHOP</div>
+                    </a>
+                    <a href="/mangkas-product">
+                        <div class="foot-text-text">PRODUCT</div>
+                    </a>
                 </div>
                 <div class="foot-text-1">
-                    <a href="/mangkas-faq"><div class="foot-text-text">FAQ</div></a>
-                    <a href="/mangkas-chat"><div class="foot-text-text">LIVE CHAT</div></a>
-                    <a href="/mangkas-contact"><div class="foot-text-text">CONTACT</div></a>
+                    <a href="/mangkas-faq">
+                        <div class="foot-text-text">FAQ</div>
+                    </a>
+                    <a href="/mangkas-chat">
+                        <div class="foot-text-text">LIVE CHAT</div>
+                    </a>
+                    <a href="/mangkas-contact">
+                        <div class="foot-text-text">CONTACT</div>
+                    </a>
                 </div>
                 <div class="foot-text-1">
-                    <a href="/login"><div class="foot-text-text">SIGN IN</div></a>
-                    <a href="/mangkas-home"><div class="foot-text-text">MEMBERSHIP</div></a>
+                    <a href="/login">
+                        <div class="foot-text-text">SIGN IN</div>
+                    </a>
+                    <a href="/mangkas-home">
+                        <div class="foot-text-text">MEMBERSHIP</div>
+                    </a>
                 </div>
             </div>
             <div class="foot-media">
@@ -477,11 +520,16 @@
                     FOLLOW US ON:
                 </div>
                 <div class="foot-media-logo">
-                    <a href="https://www.facebook.com/"><img src="{{asset('assets/media-1.png')}}" alt="logo"></a>
-                    <a href="https://web.whatsapp.com/"><img src="{{asset('assets/media-2.png')}}" alt="logo"></a>
-                    <a href="https://www.instagram.com/"><img src="{{asset('assets/media-3.png')}}" alt="logo"></a>
-                    <a href="https://www.tiktok.com/"><img src="{{asset('assets/media-4.png')}}" alt="logo"></a>
-                    <a href="https://www.twitter.com/"><img src="{{asset('assets/media-5.png')}}" alt="logo"></a>
+                    <a href="https://www.facebook.com/"><img src="{{ asset('assets/media-1.png') }}"
+                            alt="logo"></a>
+                    <a href="https://web.whatsapp.com/"><img src="{{ asset('assets/media-2.png') }}"
+                            alt="logo"></a>
+                    <a href="https://www.instagram.com/"><img src="{{ asset('assets/media-3.png') }}"
+                            alt="logo"></a>
+                    <a href="https://www.tiktok.com/"><img src="{{ asset('assets/media-4.png') }}"
+                            alt="logo"></a>
+                    <a href="https://www.twitter.com/"><img src="{{ asset('assets/media-5.png') }}"
+                            alt="logo"></a>
                 </div>
             </div>
         </div>
@@ -491,10 +539,13 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-    <script src="{{url('js/navbar.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+    <script script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+    </script>
+    <script src="{{ url('js/navbar.js') }}"></script>
 </body>
+
 </html>
-
-

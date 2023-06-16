@@ -1,26 +1,25 @@
-.form-column{
+.form-column {
     display: flex;
-    justify-content:start;
+    justify-content: start;
     flex-direction: column;
     align-items: start;
     width: 40%;
 }
 
-.form-row{
+.form-row {
     display: flex;
-    justify-content:space-between ;
+    justify-content: space-between;
     flex-direction: row;
     align-items: left;
 }
 
-
-.big-title{
+.big-title {
     width: 476px;
     height: 96px;
-    left: calc(50% - 476px/2);
+    left: calc(50% - 476px / 2);
     top: 160px;
 
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
     font-size: 64px;
@@ -34,34 +33,34 @@
 
     /* BROWN */
 
-    color: #AB8856;
+    color: #ab8856;
 }
 
-.section-formulir{
-    background-color: #12110A;
+.section-formulir {
+    background-color: #12110a;
     padding: 172px 121px 0px 121px;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
 }
 
-.form-label{
+.form-label {
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 31px;
     display: flex;
 
-    color: #AB8856;
+    color: #ab8856;
     padding-bottom: 8px;
     padding-top: 16px;
 }
 
-hr{
-    border: 1px solid #AB8856;
+hr {
+    border: 1px solid #ab8856;
 }
 
-.form-section-label{
+.form-section-label {
     margin-top: 80px;
     font-style: normal;
     font-weight: 600;
@@ -71,84 +70,83 @@ hr{
     justify-content: center;
     width: 100%;
 
-    color: #AB8856;
+    color: #ab8856;
     padding-bottom: 8px;
     padding-top: 16px;
 }
 
-form{
-    width: 100%;
-}
 
-.form-input{
+
+.form-input {
     width: 100%;
-    color: #F8F8F8;
+    color: #f8f8f8;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 4px 16px;
     border: none;
     height: 40px;
-    border: 2px solid #AB8856;
+    border: 2px solid #ab8856;
     width: 100%;
 }
 
-.form-input::placeholder{
+.form-input::placeholder {
     font-weight: 400;
     font-size: 16px;
     line-height: 31px;
     text-align: start;
 
     color: rgba(255, 255, 255, 0.3);
-
 }
 
 input .form-input:focus {
     /* border-color: brown; */
-    color: #F8F8F8;
-    border: 2px solid #AB8856;
+    color: #f8f8f8;
+    border: 2px solid #ab8856;
     border-radius: 15px;
-  }
+}
 
-  input .form-input:active {
+input .form-input:active {
     /* border-color: brown; */
-    color: #F8F8F8;
-    border: 2px solid #AB8856;
+    color: #f8f8f8;
+    border: 2px solid #ab8856;
 
     border-radius: 15px;
-  }
+}
 
-  .form-input option{
+.form-input option {
     width: 100%;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 4px 16px;
     border: none;
     height: 40px;
-    border: 2px solid #AB8856;
+    border: 2px solid #ab8856;
 }
 
-option{
-    background-color: #2A2922;
+
+
+
+option {
+    background-color: #2a2922;
     /* color: #F8F8F8; */
-    color: #12110A;
+    color: #12110a;
 }
 
-
-.serv-1-line{
+.serv-1-line {
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: column;
 }
 
-.serv-1-baris{
+.serv-1-baris {
     display: flex;
     justify-content: start;
     align-items: start;
     flex-direction: row;
 }
 
-  .container {
+.container {
     display: block;
     position: relative;
     padding-left: 35px;
@@ -163,81 +161,79 @@ option{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
+}
 
-  /* Hide the browser's default checkbox */
-  .container input {
+/* Hide the browser's default checkbox */
+.container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
+}
 
-  /* Create a custom checkbox */
-  .checkmark {
+/* Create a custom checkbox */
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
     height: 20px;
     width: 20px;
     border-radius: 3px;
-    border: 1px solid #AB8856;
-  }
+    border: 1px solid #ab8856;
+}
 
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
     background-color: rgba(255, 255, 255, 0.1);
-  }
+}
 
-  /* When the checkbox is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: #AB8856;
-  }
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #ab8856;
+}
 
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
+}
 
-  /* Show the checkmark when checked */
-  .container input:checked ~ .checkmark:after {
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
     display: block;
-  }
+}
 
-  /* Style the checkmark/indicator */
-  .container .checkmark:after {
+/* Style the checkmark/indicator */
+.container .checkmark:after {
     left: 6px;
     top: 3px;
     width: 5px;
     height: 10px;
-    border: solid #12110A;
+    border: solid #12110a;
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
 
-
-  .form-total-pay{
+.form-total-pay {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 31px;
-    color: #FFFFFF;
-  }
+    color: #ffffff;
+}
 
-  .form-column-pay{
+.form-column-pay {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     flex-direction: row;
     width: 100%;
-  }
+}
 
-
-  .form-file{
+.form-file {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -245,58 +241,121 @@ option{
     overflow: hidden;
     width: 50%;
     height: 412px;
-    background-color: #AB8856;
+    background-color: #ab8856;
     border-radius: 15px;
     margin-top: 42px;
-  }
+}
 
-  input[type='file'] {
-    color: #AB8856;
-  }
+input[type="file"] {
+    color: #ab8856;
+}
 
-
-  .button-width button{
+.button-width button {
     padding-left: 8rem;
     padding-right: 8rem;
-  }
+}
 
-  .form-pay-section{
+.form-pay-section {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
+}
 
-
-
-  .custom-file-input {
-    color: transparent;
-  }
-  .custom-file-input::-webkit-file-upload-button {
+.custom-file-input::-webkit-file-upload-button {
     visibility: hidden;
-  }
-  .custom-file-input::before {
-    content: 'Select some files';
-    color: black;
+}
+.custom-file-input::before {
+    content: "Input File";
     display: inline-block;
-    background: #785F3C;
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding: 5px 8px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        #ab8856;
+    border-radius: 15px;
+    border: none;
+    padding: 5px 99px;
     outline: none;
-    white-space: nowrap;
+    width: 100%;
     -webkit-user-select: none;
     cursor: pointer;
     font-weight: 700;
     font-size: 10pt;
-  }
-  .custom-file-input:hover::before {
-    border-color: black;
-  }
-  .custom-file-input:active {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #ffffff;
+    margin-top: 19px;
+}
+.custom-file-input:hover::before {
+    background: #f8f8f8;
+    color: #785f3c;
+}
+.custom-file-input:active {
     outline: 0;
-  }
-  .custom-file-input:active::before {
+}
+.custom-file-input:active::before {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-  }
+}
 
+input[type="radio"] {
+    display: none;
+    &:not(:disabled) ~ label {
+        cursor: pointer;
+    }
+}
+
+
+.table_agenda {
+    width: 100%;
+    color: white;
+    margin-top: 1rem;
+}
+
+.agenda_row {
+    display: inline-block;
+    width: 9rem;
+    height: 4.7rem;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    margin: 0.5rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.clear_row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.agenda_row h4{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 31px;
+    text-align: center;
+    width: 100%;
+    color: #AB8856;
+
+}
+
+.agenda_row p{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 31px;
+    /* display: flex;
+    align-items: center;*/
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+input[type="radio"]:checked + label {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #AB8856;
+    border-radius: 15px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}

@@ -1,10 +1,10 @@
-body{
-    background-color: #12110A;
+body {
+    background-color: #12110a;
 }
 
-.relog{
-    background-color: #12110A;
-    display:flex;
+.relog {
+    background-color: #12110a;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -13,20 +13,20 @@ body{
     row-gap: 4rem;
 }
 
-.relog-form{
+.relog-form {
     width: 70%;
 }
 
-.relog-photo{
+.relog-photo {
     padding: 1rem;
-    display:flex;
+    display: flex;
     align-items: center;
     width: 100%;
 }
-.relog-photo img{
+.relog-photo img {
     width: 60%;
     margin: auto;
-    display:flex;
+    display: flex;
 }
 
 .relog-title {
@@ -34,17 +34,17 @@ body{
     font-size: 40px;
     line-height: 120%;
     text-align: center;
-    color: #AB8856;
+    color: #ab8856;
 }
 
-.small-title a{
+.small-title a {
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 120%;
 }
 
-.small-title{
+.small-title {
     padding: 1rem 0.5rem;
     font-style: normal;
     font-weight: 400;
@@ -52,16 +52,16 @@ body{
     line-height: 120%;
 }
 
-.color-white{
-    color: #FFFFFF;
+.color-white {
+    color: #ffffff;
 }
 
-.color-brown{
-    color: #AB8856;
+.color-brown {
+    color: #ab8856;
 }
 
-.relog-link{
-    display:flex;
+.relog-link {
+    display: flex;
     flex-direction: row;
     justify-content: center;
 }

@@ -4,38 +4,37 @@
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
- }
+}
 
-
- .ser-card {
+.ser-card {
     display: flex;
     width: 25%;
     flex-wrap: wrap;
     background-color: #917449;
     display: flex;
     flex-direction: column;
-  }
-
-.ser-card2{
-    background-color: #AB8856;
 }
 
-.ser-logo{
+.ser-card2 {
+    background-color: #ab8856;
+}
+
+.ser-logo {
     position: relative;
     top: -80px;
     margin-bottom: -4rem;
 }
 
-.ser-title{
+.ser-title {
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
 
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
-.ser-font{
+.ser-font {
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
@@ -43,6 +42,5 @@
     text-align: center;
     padding: 0.8rem;
 
-    color: #FFFFFF;
-
+    color: #ffffff;
 }
