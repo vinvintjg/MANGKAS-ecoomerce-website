@@ -184,7 +184,19 @@
                     <a href="{{ route('getCreateShop') }}"><li>SHOP</li></a>
                     {{-- <a href=""><li>FAQ</li></a>
                     <a href=""><li>CONTACT</li></a> --}}
-                    <button class="brown login-button"><a href="{{ route('login') }}">LOGIN</a></button>
+                    @if (Auth::check())
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <button :href="route('logout')" class="brown login-button"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                            {{ __('LOGOUT') }}
+                        </button>
+                    </form>
+                    @else
+                        <button class="brown login-button"><a href="{{ route('login') }}">LOGIN</a></button>
+                    @endif
                 </div>
                 </div>
             </nav>

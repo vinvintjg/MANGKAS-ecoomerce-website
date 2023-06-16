@@ -53,6 +53,10 @@ nav button{
     height: 46px;
 
     border: 2px solid #AB8856;
+    color: #AB8856;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
     border-radius: 15px;
 
     flex: none;
@@ -70,6 +74,7 @@ nav button:hover{
 
     border: 2px solid #AB8856;
     border-radius: 15px;
+    color: white;
 }
 
 button a li{

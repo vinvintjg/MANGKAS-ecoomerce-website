@@ -1,110 +1,148 @@
 @extends('layouts.navbar')
 @section('content')
 
-<head>
-    {{-- <link rel="stylesheet" href={{asset('css/shop-detail.css')}}> --}}
-    <link rel="stylesheet" href={{asset('css/form.css')}}>
-</head>
+    <head>
+        {{-- <link rel="stylesheet" href={{asset('css/shop-detail.css')}}> --}}
+        <link rel="stylesheet" href={{asset('css/form.css')}}>
+    </head>
+
     <div class="section-formulir">
-    <div class="big-title">Booking Detail</div>
-    <form action="{{ route('createBooking') }}" method="POST" enctype="multipart/form-data">
+        <div class="big-title">Booking Detail</div>
+        <form action="{{ route('createBooking') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="form-section-label">
-            Personal
-        </div>
-        <hr class="line1">
-        <label for="booking_name" class="form-label">Name</label>
-        <input type="text" class="form-input" name="booking_name" placeholder="Enter Your Name">
-        <label for="booking_phone" class="form-label">Phone</label>
-        <input type="text" class="form-input" name="booking_phone" placeholder="Enter Your Phone">
-        <label for="booking_gender" class="form-label">Gender</label>
-        <select name="booking_gender" id="booking_gender" class="form-input">
-            <option value="-1" name="booking_gender">Choose Your Gender</option>
-            <option value="boy" name="booking_gender">male</option>
-            <option value="female" name="booking_gender">female</option>
-        </select>
+        <div class="form-row">
+            <div class="form-column">
+                <div class="form-section-label">
+                    Personal
+                </div>
+                <hr>
+                <label for="booking_name" class="form-label">Name</label>
+                <input type="text" class="form-input" name="booking_name" placeholder="Enter Your Name">
+                <label for="booking_phone" class="form-label">Phone</label>
+                <input type="text" class="form-input" name="booking_phone" placeholder="Enter Your Phone">
+                <label for="booking_gender" class="form-label">Gender</label>
+                <select name="booking_gender" id="booking_gender" class="form-input">
+                    <option value="-1" name="booking_gender">Choose Your Gender</option>
+                    <option value="boy" name="booking_gender">male</option>
+                    <option value="female" name="booking_gender">female</option>
+                </select>
+            </div>
 
-        <div class="form-section-label">
-            Barbershop
-        </div>
-        <hr>
-        <label for="" class="form-label">Barbershop</label>
-        <input type="text" value="<?= $shops['shop_name'] ?>" class="form-input" readonly>
-        {{-- <select name="shop_id" id="shop_id">
-            <option value="<?= $shopId ?>" name="shop_id"><?= $shops['shop_name'] ?></option>
-        </select> --}}
-        <br><br>
+            <div class="form-column">
+                <div class="form-section-label">
+                    Barbershop
+                </div>
+                <hr>
 
-        <div class="form-section-label">
-            Services
-        </div>
-        <hr>
-        {{-- @foreach ($services as $service)
-        <input type="checkbox" value="{{ $service->id }}" name="booking_service[]" class="service-checkbox">
-        <label>{{ $service['service_name'] }}</label>
-        @endforeach --}}
-        <div class="serv-1-line">
-        @foreach ($services as $service)
-        <div class="serv-1-baris">
-            <input type="checkbox" class="form-input" value="{{ $service->id }}" name="booking_service[]" class="service-checkbox">
-            <label class="form-label">{{ $service['service_name'] }}</label>
-            <br>
-        </div>
-        @endforeach
-        </div>
+                <label for="shop_name" class="form-label">Barbershop</label>
+                <input type="text" value="<?= $shops['shop_name'] ?>" class="form-input" readonly>
+                {{-- <select name="shop_id" id="shop_id">
+                    <option value="<?= $shopId ?>" name="shop_id"><?= $shops['shop_name'] ?></option>
+                </select> --}}
+                {{-- @foreach ($services as $service)
+                <input type="checkbox" value="{{ $service->id }}" name="booking_service[]" class="service-checkbox">
+                <label>{{ $service['service_name'] }}</label>
+                @endforeach --}}
+                <div class="serv-1-line">
+                    <label for="booking_service" class="form-label">Services</label>
+                @foreach ($services as $service)
+                <div class="serv-1-baris">
+                    <label class="container">{{ $service['service_name'] }}
+                        <input type="checkbox" value="{{ $service->id }}" name="booking_service[]" class="service-checkbox">
+                        <span class="checkmark"></span>
+                    </label>
 
-        <label for="booking_hairstylist" class="form-label">Hairstylist</label>
-        <input type="text"  class="form-input" name="booking_hairstylist" placeholder="Choose Your Hairstylist">
-
-        <label for="booking_haircut" class="form-label">Haircut Style</label>
-        <select name="booking_haircut" id="booking_haircut" class="form-input" placeholder="Enter Your Haircut Style">
-        @foreach ($haircuts as $haircut)
-            <option value="<?= $haircut['id'] ?>" name="booking_haircut"><?= $haircut['haircut_name'] ?></option>
-        @endforeach
-        </select>
-
-        <label for="booking_note" class="form-label">Note</label>
-        <input type="text"  class="form-input" name="booking_note" placeholder="Enter Your Note">
-
-        <br><br>
-
-        <label for="filter_date" class="form-label">Date</label>
-        <input type="date" class="form-input" name="filter_date" id="filter_date">
-
-        <table class="table" id="agenda_table">
-            <thead>
-                <tr>
-                    <th scope="col">Agenda Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($agendas as $agenda)
-                @if ($agenda->status !== 'Unavailable')
-                    <tr class="agenda_row" data-date="{{ date('Y-m-d', strtotime($agenda->date)) }}">
-                        <td>
-                            <input type="radio" name="agenda_id" value="{{ $agenda->id }}"> {{ $agenda->hairstylist->hairstylist_name }} {{ date('H:i', strtotime($agenda->hour)) }} {{ date('d M', strtotime($agenda->date)) }}
-                        </td>
-                    </tr>
-                @endif
+                    {{-- <input type="checkbox" class="form-input" value="{{ $service->id }}" name="booking_service[]" class="service-checkbox">
+                    <label class="form-label">{{ $service['service_name'] }}</label>
+                    <br> --}}
+                </div>
                 @endforeach
-            </tbody>
-        </table>
+                </div>
+            </div>
+        </div>
 
-        <h2>Payment</h2><hr>
-        <h2>Total Harga: <span id="total-price"></span></h2>
+        <div class="form-section-label">
+            Detail Services
+        </div>
+        <hr>
 
-        <label for="booking_payment_total" class="form-label">Payment Detail</label>
-        <input type="text" class="form-input" name="booking_payment_total" id="booking_payment_total" readonly style="display: none;" placeholder="Enter Your Payment Detail">
+        <div class="form-row">
+            <div class="form-column">
+                <label for="booking_hairstylist" class="form-label">Hairstylist</label>
+                <input type="text"  class="form-input" name="booking_hairstylist" placeholder="Choose Your Hairstylist">
 
-        <label for="booking_payment_method" class="form-label">Transaction Method</label>
-        <input type="text" class="form-input" name="booking_payment_method" placeholder="Enter Your Transaction Method">
+                <label for="booking_haircut" class="form-label">Haircut Style</label>
+                <select name="booking_haircut" id="booking_haircut" class="form-input" placeholder="Enter Your Haircut Style">
+                @foreach ($haircuts as $haircut)
+                    <option value="<?= $haircut['id'] ?>" name="booking_haircut"><?= $haircut['haircut_name'] ?></option>
+                @endforeach
+                </select>
 
-        <label for="booking_payment_photo" class="form-label">Proof of Payment</label>
-        <input type="file" class="form-input" name="booking_payment_photo" placeholder="Upload Proof of Payment">
+                <label for="booking_note" class="form-label">Note</label>
+                <input type="text"  class="form-input" name="booking_note" placeholder="Enter Your Note">
 
-        <br><br>
-        <button type="submit">SUBMIT</button>
-    </form>
+            </div>
+            <div class="form-column">
+                <label for="filter_date" class="form-label">Date</label>
+                <input type="date" class="form-input" name="filter_date" id="filter_date">
+
+                <table class="table" id="agenda_table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Agenda Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($agendas as $agenda)
+                        @if ($agenda->status !== 'Unavailable')
+                            <tr class="agenda_row" data-date="{{ date('Y-m-d', strtotime($agenda->date)) }}">
+                                <td>
+                                    <input type="radio" name="agenda_id" value="{{ $agenda->id }}"> {{ $agenda->hairstylist->hairstylist_name }} {{ date('H:i', strtotime($agenda->hour)) }} {{ date('d M', strtotime($agenda->date)) }}
+                                </td>
+                            </tr>
+                        @endif
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-section-label">
+            Payment
+        </div>
+        <hr>
+
+        <div class="form-row">
+            <div class="form-column">
+                <label for="booking_payment_total" class="form-label">Payment Detail</label>
+            <div class="form-column-pay">
+                <div class="form-total-pay">Total Harga:</div>
+                <div class="form-total-pay">Rp <span id="total-price"></span></div>
+            </div>
+                <input type="text" class="form-input" name="booking_payment_total" id="booking_payment_total" readonly style="display: none;" placeholder="Enter Your Payment Detail">
+            </div>
+            <div class="form-column">
+                <label for="booking_payment_method" class="form-label">Transaction Method</label>
+                <input type="text" class="form-input" name="booking_payment_method" placeholder="Enter Your Transaction Method">
+            </div>
+        </div>
+        <div class="form-pay-section">
+            <div class="form-section-label">
+                Proof of Payment
+            </div>
+
+            <div class="form-file">
+                <img src="{{asset('assets/pay-file.png')}}" alt="logo">
+                <div class="form-total-pay">Format: JPG, JPEG, PNG, max 10 MB</div>
+                <input type="file" class="custom-file-input" name="booking_payment_photo">
+            </div>
+        </div>
+
+        <div class="button-form button-width">
+            <button type="submit">SUBMIT</button>
+        </div>
+
+        </form>
 
     </div>
 
