@@ -1,22 +1,12 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
 ## Prototype Figma
-<div class="1 -line" style="display: flex;flex-direction: row;align-items: center;">
+<div class="1 -line" style="display: flex;flex-direction: row;align-items: center;align-items: start;">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/HOME%20PAGE.png" style="height:300px">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/PRODUCT-PAGE.png" style="height:300px">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/SHOP-PAGE.png" style="height:300px">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/SHOP-DETAIL-PAGE.png" style="height:300px">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/BOOKING-DETAIL.png" style="height:300px">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/FAQ-Page.png" style="height:300px">
-    <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/Contact-Us-Page.png" style="height:300px">
-    <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/LOGIN-PAGE.png" style="height:300px">
+    <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/Contact-Us-Page.png" style="height:150px;">
 </div>
 This is Link To Access the prototype use Figma.
 <p>https://www.figma.com/proto/9UKhZXK0trDWWr4S49J0j0/Team-Project-Sofware-Engineer?type=design&node-id=438-8&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=438%3A8</p>
@@ -44,12 +34,35 @@ Step-step Installation:
 composer install
 composer update
 cp .env.example .env
+</pre>
+- Open file .env and change DB_DATABASE name
+<pre>
+DB_DATABASE=mangkas3
+</pre>
+- Start Apache and MySQL in your XAMPP Apps
+- Open this link in your browser
+<pre>
+http://localhost/phpmyadmin/
+</pre>
+- Click NEW Button to create new database with name "mangkas3"
+- And Run This All command in terminal Visual Studio Code
+<pre>
 php artisan key:generate
-php artisan migrate:fresh –seed
+php artisan migrate:fresh --seed
 php artisan serve
 </pre>
 - Run this link to your browser
 <pre>http://127.0.0.1:8000/</pre>
+
+
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
 ## About Laravel
 
