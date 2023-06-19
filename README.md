@@ -8,17 +8,15 @@
 </p>
 
 ## Prototype Figma
-<div class="1 -line" style="display: flex;flex-direction: row;align-items: center;">
+<div class="1 -line" style="display: flex;flex-direction: row;align-items: center;align-items: start;">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/HOME%20PAGE.png" style="height:300px">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/PRODUCT-PAGE.png" style="height:300px">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/SHOP-PAGE.png" style="height:300px">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/SHOP-DETAIL-PAGE.png" style="height:300px">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/BOOKING-DETAIL.png" style="height:300px">
     <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/FAQ-Page.png" style="height:300px">
-    <div class="2-line" style="display: flex; flex-direction: column; align-items: center;">
-        <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/Contact-Us-Page.png" style="height:150px; width:150px;">
-        <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/LOGIN-PAGE.png" style="height:150px; width:150px;">
-    </div>
+    <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/Contact-Us-Page.png" style="height:150px;">
+    <img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/LOGIN-PAGE.png" style="height:150px;">
 </div>
 This is Link To Access the prototype use Figma.
 <p>https://www.figma.com/proto/9UKhZXK0trDWWr4S49J0j0/Team-Project-Sofware-Engineer?type=design&node-id=438-8&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=438%3A8</p>
