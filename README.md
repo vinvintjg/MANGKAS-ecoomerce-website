@@ -53,7 +53,11 @@ php artisan serve
 </pre>
 - Run this link to your browser
 <pre>http://127.0.0.1:8000/</pre>
-
+- If Your Image Error you can ERASE folder storage in Mangkas\public and run this command in terminal again
+<pre>
+php artisan storage:link
+php artisan serve
+</pre>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
