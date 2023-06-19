@@ -27,8 +27,8 @@
             <a href="/"><li>ABOUT</li></a>
             <a href="{{ route('getProductsMangkas') }}"><li>PRODUCT</li></a>
             <a href="{{ route('getCreateShop') }}"><li>SHOP</li></a>
-            {{-- <a href="#"><li>FAQ</li></a>
-            <a href="#"><li>CONTACT</li></a> --}}
+            <a href="{{ route('mangkas-faq') }}"><li>FAQ</li></a>
+            <a href="{{ route('mangkas-contact') }}"><li>CONTACT</li></a>
             @if (Auth::check())
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
@@ -49,6 +49,7 @@
     @yield('content')
 
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>

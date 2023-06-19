@@ -39,20 +39,12 @@
             </div>
             <a class="hamburger" id="nav-icon">&#9776;</a>
             <div class="nav-font" id="nav-mobile">
-                <a href="/">
-                    <li>HOME</li>
-                </a>
-                <a href="#aboutscroll">
-                    <li>ABOUT</li>
-                </a>
-                <a href="{{ route('getProductsMangkas') }}">
-                    <li>PRODUCT</li>
-                </a>
-                <a href="{{ route('getCreateShop') }}">
-                    <li>SHOP</li>
-                </a>
-                {{-- <a href=""><li>FAQ</li></a>
-            <a href=""><li>CONTACT</li></a> --}}
+                <a href="/"><li>HOME</li></a>
+                <a href="/"><li>ABOUT</li></a>
+                <a href="{{ route('getProductsMangkas') }}"><li>PRODUCT</li></a>
+                <a href="{{ route('getCreateShop') }}"><li>SHOP</li></a>
+                <a href="{{ route('mangkas-faq') }}"><li>FAQ</li></a>
+                <a href="{{ route('mangkas-contact') }}"><li>CONTACT</li></a>
                 @if (Auth::check())
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -499,9 +491,9 @@
                     <a href="/mangkas-faq">
                         <div class="foot-text-text">FAQ</div>
                     </a>
-                    <a href="/mangkas-chat">
+                    {{-- <a href="/mangkas-chat">
                         <div class="foot-text-text">LIVE CHAT</div>
-                    </a>
+                    </a> --}}
                     <a href="/mangkas-contact">
                         <div class="foot-text-text">CONTACT</div>
                     </a>

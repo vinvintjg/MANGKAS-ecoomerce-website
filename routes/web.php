@@ -33,7 +33,11 @@ Route::get('/', function () {
 
 Route::get('/mangkas-faq', function () {
     return view('user-faq');
-});
+})->name('mangkas-faq');
+
+Route::get('/mangkas-contact', function () {
+    return view('user-contact');
+})->name('mangkas-contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -75,7 +75,7 @@
                 </div>
                 <div class="foot-text-1">
                     <a href="/mangkas-faq"><div class="foot-text-text">FAQ</div></a>
-                    <a href="/mangkas-chat"><div class="foot-text-text">LIVE CHAT</div></a>
+                    {{-- <a href="/mangkas-chat"><div class="foot-text-text">LIVE CHAT</div></a> --}}
                     <a href="/mangkas-contact"><div class="foot-text-text">CONTACT</div></a>
                 </div>
                 <div class="foot-text-1">

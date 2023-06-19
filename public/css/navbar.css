@@ -97,9 +97,10 @@ li {
 }
 
 a {
-    width: 96px;
+    /* width: 96px; */
     height: 30px;
-
+    padding-left: 10px;
+    padding-right: 10px;
     font-family: "Poppins";
     font-style: normal;
     font-weight: 00;

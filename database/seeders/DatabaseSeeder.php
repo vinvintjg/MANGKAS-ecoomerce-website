@@ -20,5 +20,13 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(AdminSeeder::class);
         $this->call(AgendaSeeder::class);
+        $this->call(ProductSeeder::class);
+        $this->call(ShopSeeder::class);
+        $this->call(ServiceSeeder::class);
+        $this->call(FacilitySeeder::class);
+        $this->call(HairstylistSeeder::class);
+        $this->call(HaircutSeeder::class);
+        $this->call(BookingSeeder::class);
+        $this->call(XAgendaSeeder::class);
     }
 }
