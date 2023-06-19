@@ -7,12 +7,20 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Prototype Figma
+This is Link To Access the prototype use Figma.
+<p>https://www.figma.com/proto/9UKhZXK0trDWWr4S49J0j0/Team-Project-Sofware-Engineer?type=design&node-id=438-8&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=438%3A8</p>
+
 ## Guide Installation
 There are some application and tools you must prepare for this website:
+<p>GUIDE STEP BY STEP :  https://bit.ly/GUIDEINSTALL</p>
+
 - Visual Studio Code
 https://code.visualstudio.com/download
+
 - XAMPP 8.2.4
 https://www.apachefriends.org/download.html
+
 - Composer
 https://getcomposer.org/Composer-Setup.exe
 
