@@ -48,7 +48,7 @@ http://localhost/phpmyadmin/
 - And Run This All command in terminal Visual Studio Code
 <pre>
 php artisan key:generate
-php artisan migrate:fresh –seed
+php artisan migrate:fresh --seed
 php artisan serve
 </pre>
 - Run this link to your browser
