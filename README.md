@@ -8,6 +8,7 @@
 </p>
 
 ## Prototype Figma
+<img src="https://github.com/vinvintjg/MANGKAS-ecoomerce-website/blob/main/public/assets/HOME%20PAGE.png" style="height:300px">
 This is Link To Access the prototype use Figma.
 <p>https://www.figma.com/proto/9UKhZXK0trDWWr4S49J0j0/Team-Project-Sofware-Engineer?type=design&node-id=438-8&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=438%3A8</p>
 
