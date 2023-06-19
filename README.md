@@ -9,6 +9,7 @@
 
 ## Guide Installation
 There are some application and tools you must prepare for this website:
+GUIDE STEP BY STEP :  https://bit.ly/GUIDEINSTALL
 - Visual Studio Code
 https://code.visualstudio.com/download
 - XAMPP 8.2.4
