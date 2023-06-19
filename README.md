@@ -43,6 +43,19 @@ Step-step Installation:
 composer install
 composer update
 cp .env.example .env
+</pre>
+- Open file .env and change DB_DATABASE name
+<pre>
+DB_DATABASE=mangkas
+</pre>
+- Start Apache and MySQL in your XAMPP Apps
+- Open this link in your browser
+<pre>
+http://localhost/phpmyadmin/
+</pre>
+- Click NEW Button to create new database with name "mangkas"
+- And Run This All command in terminal Visual Studio Code
+<pre>
 php artisan key:generate
 php artisan migrate:fresh –seed
 php artisan serve
