@@ -42,7 +42,8 @@
                 <p>Multitotörat kvasisocial teleplastisk. Kombucha terade, med geosk väggord. Decikang mijässa heterongar. Notedat fotovalens minetygt ididogon pydona antiska. Svennekoloni makoligen vad trektigt ifall vihet. Bedade oligt, krod: stenona. Fot tetången, pararedösam tykadat. </p>
             </div>
             <div class="shop-address-desc">
-                Addres : {{ $shops->shop_address}}
+                Addres : <br>
+                {{ $shops->shop_address}}
             </div>
             <div class="button-form">
                 <button class=""><a href="{{route('getBookingById', ['id'=>$shops->id])}}">BOOK NOW</a></button>

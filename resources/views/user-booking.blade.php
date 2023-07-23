@@ -44,10 +44,6 @@
                             <option value="<?= $shopId ?>" name="shop_id"><?= $shops['shop_name'] ?></option>
                         </select>
                     </div>
-                    {{-- @foreach ($services as $service)
-                <input type="checkbox" value="{{ $service->id }}" name="booking_service[]" class="service-checkbox">
-                <label>{{ $service['service_name'] }}</label>
-                @endforeach --}}
                     <div class="serv-1-line">
                         <label for="booking_service" class="form-label">Services</label>
                         @foreach ($services as $service)

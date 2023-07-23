@@ -22,7 +22,8 @@ class ShopController extends Controller
 
     public function getCreateShop(){
         $shops = Shop::all();
-        return view('user-shop', ['shops' => $shops]);
+        $services = Service::all();
+        return view('user-shop', ['shops' => $shops, 'services' => $services]);
     }
 
     public function createShop(Request $request)

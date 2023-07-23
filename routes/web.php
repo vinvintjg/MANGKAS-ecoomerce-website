@@ -97,29 +97,28 @@ Route::middleware('admin')->group(function () {
 });
 
 Route::middleware('auth')->group(function(){
-Route::get('/create-membership', [MembershipController::class, 'getMemberships'])->name('getMemberships');
-Route::delete('/delete-membership/{id}', [MembershipController::class, 'deleteMembership'])->name('deleteMembership');
+    Route::get('/create-membership', [MembershipController::class, 'getMemberships'])->name('getMemberships');
+    Route::delete('/delete-membership/{id}', [MembershipController::class, 'deleteMembership'])->name('deleteMembership');
 
-Route::get('/mangkas-booking/{id}', [BookingController::class, 'getBookingById'])->name('getBookingById');
+    Route::get('/mangkas-booking/{id}', [BookingController::class, 'getBookingById'])->name('getBookingById');
 
-Route::get('/create-booking', [BookingController::class, 'getCreateBookingPage'])->name('getCreateBookingPage');
-Route::post('/create-booking', [BookingController::class, 'createBooking'])->name('createBooking');
-Route::get('/mangkas-booking-detail', [BookingController::class, 'getBookings'])->name('getBookings');
-Route::delete('/delete-booking/{id}', [BookingController::class, 'deleteBooking'])->name('deleteBooking');
+    Route::get('/create-booking', [BookingController::class, 'getCreateBookingPage'])->name('getCreateBookingPage');
+    Route::post('/create-booking', [BookingController::class, 'createBooking'])->name('createBooking');
+    Route::get('/mangkas-booking-detail', [BookingController::class, 'getBookings'])->name('getBookings');
+    Route::delete('/delete-booking/{id}', [BookingController::class, 'deleteBooking'])->name('deleteBooking');
 
-// Route::get('/agendas', [AgendaController::class, 'index'])->name('agendas.index');
+    // Route::get('/agendas', [AgendaController::class, 'index'])->name('agendas.index');
+    // Route::get('/s', [AgendaController::class, 'searchAgenda'])->name('search1');
 
-// Route::get('/s', [AgendaController::class, 'searchAgenda'])->name('search1');
+    Route::get('/filter', [BookingController::class, 'filter'])->name('filter');
+    Route::get('/mangkas-shop-detail/{id}', [ShopController::class, 'getShopById'])->name('getShopById');
 
-Route::get('/filter', [BookingController::class, 'filter'])->name('filter');
 });
 
 Route::get('/mangkas-home', [MembershipController::class, 'getCreateMembershipPage'])->name('getCreateMembershipPage');
 Route::post('/mangkas-home', [MembershipController::class, 'createMembership'])->name('createMembership');
 
 Route::get('/mangkas-shop', [ShopController::class, 'getCreateShop'])->name('getCreateShop');
-
-Route::get('/mangkas-shop-detail/{id}', [ShopController::class, 'getShopById'])->name('getShopById');
 
 Route::get('/mangkas-product', [ProductController::class, 'getProductsMangkas'])->name('getProductsMangkas');
 

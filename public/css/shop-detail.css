@@ -127,7 +127,7 @@
     font-size: 16px;
     line-height: 24px;
     text-align: justify;
-    color: #ffffff;
+    color: #ab8856;
 }
 
 .button-form {
@@ -202,6 +202,7 @@
 }
 .shode-content-ser-1 img {
     width: 24px;
+    margin-right: 24px;
 }
 
 .content-ser-isi {

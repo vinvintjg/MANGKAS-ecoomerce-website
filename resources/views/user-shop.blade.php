@@ -23,7 +23,7 @@
             <div class="shop-mid-text">
                 <div class="shop-rate">
                     <img src="assets/star-rate.png" alt="star">
-                        4.5
+                    {{ $shop->shop_rate }}
                 </div>
                 <div class="shop-location">
                     {{ $shop->shop_location }}
@@ -31,117 +31,27 @@
             </div>
             <div class="shop-bot-text">
                 <div class="shop-service">
-                        Hair Style &bull; Beard Trim &bull; Hair Grooming
+                    @php
+                        $count = 0;
+                    @endphp
+
+                    @foreach ($services as $service)
+                        @if ($service->shop_id == $shop->shopid && $count < 3)
+                            {{ $service->service_name }}
+                            @if($count<2)&bull;@endif
+                            @php
+                                $count++;
+                            @endphp
+                        @endif
+                    @endforeach
                 </div>
             </div>
             <div class="shop-button">
             <button class=""><a href="{{route('getShopById', ['id'=>$shop->id])}}">BOOKING</a></button>
+            </div>
         </div>
-        </div>
-
-        {{-- <div class="card_image">
-            <img src="{{asset('storage/image/'.$product->product_logo)}}" alt="card image">
-        </div>
-        <br><br><br>
-        <h2>{{ $product->product_name }}</h2>
-        <h3>IDR {{ $product->product_price }}</h3>
-        <div class="card_star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate-0.png" alt="star">
-        </div> --}}
     </div>
     @endforeach
-    @foreach ($shops as $shop)
-    <div class="shop-card-1 card card-jarak-1">
-        <div class="shop-img">
-            <img src="{{asset('storage/image/'.$shop->shop_photo_1)}}" alt="card image">
-        </div>
-        <div class="shop-text">
-            <div class="shop-top-text">
-                {{ $shop->shop_name }}
-            </div>
-            <div class="shop-mid-text">
-                <div class="shop-rate">
-                    <img src="assets/star-rate.png" alt="star">
-                        4.5
-                </div>
-                <div class="shop-location">
-                    {{ $shop->shop_location }}
-                </div>
-            </div>
-            <div class="shop-bot-text">
-                <div class="shop-service">
-                        Hair Style &bull; Beard Trim &bull; Hair Grooming
-                </div>
-            </div>
-            <div class="shop-button">
-            <button class=""><a href="{{route('getShopById', ['id'=>$shop->id])}}">BOOKING</a></button>
-        </div>
-        </div>
-
-        {{-- <div class="card_image">
-            <img src="{{asset('storage/image/'.$product->product_logo)}}" alt="card image">
-        </div>
-        <br><br><br>
-        <h2>{{ $product->product_name }}</h2>
-        <h3>IDR {{ $product->product_price }}</h3>
-        <div class="card_star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate-0.png" alt="star">
-        </div> --}}
-    </div>
-    @endforeach
-    @foreach ($shops as $shop)
-    <div class="shop-card-1 card card-jarak-1">
-        <div class="shop-img">
-            <img src="{{asset('storage/image/'.$shop->shop_photo_1)}}" alt="card image">
-        </div>
-        <div class="shop-text">
-            <div class="shop-top-text">
-                {{ $shop->shop_name }}
-            </div>
-            <div class="shop-mid-text">
-                <div class="shop-rate">
-                    <img src="assets/star-rate.png" alt="star">
-                        4.5
-                </div>
-                <div class="shop-location">
-                    {{ $shop->shop_location }}
-                </div>
-            </div>
-            <div class="shop-bot-text">
-                <div class="shop-service">
-                        Hair Style &bull; Beard Trim &bull; Hair Grooming
-                </div>
-            </div>
-            <div class="shop-button">
-            <button class=""><a href="{{route('getShopById', ['id'=>$shop->id])}}">BOOKING</a></button>
-        </div>
-        </div>
-
-        {{-- <div class="card_image">
-            <img src="{{asset('storage/image/'.$product->product_logo)}}" alt="card image">
-        </div>
-        <br><br><br>
-        <h2>{{ $product->product_name }}</h2>
-        <h3>IDR {{ $product->product_price }}</h3>
-        <div class="card_star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate-0.png" alt="star">
-        </div> --}}
-    </div>
-    @endforeach
-
-
     </div>
 </div>
 

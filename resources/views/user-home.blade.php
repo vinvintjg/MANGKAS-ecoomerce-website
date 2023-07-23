@@ -432,6 +432,7 @@
         </div>
     </section>
 
+    @if (Auth::check())
     <section class="member" id="member-mangkas">
         <div class="member-title">Membership</div>
         <div class="member-form">
@@ -439,29 +440,56 @@
                 @csrf
                 <div class="form-label" id="">Name</div>
                 <div class="form-input" for="membership_name">
-                    <input type="text" name="membership_name" placeholder="Fill Your Name">
+                    <input type="text" name="membership_name" placeholder="Fill Your Name" value="{{ old('membership_name') }}">
+                    @error('membership_name')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="form-label" id="">Membership Type</div>
                 <div class="select-wrapper">
                     <select name="membership_type" class="form-input" id="membership_type">
-                        <option value="-1" name="membership_type" class="form-input" for="membership_type">
+                        <option value="-1" name="membership_type" class="form-input" for="membership_type"
+                            @if(old('membership_type') == -1) selected @endif>
                             Choose...</option>
-                        <option value="silver" name="membership_type" class="form-input" for="membership_type">
+                        <option value="silver" name="membership_type" class="form-input" for="membership_type"
+                            @if(old('membership_type') == 'silver') selected @endif>
                             silver</option>
-                        <option value="bronze" name="membership_type" class="form-input" for="membership_type">
+                        <option value="bronze" name="membership_type" class="form-input" for="membership_type"
+                            @if(old('membership_type') == 'bronze') selected @endif>
                             bronze</option>
-                        <option value="gold" name="membership_type" for="membership_type">gold</option>
-                        <option value="platinum" name="membership_type" for="membership_type">platinum</option>
+                        <option value="gold" name="membership_type" for="membership_type"
+                            @if(old('membership_type') == 'gold') selected @endif>
+                            gold</option>
+                        <option value="platinum" name="membership_type" for="membership_type"
+                            @if(old('membership_type') == 'platinum') selected @endif>
+                            platinum</option>
                     </select>
                     <span class="dropdown-icon">&#9660;</span>
+                    @error('membership_type')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
-                <div class="form-label" id="membership_phone">membership_phone</div>
+                <div class="form-label" id="membership_phone">Phone</div>
                 <div class="form-input" for="membership_phone">
-                    <input type="text" name="membership_phone" placeholder="Fill Your Phone">
+                    <input type="text" name="membership_phone" placeholder="Fill Your Phone" value="{{ old('membership_phone') }}">
+                    @error('membership_phone')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
-                <div class="form-label" id="membership_email">membership_email</div>
+                <div class="form-label" id="membership_email">Email</div>
                 <div class="form-input" for="membership_email">
-                    <input type="text" name="membership_email" placeholder="Fill Your Email">
+                    <input type="text" name="membership_email" placeholder="Fill Your Email" value="{{ old('membership_email') }}">
+                    @error('membership_email')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="button-form">
                     <button type="submit">Join Now</button>
@@ -469,6 +497,7 @@
             </form>
         </div>
     </section>
+    @endif
 
     <footer class="footer">
         <div class="foot-top">

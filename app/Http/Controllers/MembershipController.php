@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Membership;
 use Illuminate\Http\Request;
+use App\Http\Requests\MembershipRequest;
 use Illuminate\Support\Facades\Auth;
 
 class MembershipController extends Controller
@@ -12,7 +13,7 @@ class MembershipController extends Controller
         return view('user-home', ['memberships' => $memberships]);
     }
 
-    public function createMembership(Request $request)
+    public function createMembership(MembershipRequest $request)
     {
         Membership::create([
             'membership_name' => $request->membership_name,

@@ -29,6 +29,10 @@
     transform: scale(1.05); /* Efek zoom pada card saat di-hover */
 }
 
+.shop-button{
+    margin-bottom: 2.5rem;
+}
+
 .shop-button button a {
     color: #ffffff;
     text-decoration: none;
