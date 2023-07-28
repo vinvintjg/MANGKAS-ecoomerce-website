@@ -130,3 +130,4 @@ use App\Http\Controllers\ChattingController;
 Route::get('/mangkas-chatting', [ChattingController::class, 'getCreateChattingPage'])->name('getCreateChattingPage');
 Route::post('/mangkas-chatting', [ChattingController::class, 'createChatting'])->name('createChatting');
 Route::get('/mangkas-chatting', [ChattingController::class, 'getChattings'])->name('getChattings');
+ 

@@ -29,6 +29,7 @@ class HaircutController extends Controller
 
     public function getHaircuts(){
         $user_id = Auth::user()->id;
+        // $haircuts = Haircut::all();
         $haircuts = Haircut::where('shop_id', $user_id)->get();
         return view('create-haircut', ['haircuts' => $haircuts]);
     }

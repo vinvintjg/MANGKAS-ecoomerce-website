@@ -113,5 +113,5 @@
             <div class="foot-bot">
                 @2023 Mangkas.com by PT Mangkas | All right reserved.
             </div>
-        </footer>
+        </footer>        
 @endsection

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href={{asset('css/footer.css')}}>
 </head>
 <body>
-
+    <x-live-chat />
     <nav>
         <div class="navbar">
         <div class="nav-logo">

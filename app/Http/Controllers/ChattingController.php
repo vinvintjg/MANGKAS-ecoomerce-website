@@ -9,7 +9,7 @@ class ChattingController extends Controller
 {
     public function getCreateChattingPage(){
         $chattings = Chatting::all();
-        return view('mangkas-chatting', ['chattings' => $chattings]);
+        return view('components.live-chat', ['chattings' => $chattings]);
     }
 
     public function createChatting(Request $request){
@@ -19,20 +19,19 @@ class ChattingController extends Controller
             'sender' => Auth::user()->id,
             'receiver' => $request->receiver,
         ]);
-
-        return redirect(route('getChattings'));
+        return back();
     }
 
     public function getChattings()
     {
         $userId = Auth::user()->id;
-
+        // $chattings = Chatting::all();
         $senderChattings = Chatting::where('sender', $userId)->get();
         $receiverChattings = Chatting::where('receiver', $userId)->get();
 
         $chattings = $senderChattings->concat($receiverChattings);
 
-        return view('mangkas-chatting', ['chattings' => $chattings]);
+        return view('components.live-chat', ['chattings' => $chattings]);
     }
 
 }

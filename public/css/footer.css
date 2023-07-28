@@ -92,3 +92,247 @@
     align-items: center;
     color: rgba(255, 255, 255, 0.5);
 }
+
+.live-title{
+    padding: 7px 15px;
+    width: 293px;
+}
+
+.live-title-1{
+    padding: 7px 15px;
+    width: 293px;
+    z-index: 5;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 2px solid var(--darkbrown, #12110A);
+    background: #292822;
+    align-items: center;
+
+    /* display: flex;
+    justify-content: end; */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-radius: 15px 15px 0px 0px;
+    box-shadow: 0px 16px 32px 0px #000;
+}
+
+.live-title-section{
+    color: #F8F8F8;
+    cursor: pointer;
+}
+
+.live-chat{
+    padding: 8px 16px 8px 16px;
+}
+
+.live-chat-2{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 8px 16px 8px 16px;
+}
+
+.logo-live-chat{
+    display: flex;
+    justify-content: end;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 24px #000);
+}
+
+.card-live-chat{
+    width: 293px;
+    height: 440px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 6;
+
+    display: flex;
+    justify-content: end;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-radius: 15px 15px 0px 0px;
+    box-shadow: 0px 16px 32px 0px #000;
+}
+
+.card-live-top {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    border-radius: 15px 15px 0px 0px;
+    background-image: url('../assets/bg-live-chat.png');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 293px;
+
+    /* Set a maximum height for the chat container */
+    max-height: 400px; /* Adjust the value as needed */
+
+    /* Enable vertical scrolling for overflowing content */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.live-bubble-time{
+    color: var(--brown, #AB8856);
+    font-family: Poppins;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.live-bubble-time-2{
+    color: var(--brown, #FFF);
+    font-family: Poppins;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+.live-bubble-text{
+    color: var(--brown, #AB8856);
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.live-bubble-text-2{
+    color: var(--brown, #FFF);
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+.live-bubble{
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    padding: 8px 16px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 15px 15px 15px 0px;
+    background: #F8F8F8;
+    max-width: 208px;
+}
+
+.live-bubble-2{
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+    padding: 8px 16px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 15px 15px 0px 15px;
+    background: #AB8856;
+    max-width: 208px;
+}
+
+.live-title{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 2px solid var(--darkbrown, #12110A);
+    background: #292822;
+    align-items: center;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.live-profile{
+    width: 293px;
+    height: 45px;
+    background: #292822;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    padding: 11px 17px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.live-profile-logo img{
+    height: 25px;
+    padding-right: 17px;
+}
+.live-profile-title{
+    color: var(--brown, #AB8856);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    }
+
+    .live-profile-title-bottom{
+        color: var(--brown, #AB8856);
+        font-family: Poppins;
+        font-size: 8px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .card-live-bottom{
+        background: #292822;
+        width: 100%;
+        height: 44px;
+    }
+
+    .card-live-bottom input{
+        background: #292822;
+        font-style: none;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        height: 44px;
+        width: 87%;
+        border: none;
+        outline: none;
+        padding: 17px;
+        color: #F8F8F8;
+    }
+
+    .live-input-place::placeholder {
+        color: rgba(255, 255, 255, 0.30);
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+    }
+
+    .scroll-button {
+        position: fixed;
+        bottom: 42px;
+        right: 150px;
+        color: #fff;
+        border: none;
+        padding: 1px;
+        cursor: pointer;
+        opacity: 0.5;
+        transform: scale(1.5);
+        transition: opacity 0.3s ease;
+        background-color: transparent;
+      }
+      
+      /* On hover, increase the opacity to make the button more visible */
+      .scroll-button:hover {
+        opacity: 1;
+      }
+
+      

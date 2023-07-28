@@ -80,7 +80,7 @@ hr {
 .form-input {
     width: 100%;
     color: #f8f8f8;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.10);
     border-radius: 15px;
     padding: 4px 16px;
     border: none;

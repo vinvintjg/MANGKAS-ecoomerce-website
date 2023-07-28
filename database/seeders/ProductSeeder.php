@@ -19,16 +19,15 @@ class ProductSeeder extends Seeder
             'product_name' => 'Styling Hairspray',
             'product_price' => 65000,
             'product_rate' => 5,
-            'product_logo' => '_Hair Shampoo.png',
+            'product_logo' => '_Styling Hairspray.png',
         ]);
 
-        // Repeat the above code for the remaining rows with appropriate values for each row
         Product::create([
             'id' => 2,
             'product_name' => 'Hair Shampoo',
             'product_price' => 85000,
             'product_rate' => 5,
-            'product_logo' => '_Styling Hairspray.png',
+            'product_logo' => '_Hair Shampoo_1.png',
         ]);
 
         Product::create([
@@ -60,7 +59,7 @@ class ProductSeeder extends Seeder
             'product_name' => 'Hair Shampoo',
             'product_price' => 100000,
             'product_rate' => 5,
-            'product_logo' => '_Hair Shampoo.png',
+            'product_logo' => '_Hair Shampoo_2.png',
         ]);
 
         Product::create([
