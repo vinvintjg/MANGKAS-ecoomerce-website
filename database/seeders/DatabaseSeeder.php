@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(HaircutSeeder::class);
         $this->call(BookingSeeder::class);
         $this->call(XAgendaSeeder::class);
+        $this->call(FaqSeeder::class);
     }
 }

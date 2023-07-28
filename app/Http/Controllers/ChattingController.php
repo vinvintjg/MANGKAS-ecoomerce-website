@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chatting;
 use Illuminate\Http\Request;
+use App\Http\Requests\ChattingRequest;
 use Illuminate\Support\Facades\Auth;
 class ChattingController extends Controller
 {
@@ -12,7 +13,7 @@ class ChattingController extends Controller
         return view('components.live-chat', ['chattings' => $chattings]);
     }
 
-    public function createChatting(Request $request){
+    public function createChatting(ChattingRequest $request){
 
         Chatting::create([
             'chatting_text' => $request->chatting_text,

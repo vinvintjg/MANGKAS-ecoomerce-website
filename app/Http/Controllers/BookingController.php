@@ -10,6 +10,7 @@ use App\Models\Service;
 use App\Models\Shop;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\BookingRequest;
 use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
@@ -19,7 +20,7 @@ class BookingController extends Controller
         return view('user-booking', ['bookings' => $bookings]);
     }
 
-    public function createBooking(Request $request){
+    public function createBooking(BookingRequest $request){
         $services = Service::all();
         $extension1 = $request->file('booking_payment_photo')->getClientOriginalExtension();
         $fileName1 = $request->agenda_id . '_' .$request->booking_name . $extension1; //rename
@@ -53,9 +54,7 @@ class BookingController extends Controller
             $agenda->status = 'Unavailable';
             $agenda->save();
         }
-
-        // dd($request->all());
-
+        
         return redirect(route('getBookings'));
     }
 

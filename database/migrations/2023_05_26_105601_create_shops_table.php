@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('shop_price_high');
             $table->float('shop_rate');
             $table->string('shop_location');
-            $table->string('shop_description');
+            $table->longtext('shop_description');
             $table->string('shop_address');
             $table->unsignedBigInteger('shopid')->unique();
             $table->foreign('shopid')->references('id')->on('users')

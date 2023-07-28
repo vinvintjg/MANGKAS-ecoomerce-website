@@ -24,7 +24,7 @@ class ShopSeeder extends Seeder
             'shop_price_high' => 80000,
             'shop_rate' => 4.50,
             'shop_location' => 'Jakarta Utara',
-            'shop_description' => 'Lörem ipsum joment fynålungen medan spedat äggkonto. Fatönade sasamma,',
+            'shop_description' => 'Classic Cuts Barber Shop, where timeless style meets exceptional grooming. Our barbers are dedicated experts, delivering traditional and contemporary haircuts with precision and skill. Immerse yourself in our inviting ambiance, a blend of vintage charm and modern comfort. Experience the art of shaving and beard care with premium products for a refined look. Our commitment to customer satisfaction ensures you leave feeling confident and polished. Embrace the classic gentleman touch with Classic Cuts Barber Shop - your destination for top-tier grooming and a touch of old-world elegance.',
             'shop_address' => 'Jalan Pluit Timur Blok I 24 Jakarta Utara Daerah Khusus Ibukota Jakarta.',
             'shopid' => 2,
         ]);
@@ -40,7 +40,7 @@ class ShopSeeder extends Seeder
             'shop_price_high' => 80000,
             'shop_rate' => 4.50,
             'shop_location' => 'Jakarta Timur',
-            'shop_description' => 'lorem ipsum',
+            'shop_description' => 'Sharp & Suave is a Barber Shop that offers the best mens grooming experience with a modern and elegant touch. Our shop brings talented barbers who excel in the latest haircuts and beard care. With a comfortable atmosphere and top-notch services, we provide unmatched customer satisfaction. Enjoy precision haircuts and soothing treatments with high-quality products. Whether you seek a classic gentleman look or a contemporary style, Sharp & Suave Barber Shop is the ultimate choice for a masculine and classy appearance.',
             'shop_address' => 'Jl. Manggis 13560 Jakarta Timur DKI Jakarta.',
             'shopid' => 9,
         ]);
@@ -56,7 +56,7 @@ class ShopSeeder extends Seeder
             'shop_price_high' => 80000,
             'shop_rate' => 4.50,
             'shop_location' => 'Jakarta Barat',
-            'shop_description' => 'Lörem ipsum joment fynålungen medan spedat äggkonto. Fatönade sasamma,',
+            'shop_description' => 'Unique Barber, where innovation meets artistry in men grooming. Our barber shop is a haven for individuals seeking personalized and distinctive styles that match their unique personalities. Our team of skilled barbers is passionate about crafting one-of-a-kind haircuts and grooming experiences tailored to each client. Embrace the latest trends or create your own signature look with confidence. We pride ourselves on using premium products and techniques that elevate your grooming experience. Step into a world of creativity and excellence at Unique Barber, where we redefine the art of men grooming with flair and originality.',
             'shop_address' => 'Jl. Kemanggisan Raya No.20, RT.1/RW.7, Kemanggisan, Kec. Palmerah, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11480',
             'shopid' => 10,
         ]);

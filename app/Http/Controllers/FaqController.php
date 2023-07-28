@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Faq;
 use Illuminate\Http\Request;
 
-class FAQController extends Controller
+class FaqController extends Controller
 {
 
     public function getCreateFaqPage(){
@@ -25,6 +25,11 @@ class FAQController extends Controller
     public function getFaqs(){
         $faqs = Faq::all();
         return view('create-faq', ['faqs' => $faqs]);
+    }
+
+    public function getFaqsMangkas(){
+        $faqs = Faq::all();
+        return view('user-faq', ['faqs' => $faqs]);
     }
 
     public function deleteFaq($id){

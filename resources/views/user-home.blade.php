@@ -43,7 +43,7 @@
                 <a href="/"><li>ABOUT</li></a>
                 <a href="{{ route('getProductsMangkas') }}"><li>PRODUCT</li></a>
                 <a href="{{ route('getCreateShop') }}"><li>SHOP</li></a>
-                <a href="{{ route('mangkas-faq') }}"><li>FAQ</li></a>
+                <a href="{{ route('getFaqsMangkas') }}"><li>FAQ</li></a>
                 <a href="{{ route('mangkas-contact') }}"><li>CONTACT</li></a>
                 @if (Auth::check())
                     <form method="POST" action="{{ route('logout') }}">
@@ -468,12 +468,13 @@
                             platinum</option>
                     </select>
                     <span class="dropdown-icon">&#9660;</span>
-                    @error('membership_type')
+                    
+                </div>
+                @error('membership_type')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
                     @enderror
-                </div>
                 <div class="form-label" id="membership_phone">Phone</div>
                 <div class="form-input" for="membership_phone">
                     <input type="text" name="membership_phone" placeholder="Fill Your Phone" value="{{ old('membership_phone') }}">
@@ -518,7 +519,7 @@
                     </a>
                 </div>
                 <div class="foot-text-1">
-                    <a href="/mangkas-faq">
+                    <a href="/getFaqsMangkas">
                         <div class="foot-text-text">FAQ</div>
                     </a>
                     {{-- <a href="/mangkas-chat">

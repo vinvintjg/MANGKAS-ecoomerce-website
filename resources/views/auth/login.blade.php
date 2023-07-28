@@ -31,7 +31,7 @@
         <a href="/"><li>ABOUT</li></a>
         <a href="{{ route('getProductsMangkas') }}"><li>PRODUCT</li></a>
         <a href="{{ route('getCreateShop') }}"><li>SHOP</li></a>
-        <a href="{{ route('mangkas-faq') }}"><li>FAQ</li></a>
+        <a href="{{ route('getFaqsMangkas') }}"><li>FAQ</li></a>
         <a href="{{ route('mangkas-contact') }}"><li>CONTACT</li></a>
         @if (Auth::check())
             <form method="POST" action="{{ route('logout') }}">

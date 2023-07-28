@@ -31,10 +31,6 @@ Route::get('/', function () {
     return view('user-home');
 });
 
-Route::get('/mangkas-faq', function () {
-    return view('user-faq');
-})->name('mangkas-faq');
-
 Route::get('/mangkas-contact', function () {
     return view('user-contact');
 })->name('mangkas-contact');
@@ -121,6 +117,8 @@ Route::post('/mangkas-home', [MembershipController::class, 'createMembership'])-
 Route::get('/mangkas-shop', [ShopController::class, 'getCreateShop'])->name('getCreateShop');
 
 Route::get('/mangkas-product', [ProductController::class, 'getProductsMangkas'])->name('getProductsMangkas');
+
+Route::get('/mangkas-faq', [FaqController::class, 'getFaqsMangkas'])->name('getFaqsMangkas');
 
 require __DIR__.'/auth.php';
 
