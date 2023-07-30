@@ -1,15 +1,14 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shop Page</title>
+    <script src="https://cdn.ckeditor.com/4.22.1/standard-all/ckeditor.js"></script>
 </head>
-<body> --}}
+<body>
 
-{{-- @extends('layouts.navbar')
-@section('content') --}}
     <form action="{{ route('createShop') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
@@ -32,7 +31,8 @@
         <label for="">shop location</label>
         <input type="text" name="shop_location">
         <label for="">shop_description</label>
-        <input type="text" name="shop_description">
+        <textarea cols="80" id="editor1" name="shop_description" rows="5"></textarea>
+        {{-- <input type="text" name="shop_description"> --}}
         <label for="">shop_address</label>
         <input type="text" name="shop_address">
 
@@ -91,8 +91,35 @@
             @endforeach
         </tbody>
     </table>
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script>
+        // Don't forget to add CSS for your custom styles.
+        CKEDITOR.replace('editor1', {
+          toolbar: [{
+              name: 'document',
+              items: ['Undo', 'Redo']
+            },
+            {
+              name: 'styles',
+              items: ['Format']
+            },
+            {
+              name: 'basicstyles',
+              items: ['Bold', 'Italic', 'Strike', '-']
+            },
+            {
+              name: 'paragraph',
+              items: ['NumberedList', 'BulletedList']
+            },
+            {
+              name: 'links',
+              items: ['Link', 'Unlink']
+            }
+          ],
+          height: 200
+        });
+      </script>
 
-{{-- </body>
-</html> --}}
 
-{{-- @yield('content') --}}
+</body>
+</html>

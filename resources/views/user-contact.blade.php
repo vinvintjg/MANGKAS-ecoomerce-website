@@ -35,7 +35,7 @@
                     <img src="{{asset('assets/contact-chat.png')}}" alt="logo">
                 </div>
                 <div class="faq-text-m">
-                    By Phone
+                    Live Chat
                 </div>
                 <div class="faq-text-s">
                     Chat with a member of our <br>

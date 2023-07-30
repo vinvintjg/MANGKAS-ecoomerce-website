@@ -66,7 +66,7 @@
                     </a>
                 </div>
                 <div class="foot-text-1">
-                    <a href="/getFaqsMangkas">
+                    <a href="/mangkas-faq">
                         <div class="foot-text-text">FAQ</div>
                     </a>
                     {{-- <a href="/mangkas-chat"> --}}

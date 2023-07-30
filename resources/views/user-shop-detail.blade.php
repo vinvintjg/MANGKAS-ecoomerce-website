@@ -38,7 +38,7 @@
                 IDR {{ $shops->shop_price_low }} - {{ $shops->shop_price_high }}
             </div>
             <div class="shode-long-desc">
-                <p>{{ $shops->shop_description }}</p>
+                {!! $shops->shop_description !!}
             </div>
             <div class="shop-address-desc">
                 Addres : <br>

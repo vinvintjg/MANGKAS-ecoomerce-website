@@ -10,9 +10,10 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\HaircutController;
 use App\Http\Controllers\HairstylistController;
-
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\BookingController;
+
+use App\Http\Controllers\TextController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,18 @@ Auth::routes();
 Route::get('/', function () {
     return view('user-home');
 });
+
+Route::get('/text', function () {
+    return view('text');
+});
+
+Route::post('/create',[TextController::class,'index']);
+ 
+Route::post('ckeditor/upload', [TextController::class, 'upload'])->name('ckeditor.upload');
+
+Route::get('/show',[TextController::class,'show']);
+
+Route::post('/upload', [TextController::class, 'upload'])->name('ckeditor.upload');
 
 Route::get('/mangkas-contact', function () {
     return view('user-contact');
