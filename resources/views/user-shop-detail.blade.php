@@ -41,7 +41,7 @@
                 {!! $shops->shop_description !!}
             </div>
             <div class="shop-address-desc">
-                Addres : <br>
+                Address : <br>
                 {{ $shops->shop_address}}
             </div>
             <div class="button-form">
@@ -92,14 +92,39 @@
         </div>
         <div class="hair-content">
             @foreach ($hairstylists as $hairstylist)
-            <div class="hair-card">
-                <div class="hair-image">
-                    <img src="{{asset('storage/image/'.$hairstylist->hairstylist_logo)}}" alt="">
+            <div class="flip-card hair-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="hair-image">
+                            <img src="{{asset('storage/image/'.$hairstylist->hairstylist_logo)}}" alt="">
+                        </div>
+                        <div class="hair-text">
+                            {{ $hairstylist->hairstylist_name }}
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="flip-back-top">
+                            <div class="hair-text">
+                                {{ $hairstylist->hairstylist_name }}
+                            </div>
+                            <div class="shode-long-desc">
+                                {{ $hairstylist->hairstylist_description }}
+                            </div>
+                        </div>
+                        <div class="flip-back-under">
+                            <div class="flip-rate">
+                                <div>
+                                    <img src="{{asset('assets/star-rate.png')}}" alt="star" style="width: 20px;"> {{ $hairstylist->hairstylist_rate }}
+                                </div>
+                                <div>
+                                    {{ $hairstylist->hairstylist_review }} Reviews
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="hair-text">
-                    {{ $hairstylist->hairstylist_name }}
-                </div>
-            </div>
+            </div>  
+            
             @endforeach
         </div>
     </div>
@@ -112,13 +137,17 @@
         <div class="hair-content">
             @foreach ($haircuts as $haircut)
             <div class="hair-card">
-                <div class="hair-image">
-                    <img src="{{asset('storage/image/'.$haircut->haircut_logo)}}" alt="">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="hair-image">
+                            <img src="{{asset('storage/image/'.$haircut->haircut_logo)}}" alt="">
+                        </div>
+                        <div class="hair-text">
+                            {{ $haircut->haircut_name }}
+                        </div>
+                    </div>
                 </div>
-                <div class="hair-text">
-                    {{ $haircut->haircut_name }}
-                </div>
-            </div>
+            </div>  
             @endforeach
         </div>
     </div>

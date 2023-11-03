@@ -54,7 +54,7 @@
         <h4>PAYEMNT</h4>
         <p>Payment Total &emsp;&emsp;: {{ $booking->booking_payment_total }}</p>
         <p>Payment Method&emsp;: {{ $booking->booking_payment_method }}</p>
-        <img height="100px" src="{{asset('storage/image/'.$booking->booking_payment_photo)}}" alt="">
+        <img height="100px" src="{{asset('storage/image/'.$booking->booking_payment_photo)}}" alt="error">
         <p>
             <form action="{{route('deleteBooking', ['id' => $booking->id])}}" method="post">
             @csrf

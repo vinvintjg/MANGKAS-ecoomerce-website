@@ -40,7 +40,7 @@
             <a class="hamburger" id="nav-icon">&#9776;</a>
             <div class="nav-font" id="nav-mobile">
                 <a href="/"><li>HOME</li></a>
-                <a href="/"><li>ABOUT</li></a>
+                <a href="/#aboutscroll"><li>ABOUT</li></a>
                 <a href="{{ route('getProductsMangkas') }}"><li>PRODUCT</li></a>
                 <a href="{{ route('getCreateShop') }}"><li>SHOP</li></a>
                 <a href="{{ route('getFaqsMangkas') }}"><li>FAQ</li></a>
@@ -261,7 +261,7 @@
                 Shop
             </div>
             <div class="pro-more">
-                <button class=""><a href="{{ route('getProductsMangkas') }}">See More...</a></button>
+                <button class=""><a href="{{ route('getCreateShop') }}">See More...</a></button>
             </div>
         </div>
         <button class="pre-btn"><img src="assets/arrow-right.png" alt=""></button>

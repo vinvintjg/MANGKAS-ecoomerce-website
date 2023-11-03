@@ -23,7 +23,7 @@ class BookingController extends Controller
     public function createBooking(BookingRequest $request){
         $services = Service::all();
         $extension1 = $request->file('booking_payment_photo')->getClientOriginalExtension();
-        $fileName1 = $request->agenda_id . '_' .$request->booking_name . $extension1; //rename
+        $fileName1 = $request->agenda_id . '_' .$request->booking_name . '.' . $extension1;//rename
         $request->file('booking_payment_photo')->storeAs('public/image/', $fileName1); //save
 
         $booking = Booking::create([

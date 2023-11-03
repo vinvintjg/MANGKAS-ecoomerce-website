@@ -105,6 +105,8 @@ Route::middleware('admin')->group(function () {
 
 });
 
+
+
 Route::middleware('auth')->group(function(){
     Route::get('/create-membership', [MembershipController::class, 'getMemberships'])->name('getMemberships');
     Route::delete('/delete-membership/{id}', [MembershipController::class, 'deleteMembership'])->name('deleteMembership');
