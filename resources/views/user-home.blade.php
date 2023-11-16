@@ -37,7 +37,7 @@
             <div class="nav-logo">
                 <img src="assets/logo_navbar.png" alt="logo">
             </div>
-            <a class="hamburger" id="nav-icon">&#9776;</a>
+            <div class="hamburger" id="nav-icon">&#9776;</div>
             <div class="nav-font" id="nav-mobile">
                 <a href="/"><li>HOME</li></a>
                 <a href="/#aboutscroll"><li>ABOUT</li></a>
@@ -56,7 +56,9 @@
                         </button>
                     </form>
                 @else
-                    <button class="brown login-button"><a href="{{ route('login') }}">LOGIN</a></button>
+                    <div class="login-btn">
+                        <button type="submit" onclick="window.location.href = '{{ route('login') }}';">LOGIN</button>
+                    </div>
                 @endif
             </div>
         </div>
@@ -69,7 +71,15 @@
                 <span class="">WELCOME TO MANGKAS</span>
                 <h1>Look Sharp Feel Sharper <br>
                     With Our Cuts</h1>
-                <button class=""><a href="#member-mangkas">MEMBERSHIP NOW</a></button>
+                @if (Auth::check())
+                <div class="member-btn">
+                    <button type="submit" onclick="window.location.href = '#member-mangkas';">MEMBERSHIP NOW</button>
+                </div>
+                @else
+                <div class="member-btn">
+                    <button type="submit" onclick="window.location.href = '/login';">MEMBERSHIP NOW</button>
+                </div>
+                @endif
             </div>
         </div>
     </header>
@@ -161,8 +171,8 @@
             <div class="pro-head-title">
                 Product
             </div>
-            <div class="pro-more">
-                <button class=""><a href="{{ route('getProductsMangkas') }}">See More...</a></button>
+            <div class="pro-more login-btn">
+                <button type="submit" onclick="window.location.href = '{{ route('getProductsMangkas') }}';">See More...</button>
             </div>
         </div>
         <div class="swiper-wrapper">
@@ -260,8 +270,8 @@
             <div class="pro-head-title">
                 Shop
             </div>
-            <div class="pro-more">
-                <button class=""><a href="{{ route('getCreateShop') }}">See More...</a></button>
+            <div class="pro-more login-btn">
+                <button type="submit" onclick="window.location.href = '{{ route('getCreateShop') }}';">See More...</button>
             </div>
         </div>
         <button class="pre-btn"><img src="assets/arrow-right.png" alt=""></button>

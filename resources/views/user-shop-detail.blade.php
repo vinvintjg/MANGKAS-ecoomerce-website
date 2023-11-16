@@ -44,8 +44,8 @@
                 Address : <br>
                 {{ $shops->shop_address}}
             </div>
-            <div class="button-form">
-                <button class=""><a href="{{route('getBookingById', ['id'=>$shops->id])}}">BOOK NOW</a></button>
+            <div class="button-form login-btn">
+                <button type="submit" onclick="window.location.href = '{{route('getBookingById', ['id'=>$shops->id])}}';">BOOK NOW</button>
             </div>
 
 

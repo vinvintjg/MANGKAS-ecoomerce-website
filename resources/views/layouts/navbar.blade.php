@@ -21,7 +21,7 @@
         <div class="nav-logo">
             <img src="{{asset('assets/logo_navbar.png')}}" alt="logo">
         </div>
-        <a class="hamburger" id="nav-icon">&#9776;</a>
+        <div class="hamburger" id="nav-icon">&#9776;</div>
         <div class="nav-font" id="nav-mobile">
             <a href="/"><li>HOME</li></a>
             <a href="/#aboutscroll"><li>ABOUT</li></a>
@@ -40,7 +40,9 @@
                 </button>
             </form>
             @else
-                <button class="brown login-button"><a href="{{ route('login') }}">LOGIN</a></button>
+                <div class="login-btn">
+                    <button type="submit" onclick="window.location.href = '{{ route('login') }}';">LOGIN</button>
+                </div>
             @endif
         </div>
         </div>

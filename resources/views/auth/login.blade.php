@@ -25,7 +25,7 @@
     <div class="nav-logo">
         <img src="assets/logo_navbar.png" alt="logo">
     </div>
-    <a class="hamburger" id="nav-icon">&#9776;</a>
+    <div class="hamburger" id="nav-icon">&#9776;</div>
     <div class="nav-font" id="nav-mobile">
         <a href="/"><li>HOME</li></a>
         <a href="/#aboutscroll"><li>ABOUT</li></a>

@@ -5,8 +5,10 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    color: white;
 }
 .shop-button button {
+    color: white;
     background-color: #ab8856;
     border: none;
     box-sizing: border-box;
@@ -36,6 +38,12 @@
 .shop-button button a {
     color: #ffffff;
     text-decoration: none;
+}
+
+.shop-button button:hover{
+    border: 2px solid #ab8856;
+    color: #ab8856;
+    background-color: #ffffff;
 }
 
 .shop-text {

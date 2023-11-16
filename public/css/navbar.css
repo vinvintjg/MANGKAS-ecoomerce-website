@@ -130,7 +130,12 @@ a {
 }
 
 a:hover {
-    text-decoration: underline #ab8856 2px;
+    text-decoration: underline;
+    text-decoration-color: #ab8856; /* Warna underline yang diinginkan */
+    text-decoration-thickness: 2px; /* Ketebalan underline */
+    text-underline-offset: 5px; /* Jarak antara teks dan underline */
+    text-decoration-skip-ink: auto; /* Mengontrol bagaimana underline melewati huruf (opsional) */
+    color: #ab8856;
 }
 
 nav a {
@@ -183,6 +188,28 @@ button a:hover {
 
 li .navlog {
     padding: 1rem 2rem 1rem 2rem;
+}
+
+.login-btn {
+    text-align: center;
+}
+.login-btn button {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+
+    /* width: 125px; */
+    height: 46px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid #ab8856;
+    border-radius: 15px;
+    color: #ab8856;
+}
+
+.login-btn button:hover {
+    background-color: #ab8856;
+    color: #f8f8f8;
 }
 
 @media all and (max-width: 1315px) {

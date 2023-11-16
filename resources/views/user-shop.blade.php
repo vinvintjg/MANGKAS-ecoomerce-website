@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="shop-button">
-            <button class=""><a href="{{route('getShopById', ['id'=>$shop->id])}}">BOOKING</a></button>
+            <a href="{{route('getShopById', ['id'=>$shop->id])}}"><button class="">BOOKING</button></a>
             </div>
         </div>
     </div>
