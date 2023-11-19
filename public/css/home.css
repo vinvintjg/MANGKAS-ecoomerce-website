@@ -28,15 +28,6 @@ header {
     align-items: center;
 }
 
-/* .hero-font h1{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 96px;
-    text-align: center;
-
-    color: #FFFFFF;
-} */
 
 .hero-font h1 {
     font-style: normal;
@@ -114,10 +105,28 @@ header button a:hover {
     padding: auto;
 }
 
-@media all and (max-width: 600px) {
+
+
+@media all and (max-width: 900px) {
     header {
-        /* text-align: center; */
         width: 100%;
-        height: 50rem;
+        height: 744px;
+        left: 0px;
+        top: 0px;
+    }
+
+    .hero-font h1{
+        font-size: 40px;
+    }
+
+    .hero-font span {
+        font-size: 16px;
+    }
+
+    header button {
+        font-size: 20px;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
+

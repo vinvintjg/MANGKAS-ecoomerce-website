@@ -99,10 +99,11 @@
 }
 .pro-more {
     position: relative;
-    right: -330px;
+    left: 20%;
 }
 
 .pro-more button {
+    
     background-color: transparent;
     border: none;
     box-sizing: border-box;
@@ -195,4 +196,78 @@ h3 {
 }
 .card-jarak {
     margin-bottom: 15rem;
+}
+
+
+@media all and (max-width: 900px) {
+
+    .pro-head {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pro-head-title {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        font-size: 40px;
+        text-align: center;
+    }
+    .pro-more {
+        position: relative;
+        left: 0%;
+    }
+
+    .swiper-wrapper {
+        width: 80%;
+        height: 30em;
+        display: flex;
+        align-items: center;
+    }
+    
+    .card {
+        width: 245px;
+        height: 275px;
+        background-color: #785f3c;
+        padding: 2rem 1em;
+        margin: 0 2em;
+    }
+    
+    .card_star img {
+        width: 21px;
+        height: 20px;
+        margin-left: 7px;
+    }
+    
+    .card_content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .swiper-slide h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+    }
+    
+    .card_title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        position: relative;
+        top: 0.2em;
+    }
+    .card_image img{
+        height: 200px;
+    }
+
+    .swiper-slide h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 36px;
+    }
+
+    
 }

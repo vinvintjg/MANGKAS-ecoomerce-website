@@ -19,6 +19,7 @@
 {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: row;
 }
 
@@ -69,4 +70,82 @@
     /* DARK BROWN */
 
     color: #12110A;
+}
+
+
+@media all and (max-width: 900px) {
+
+    #aboutscroll {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .about{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 12rem;
+        margin-bottom: 12rem;
+        width: 100%;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        grid-gap: 0px;
+    }
+
+    .abo-text{
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+    }
+    
+    .abo-title1{
+        font-size: 40px;
+    }
+    
+    .abo-title2{
+        font-size: 40px;
+    }
+    .abo-icon{
+        position: relative;
+        right: -15%;
+    }
+    .abo-mid{
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 36px;
+        width: 100%;
+    }
+    
+    .abo-bottom{
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 30px;
+        width: 100%;
+    }
+    
+    .abo-icon img{
+        width: 56px;
+    }
+
+    .abo-head{
+        padding-left: 64px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .abo-logo {
+        display: flex;
+        align-items: end;
+        justify-content: center;
+    }
+    .abo-logo img {
+        padding-top: 3rem;
+        width: 80%;
+        
+    }
+
 }

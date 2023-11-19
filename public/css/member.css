@@ -226,3 +226,184 @@ select {
     width: 80%;
     text-align: center;
 }
+
+
+@media all and (max-width: 900px) {
+
+    .member-btn button {
+        height: 46px;
+        padding-left: 1.8rem;
+        padding-right: 1.8rem;
+        font-size: medium;
+        font-weight: 600;
+    }
+
+    .member {
+        height: 795px;
+    }
+    
+    .member-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 20px;
+        text-align: center;
+        align-items: center;
+        padding-bottom: 3rem;
+    
+        color: #ab8856;
+    }
+    
+    .member-form {
+        width: 70%;
+    }
+    
+    .form-label {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+    
+        color: #ab8856;
+        padding-bottom: 8px;
+        padding-top: 16px;
+    }
+    
+    .select-wrapper {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+    
+    .select-wrapper .dropdown-icon {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        color: #ab8856;
+    }
+    
+    .form-input input {
+        width: 100%;
+        color: #f8f8f8;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 4px 16px;
+        border: none;
+        height: 40px;
+        border: 2px solid #ab8856;
+    }
+    
+    .form-input::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 31px;
+        /* identical to box height, or 196% */
+    
+        text-align: center;
+    
+        color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .form-input input:focus {
+        /* border-color: brown; */
+        color: #f8f8f8;
+        border: 2px solid #ab8856;
+        border-radius: 15px;
+    }
+    
+    .form-input input:active {
+        /* border-color: brown; */
+        color: #f8f8f8;
+        border: 2px solid #ab8856;
+    
+        border-radius: 15px;
+    }
+    
+    select .form-input input:valid {
+        /* border-color: brown; */
+        color: #f8f8f8;
+    }
+    
+
+    
+    
+    .member-btn {
+        text-align: center;
+    }
+    .member-btn button {
+        background-color: transparent;
+        border: none;
+        box-sizing: border-box;
+    
+        /* width: 125px; */
+        height: 46px;
+        padding-left: 1.8rem;
+        padding-right: 1.8rem;
+        border: 2px solid #ab8856;
+        border-radius: 15px;
+        color: #ab8856;
+        font-size: medium;
+        font-weight: 600;
+    }
+    
+
+    .button-form {
+        text-align: center;
+    }
+    .button-form button {
+        margin-top: 50px;
+        background-color: transparent;
+        border: none;
+        box-sizing: border-box;
+    
+        /* width: 125px; */
+        height: 46px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border: 2px solid #ab8856;
+        border-radius: 15px;
+        color: #ab8856;
+    }
+
+    #membership_type {
+        font-size: medium;
+    }
+
+    .form-input option {
+        width: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 4px 16px;
+        border: none;
+        height: 40px;
+        border: 2px solid #ab8856;
+    }
+    
+    #membership_type option {
+        background-color: #2a2922;
+        color: #f8f8f8;
+    }
+    
+
+    #membership_type select::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid black; /* Adjust the color and size as needed */
+    }
+    
+
+    
+
+    
+}
+

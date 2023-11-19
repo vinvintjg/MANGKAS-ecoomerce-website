@@ -113,3 +113,15 @@
     justify-content: top;
     flex-direction: column;
 }
+
+@media all and (max-width: 900px) {
+
+    .section-faq {
+        background-color: #12110a;
+        padding: 72px 20px 20px 20px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: top;
+        flex-direction: column;
+    }
+}

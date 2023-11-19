@@ -44,3 +44,31 @@
 
     color: #ffffff;
 }
+
+
+@media all and (max-width: 900px) {
+
+    .head{
+        row-gap: 64px;
+        background: linear-gradient(to left, #ab8856 50%, #917449 50%);
+          
+    }
+    .ser-card {
+        width: 50%;
+        
+    }
+
+    .ser-title {
+        font-weight: 500;
+        font-size: 16px;
+    }
+    
+    .ser-font {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 24px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+}

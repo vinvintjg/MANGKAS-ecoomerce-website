@@ -274,65 +274,164 @@
     font-weight: 600;
     line-height: normal;
 
+}
+
+.live-profile-title-bottom{
+    color: var(--brown, #AB8856);
+    font-family: Poppins;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.card-live-bottom{
+    background: #292822;
+    width: 100%;
+    height: 44px;
+}
+
+.card-live-bottom input{
+    background: #292822;
+    font-style: none;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    height: 44px;
+    width: 87%;
+    border: none;
+    outline: none;
+    padding: 17px;
+    color: #F8F8F8;
+}
+
+.live-input-place::placeholder {
+    color: rgba(255, 255, 255, 0.30);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.scroll-button {
+    position: fixed;
+    bottom: 42px;
+    right: 150px;
+    color: #fff;
+    border: none;
+    padding: 1px;
+    cursor: pointer;
+    opacity: 0.5;
+    transform: scale(1.5);
+    transition: opacity 0.3s ease;
+    background-color: transparent;
+}
+
+  /* On hover, increase the opacity to make the button more visible */
+.scroll-button:hover {
+    opacity: 1;
+}
+
+
+@media all and (max-width: 900px) {
+
+    .footer {
+        height: 246px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 
-    .live-profile-title-bottom{
-        color: var(--brown, #AB8856);
-        font-family: Poppins;
-        font-size: 8px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+    .foot-top{
+        padding: 3rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .card-live-bottom{
-        background: #292822;
+    .foot-text{
         width: 100%;
-        height: 44px;
+        padding: 1rem;
     }
 
-    .card-live-bottom input{
-        background: #292822;
-        font-style: none;
-        font-family: Poppins;
+    .foot-text-1{
+        text-align: center;
+    }
+
+    .foot-media {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .foot-media-text {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+        padding-bottom: 1rem;
+    
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .foot-bot {
+        height: 47px;
+        font-weight: 600;
         font-size: 12px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-        height: 44px;
-        width: 87%;
-        border: none;
-        outline: none;
-        padding: 17px;
-        color: #F8F8F8;
+    }
+}
+
+@media all and (max-width: 450px) {
+
+    .footer {
+        height: 246px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 
-    .live-input-place::placeholder {
-        color: rgba(255, 255, 255, 0.30);
-        font-family: Poppins;
+    .foot-top{
+        padding: 3rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foot-text{
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .foot-text-1{
+        text-align: center;
+    }
+
+    .foot-media {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .foot-media-text {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+        padding-bottom: 1rem;
+    
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .foot-bot {
+        height: 47px;
+        font-weight: 600;
         font-size: 12px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
     }
-
-    .scroll-button {
-        position: fixed;
-        bottom: 42px;
-        right: 150px;
-        color: #fff;
-        border: none;
-        padding: 1px;
-        cursor: pointer;
-        opacity: 0.5;
-        transform: scale(1.5);
-        transition: opacity 0.3s ease;
-        background-color: transparent;
-      }
-      
-      /* On hover, increase the opacity to make the button more visible */
-      .scroll-button:hover {
-        opacity: 1;
-      }
-
-      
+}

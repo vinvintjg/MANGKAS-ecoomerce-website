@@ -283,35 +283,80 @@
     opacity: 1;
 }
 
-.collection-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-}
 
-.collection {
-    position: relative;
-}
+@media all and (max-width: 900px) {
 
-.collection img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
-.collection p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-    font-size: 50px;
-    text-transform: capitalize;
-}
 
-.collection:nth-child(3) {
-    grid-column: span 2;
-    margin-bottom: 10px;
+    .shop {
+        width: 100%;
+        background-color: #f8f8f8;
+        height: 795px;
+    }
+
+    .shop-card {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        width: 345px;
+        height: fit-content;
+    }
+
+
+
+    .shop-img {
+        width: 280px;
+    }
+
+    .shop-img img {
+        width: 100%;
+    }
+
+    .shop-text {
+        width: 240px;
+        margin: 20px;
+    }
+    
+    .shop-top-text {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 0.8rem;
+    }
+    
+    .shop-mid-text {
+        display: flex;
+        margin-bottom: 0.8rem;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    
+    .shop-bot-text {
+        margin-bottom: 0.8rem;
+    }
+    .shop-rate {
+        font-size: 12px;
+    }
+    .shop-location {
+        font-weight: 400;
+        font-size: 16px;
+    }
+    .shop-service {
+        font-size: 12px;
+    }
+
+    .shop-button{
+        margin-bottom: 0rem;
+    }
+    
+    .shop-button button {
+        height: 40px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .shop-button button a {
+        font-size: 16px;
+    }
+    
 }
