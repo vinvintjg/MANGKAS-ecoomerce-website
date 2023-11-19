@@ -275,7 +275,7 @@ li .navlog {
         align-items: center;
         padding-right: 1.5rem;
         size: 100px;
-        color: white;
+        color: #ab8856;
         font-size: 1.5rem;
         cursor: pointer;
         text-decoration: none;
@@ -306,7 +306,29 @@ li .navlog {
         position: fixe;
     }
 
-    
+}
+
+
+@media all and (max-width: 450px) {
+
+
+    .nav-logo img {
+        height: 32px;
+        width: auto;
+    }
+
+    .hamburger {
+        size: 64px;
+        color: #ab8856;
+    }
+
+    nav a li {
+        font-size: medium;
+    }
+
+    nav form button{
+        font-size: medium;
+    }
 
 
 }

@@ -100,7 +100,7 @@
                         scissors, combs, gel, or hair dye, to create their taste and lifestyle.</p>
                 </div>
             </div>
-            <div class="ser-card ser-card2">
+            <div class="ser-card ser-card2 ser-card3">
                 <div class="ser-logo">
                     <img src="assets/ser-beard.png" alt="">
                 </div>
@@ -112,7 +112,7 @@
                         called a bread trimmer, resulting in a clean andcappearance.</p>
                 </div>
             </div>
-            <div class="ser-card">
+            <div class="ser-card ser-card4">
                 <div class="ser-logo">
                     <img src="assets/ser-spa.png" alt="">
                 </div>
@@ -124,7 +124,7 @@
                         products, such as shampoo, conditioner, hair oil.</p>
                 </div>
             </div>
-            <div class="ser-card ser-card2">
+            <div class="ser-card ser-card2 ser-card5">
                 <div class="ser-logo">
                     <img src="assets/ser-color.png" alt="">
                 </div>

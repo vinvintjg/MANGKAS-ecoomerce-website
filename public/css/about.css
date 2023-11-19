@@ -87,8 +87,32 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-top: 12rem;
-        margin-bottom: 12rem;
+        margin-top: 0rem;
+        margin-bottom: 3rem;
+        width: 100%;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        grid-gap: 0px;
+    }
+
+    .abo-text{
+        width: 100%;
+        text-align: center;
+        padding: 0.2rem;
+    }
+    
+}
+
+
+@media all and (max-width: 450px) {
+
+    .about{
+        transform: translateY(-100px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 4rem;
         width: 100%;
         padding-left: 3rem;
         padding-right: 3rem;
