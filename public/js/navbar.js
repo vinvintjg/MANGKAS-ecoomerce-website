@@ -6,7 +6,11 @@ function resetMenu() {
         document.getElementById("nav-mobile").style.display = "none";
     }
 }
+resetMenu();
+
+// Tambahkan event listener untuk menangkap perubahan ukuran layar
 window.addEventListener("resize", resetMenu);
+
 
 // untuk memunculkan navbar pada ukuran mobile
 function mobileMenu() {
