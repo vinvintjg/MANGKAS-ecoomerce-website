@@ -42,7 +42,7 @@
     align-items: center;
     flex-direction: column;
 
-    margin: 0 2em;
+    /* margin: 0 2em; */
 }
 
 /* .swiper-slide:not(.swiper-slide-active){
@@ -66,6 +66,7 @@
     font-size: 24px;
     line-height: 36px;
     /* identical to box height */
+
 
     text-align: center;
 
@@ -159,6 +160,7 @@
     padding: 172px 120px;
     background-color: #12110a;
     /* height: 100%; */
+    
 }
 
 h2 {
@@ -197,9 +199,63 @@ h3 {
 .card-jarak {
     margin-bottom: 15rem;
 }
+.card-page-jarak{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 13rem;
+}
 
 
 @media all and (max-width: 900px) {
+
+    .swiper-slide{
+        width: fit-content;
+    }
+    .big-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 96px;
+        /* identical to box height */
+        padding-bottom: 1rem;
+        text-align: center;
+        color: #ab8856;
+    }
+
+    .swiper-wrapper {
+        width: 10%;
+        height: 30em;
+        display: flex;
+        align-items: center;
+    }
+
+    .card {
+        margin: 0;
+        padding: 0;
+        height: fit-content;
+        background-color: transparent;
+        min-width: fit-content;
+        flex-wrap: wrap;
+        
+    }
+    .card-jarak {
+        margin-bottom: 0rem;
+    }
+
+    .card-page-jarak{
+        margin-bottom: 3rem;
+    }
+    
+
+    .mangkas-product {
+        padding: 172px 50px;
+        background-color: #12110a;
+        /* height: 100%; */
+        
+    }
+    br{
+        display: none;
+    }
 
     .pro-head {
         display: flex;
@@ -226,12 +282,14 @@ h3 {
         align-items: center;
     }
     
-    .card {
+    .card_image {
         width: 245px;
         height: 275px;
         background-color: #785f3c;
         padding: 2rem 1em;
-        margin: 0 2em;
+        display: flex;
+        justify-content: center;
+        border-radius: 15px;
     }
     
     .card_star img {
@@ -269,5 +327,152 @@ h3 {
         line-height: 36px;
     }
 
+    .card h2{
+        padding-top: 10px;
+        font-size: large;
+    }
+
+    .card h3{
+        font-size: x-large;
+    }
+
     
 }
+
+
+@media all and (max-width: 450px) {
+
+    .swiper-slide{
+        width: fit-content;
+    }
+    .big-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 96px;
+        /* identical to box height */
+        padding-bottom: 1rem;
+        text-align: center;
+        color: #ab8856;
+    }    
+
+    .swiper-wrapper {
+        width: 10%;
+        height: 30em;
+        display: flex;
+        align-items: center;
+    }
+
+    .card {
+        margin: 0;
+        padding: 0;
+        height: fit-content;
+        background-color: transparent;
+        min-width: fit-content;
+        flex-wrap: wrap;
+        
+    }
+    .card-jarak {
+        margin-bottom: 3rem;
+    }
+
+    .mangkas-product {
+        padding: 100px 50px;
+        background-color: #12110a;
+        /* height: 100%; */
+        
+    }
+    br{
+        display: none;
+    }
+
+    .pro-head {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pro-head-title {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        font-size: 40px;
+        text-align: center;
+    }
+    .pro-more {
+        position: relative;
+        left: 0%;
+    }
+
+    .swiper-wrapper {
+        width: 100%;
+        height: 30em;
+        display: flex;
+        align-items: center;
+    }
+    
+    .card_image {
+        width: 145px;
+        height: 175px;
+        background-color: #785f3c;
+        padding: 2rem 1em;
+        display: flex;
+        justify-content: center;
+        border-radius: 15px;
+    }
+    
+    .card_star img {
+        width: 11px;
+        height: 10px;
+        margin-left: 7px;
+    }
+    
+    .card_content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .swiper-slide h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        padding: 0;
+        margin: 0;
+        line-height: 36px;
+    }
+    
+    .card_title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        position: relative;
+        top: 0.2em;
+    }
+    .card_image img{
+        height: 120px;
+    }
+
+    .swiper-slide h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 36px;
+    }
+
+    .card h2{
+        padding: 0;
+        margin: 0;
+        padding-top: 1rem;
+        font-size: small;
+        line-height: normal;
+    }
+
+    .card h3{
+        font-size: larger;
+        line-height: normal;
+        padding: 0;
+        margin: 0;
+    }
+
+    
+}
+

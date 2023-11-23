@@ -69,8 +69,7 @@
         <div class="hero">
             <div class="hero-font">
                 <span class="">WELCOME TO MANGKAS</span>
-                <h1>Look Sharp Feel Sharper <br>
-                    With Our Cuts</h1>
+                <h1>Look Sharp Feel Sharper With Our Cuts</h1>
                 @if (Auth::check())
                 <div class="member-btn">
                     <button type="submit" onclick="window.location.href = '#member-mangkas';">MEMBERSHIP NOW</button>
@@ -300,7 +299,8 @@
                         </div>
                     </div>
                     <div class="shop-button">
-                        <button class=""><a href="{{ route('getCreateShop') }}">BOOKING</a></button>
+                        <button onclick="window.location.href = '{{ route('getCreateShop') }}';">BOOKING</button>
+                        {{-- <button class=""><a href="{{ route('getCreateShop') }}">BOOKING</a></button> --}}
                     </div>
                 </div>
             </div>

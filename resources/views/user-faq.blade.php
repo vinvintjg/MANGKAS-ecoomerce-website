@@ -17,42 +17,24 @@
         <div class="section-faq">
             <div class="big-title">FAQ</div>
             @foreach ($faqs as $faq)
-            <div class="drop">
-                <div class="drop-item">
-                    <button id="drop-button-1" aria-expanded="false">
-                        <span class="drop-title">{{ $faq->faq_question }}</span>
-                        <span class="icon" aria-hidden="true"></span>
-                    </button>
-                    <div class="drop-content">
-                        <p>
-                            {{ $faq->faq_answer }}
-                        </p>
+                <div class="drop">
+                    <div class="drop-item">
+                        <button id="drop-button-1" aria-expanded="false">
+                            <span class="drop-title">{{ $faq->faq_question }}</span>
+                            <span class="icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="drop-content">
+                            <p>
+                                {{ $faq->faq_answer }}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </body>
 
-    
+
 
     </html>
-
-    <script>
-        const items = document.querySelectorAll('.drop button');
-
-        function toggledrop() {
-            const itemToggle = this.getAttribute('aria-expanded');
-
-            for (i = 0; i < items.length; i++) {
-                items[i].setAttribute('aria-expanded', 'false');
-            }
-
-            if (itemToggle == 'false') {
-                this.setAttribute('aria-expanded', 'true');
-            }
-        }
-
-        items.forEach((item) => item.addEventListener('click', toggledrop));
-    </script>
 @endsection

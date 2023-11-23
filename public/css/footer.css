@@ -339,7 +339,7 @@
 @media all and (max-width: 900px) {
 
     .footer {
-        height: 246px;
+        height: fit-content;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -390,7 +390,7 @@
 @media all and (max-width: 450px) {
 
     .footer {
-        height: 246px;
+        height: fit-content;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -439,6 +439,8 @@
         height: 47px;
         font-weight: 600;
         font-size: 12px;
+        padding: 0.5rem;
+        text-align: center;
     }
 
     .foot-text-text {

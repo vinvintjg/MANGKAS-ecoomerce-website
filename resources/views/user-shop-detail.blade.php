@@ -47,14 +47,12 @@
             <div class="button-form login-btn">
                 <button type="submit" onclick="window.location.href = '{{route('getBookingById', ['id'=>$shops->id])}}';">BOOK NOW</button>
             </div>
-
-
         </div>
 
     </div>
 
     <div class="section-shode-ser-fav">
-        <div class="shode-ser">
+        <div class="shode-ser-0">
             <div class="shode-title-ser-fav">
                 Barbershop Services
             </div>

@@ -84,7 +84,7 @@
 }
 .drop button[aria-expanded="true"] + .drop-content {
     opacity: 1;
-    max-height: 9em;
+    max-height: fit-content;
     transition: all 200ms linear;
     will-change: opacity, max-height;
 }
@@ -118,10 +118,44 @@
 
     .section-faq {
         background-color: #12110a;
-        padding: 72px 20px 20px 20px;
-        margin-bottom: 20px;
+        padding: 72px 40px 50px 40px;
         display: flex;
         justify-content: top;
         flex-direction: column;
+    }
+
+    .drop button .drop-title {
+        padding: 1em 1.5em 1em 0;
+        font-size: 16px;
+    }
+
+    .drop .drop-content p {
+        font-size: 12px;
+        line-height: 24px;
+        margin-bottom: 10px;
+        padding: 2rem;
+    }
+}
+
+@media all and (max-width: 450px) {
+
+    .section-faq {
+        background-color: #12110a;
+        padding: 72px 40px 50px 40px;
+        display: flex;
+        justify-content: top;
+        flex-direction: column;
+    }
+
+    .drop button .drop-title {
+        padding: 1em 1.5em 1em 0;
+        font-size: 12px;
+    }
+
+    .drop .drop-content p {
+        font-size: 10px;
+        line-height: 24px;
+        margin-bottom: 10px;
+        padding: 1.5rem;
     }
 }

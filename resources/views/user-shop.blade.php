@@ -12,11 +12,11 @@
     <div class="mangkas-card">
 
     @foreach ($shops as $shop)
-    <div class="shop-card-1 card card-jarak-1">
+    <div class="shop-card-1 card">
         <div class="shop-img">
             <img src="{{asset('storage/image/'.$shop->shop_photo_1)}}" alt="card image">
         </div>
-        <div class="shop-text">
+        <div class="shop-text-2">
             <div class="shop-top-text">
                 {{ $shop->shop_name }}
             </div>
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="shop-button">
-            <a href="{{route('getShopById', ['id'=>$shop->id])}}"><button class="">BOOKING</button></a>
+                <button onclick="window.location.href = '{{route('getShopById', ['id'=>$shop->id])}}';">BOOKING</button>
             </div>
         </div>
     </div>

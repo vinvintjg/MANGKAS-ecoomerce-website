@@ -366,4 +366,149 @@ input[type="radio"]:checked + label {
     .big-title {
         font-size: 32px;
     }
+
+    .section-formulir {
+        background-color: #12110a;
+        padding: 100px 80px 0px 80px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: left;
+    }
+    .form-column{
+        width: 100%;
+    }
+
+    .form-label {
+        font-size: 16px;
+    }
+
+    .form-input::placeholder {
+        font-size: 14px;
+    }
+
+    .form-input {
+        font-size: 14px;
+    }
+
+    .agenda_row h4{
+        font-size: 12px;
+    
+    }
+    
+    .agenda_row p{
+        font-size: 12px;
+    }
+
+    .form-file {
+        width: 100%;
+        padding: 2rem;
+        background-color: #AB8856;
+    }
+
+    .form-file input{
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .button-width button {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+
+}
+
+@media all and (max-width: 450px) {
+
+    .big-title {
+        font-size: 32px;
+    }
+
+    .section-formulir {
+        background-color: #12110a;
+        padding: 3rem 3rem 0px 3rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: left;
+    }
+    .form-column{
+        width: 100%;
+    }
+
+    .form-label {
+        font-size: 16px;
+    }
+
+    .form-section-label{
+        margin-top: 30px;
+    }
+
+    .form-input::placeholder {
+        font-size: 14px;
+    }
+
+    .form-input {
+        font-size: 14px;
+    }
+
+    .agenda_row h4{
+        font-size: 12px;
+    
+    }
+    
+    .agenda_row p{
+        font-size: 12px;
+    }
+
+    .form-file {
+        width: 100%;
+        padding: 2rem;
+        background-color: #AB8856;
+    }
+
+    .form-file input{
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .button-width button {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .custom-file-input::before {
+        padding: 8px 8px;
+        font-size: 16px;
+    }
+
+    .form-total-pay {
+        font-size: 12px;
+    }
+
+    .agenda_row {
+        width: 6rem;
+        height: 4rem;
+    }
+
+    .agenda_row h4{
+        margin: 0;
+    
+    }
+
 }

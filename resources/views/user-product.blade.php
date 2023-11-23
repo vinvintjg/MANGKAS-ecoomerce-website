@@ -10,23 +10,8 @@
 
     <div class="mangkas-card">
 
-    {{-- <div class="card">
-        <div class="card_image">
-            <img src="assets/product-1.png" alt="card image">
-        </div>
-        <br><br><br>
-        <h2>Perfume</h2>
-        <h3>IDR 85.000</h3>
-        <div class="card_star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate.png" alt="star">
-            <img src="assets/star-rate-0.png" alt="star">
-        </div>
-    </div> --}}
     @foreach ($products as $product)
-    <div class="card card-jarak">
+    <div class="card card-jarak card-page-jarak">
         <div class="card_image">
             <img src="{{asset('storage/image/'.$product->product_logo)}}" alt="card image">
         </div>
