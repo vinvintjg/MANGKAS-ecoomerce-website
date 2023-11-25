@@ -2,7 +2,7 @@
 @section('content')
 
 <head>
-    <link rel="stylesheet" href={{asset('css/shop-detail.css')}}>
+    <link rel="stylesheet" href={{asset('css/shop-detail.css')}}?t={{ env('VERSION_TIME') }}>
 </head>
     <div class="section-shode-top">
         <div class="shode-display">

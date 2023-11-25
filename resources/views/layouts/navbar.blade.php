@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,300;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href={{asset('css/navbar.css')}}>
-    <link rel="stylesheet" href={{asset('css/member.css')}}>
-    <link rel="stylesheet" href={{asset('css/footer.css')}}>
+    <link rel="stylesheet" href={{asset('css/navbar.css')}}?t={{ env('VERSION_TIME') }}>
+    <link rel="stylesheet" href={{asset('css/member.css')}}?t={{ env('VERSION_TIME') }}>
+    <link rel="stylesheet" href={{asset('css/footer.css')}}?t={{ env('VERSION_TIME') }}>
 </head>
 <body>
     <x-live-chat />
@@ -110,5 +110,5 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-<script src="{{url('js/navbar.js')}}"></script>
+<script src="{{url('js/navbar.js')}}?t={{ env('VERSION_TIME') }}"></script>
 </html>

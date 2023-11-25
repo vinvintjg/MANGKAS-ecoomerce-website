@@ -2,7 +2,7 @@
 @section('content')
 
 <head>
-    <link rel="stylesheet" href={{asset('css/product.css')}}>
+    <link rel="stylesheet" href={{asset('css/product.css')}}?t={{ env('VERSION_TIME') }}>
 </head>
 
 <div class="mangkas-product">

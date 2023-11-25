@@ -7,7 +7,7 @@
     <title>My Invoice</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,300;1,600&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href={{asset('css/invoice.css')}}>
+    <link rel="stylesheet" href={{asset('css/invoice.css')}}?t={{ env('VERSION_TIME') }}>
 </head>
 <body>
     @foreach ($bookings as $booking)

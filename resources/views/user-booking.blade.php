@@ -2,8 +2,7 @@
 @section('content')
 
     <head>
-        {{-- <link rel="stylesheet" href={{asset('css/shop-detail.css')}}> --}}
-        <link rel="stylesheet" href={{ asset('css/form.css') }}>
+        <link rel="stylesheet" href={{ asset('css/form.css') }}?t={{ env('VERSION_TIME') }}>
     </head>
 
     <div class="section-formulir">

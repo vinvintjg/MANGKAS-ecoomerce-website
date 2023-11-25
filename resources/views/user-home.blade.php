@@ -18,14 +18,14 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href={{ asset('css/navbar.css') }}>
-    <link rel="stylesheet" href={{ asset('css/home.css') }}>
-    <link rel="stylesheet" href={{ asset('css/service.css') }}>
-    <link rel="stylesheet" href={{ asset('css/about.css') }}>
-    <link rel="stylesheet" href={{ asset('css/product.css') }}>
-    <link rel="stylesheet" href={{ asset('css/shop.css') }}>
-    <link rel="stylesheet" href={{ asset('css/member.css') }}>
-    <link rel="stylesheet" href={{ asset('css/footer.css') }}>
+    <link rel="stylesheet" href={{ asset('css/navbar.css') }}?t={{ env('VERSION_TIME') }}>
+    <link rel="stylesheet" href={{ asset('css/home.css') }}?t={{ env('VERSION_TIME') }}>
+    <link rel="stylesheet" href={{ asset('css/service.css') }}?t={{ env('VERSION_TIME') }}>
+    <link rel="stylesheet" href={{ asset('css/about.css') }}?t={{ env('VERSION_TIME') }}>
+    <link rel="stylesheet" href={{ asset('css/product.css') }}?t={{ env('VERSION_TIME') }}>
+    <link rel="stylesheet" href={{ asset('css/shop.css') }}?t={{ env('VERSION_TIME') }}>
+    <link rel="stylesheet" href={{ asset('css/member.css') }}?t={{ env('VERSION_TIME') }}>
+    <link rel="stylesheet" href={{ asset('css/footer.css') }}?t={{ env('VERSION_TIME') }}>
     <title>HOME PAGE</title>
 </head>
 
@@ -575,7 +575,7 @@
     <script script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
     </script>
-    <script src="{{ url('js/navbar.js') }}"></script>
+    <script src="{{ url('js/navbar.js') }}?t={{ env('VERSION_TIME') }}"></script>
     
 </body>
 
