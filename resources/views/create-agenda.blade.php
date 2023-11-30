@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.navbar-admin')
+@section('content')
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create Page</title>
 </head>
-<body>
+
     <form action="{{ route('createAgenda') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="">hairstylist</label>
@@ -60,5 +60,4 @@
         </tbody>
     </table>
 
-</body>
-</html>
+    @endsection
