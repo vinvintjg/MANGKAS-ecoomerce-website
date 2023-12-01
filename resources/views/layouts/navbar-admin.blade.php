@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,300;1,600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href={{asset('css/navbar-admin.css')}}?t={{ env('VERSION_TIME') }}>
+    <link rel="stylesheet" href={{asset('css/form-admin.css')}}?t={{ env('VERSION_TIME') }}>
     
 </head>
   <body>
@@ -20,7 +21,7 @@
 
       <div class="navbar_content">
         <i class="bi bi-grid"></i>
-        <i class='bx bx-sun' id="darkLight"></i>
+        <i class='bx bx-moon' id="darkLight"></i>
         <i class='bx bx-bell' ></i>
       </div>
     </nav>
@@ -32,7 +33,7 @@
           <div class="menu_title menu_dahsboard"></div>
 
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="/create-product" class="nav_link">
               <span class="navlink_icon">
                 {{-- <i class="bx bx-cube"></i> --}}
                 <i class='bx bx-gift'></i>
@@ -41,7 +42,7 @@
             </a>
           </li>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="/create-faq" class="nav_link">
               <span class="navlink_icon">
                 <i class='bx bx-help-circle'></i>
               </span>
@@ -49,7 +50,7 @@
             </a>
           </li>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="/create-chat" class="nav_link">
               <span class="navlink_icon">
                 <i class='bx bx-conversation'></i>
                 {{-- <i class='bx bx-support'></i> --}}
@@ -58,7 +59,7 @@
             </a>
           </li>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="/create-membership" class="nav_link">
               <span class="navlink_icon">
                 {{-- <i class='bx bx-group'></i> --}}
                 <i class='bx bx-id-card'></i>
@@ -87,7 +88,7 @@
         <ul class="menu_items">
           <div class="menu_title menu_editor"></div>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="/create-shop" class="nav_link">
               <span class="navlink_icon">
                 <i class='bx bx-store-alt'></i>
               </span>
@@ -95,7 +96,7 @@
             </a>
           </li>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="/create-service" class="nav_link">
               <span class="navlink_icon">
                 <i class='bx bx-shower'></i>
               </span>
@@ -103,7 +104,7 @@
             </a>
           </li>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="/create-facility" class="nav_link">
               <span class="navlink_icon">
                 <i class='bx bx-rss'></i>
               </span>
@@ -111,7 +112,7 @@
             </a>
           </li>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="/create-hairstylist" class="nav_link">
               <span class="navlink_icon">
                 <i class='bx bx-user'></i>
               </span>
@@ -119,7 +120,7 @@
             </a>
           </li>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="/create-haircut" class="nav_link">
               <span class="navlink_icon">
                 <i class='bx bx-cut'></i>
               </span>
@@ -127,7 +128,7 @@
             </a>
           </li>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="/create-agenda" class="nav_link">
               <span class="navlink_icon">
                 <i class='bx bx-calendar'></i>
               </span>
@@ -135,7 +136,7 @@
             </a>
           </li>
           <li class="item">
-            <a href="#" class="nav_link">
+            <a href="/create-booking" class="nav_link">
               <span class="navlink_icon">
                 <i class='bx bx-data'></i>
               </span>
@@ -159,7 +160,9 @@
       </div>
     </nav>
 
+    <div class="admin-area">
     @yield('content')
+    </div>
 
     <script src="{{url('js/navbar-admin.js')}}?t={{ env('VERSION_TIME') }}"></script>
   </body>

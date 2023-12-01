@@ -9,9 +9,13 @@ sidebarOpen.addEventListener("click", () => sidebar.classList.toggle("close"));
 
 sidebarClose.addEventListener("click", () => {
   sidebar.classList.add("close", "hoverable");
+  const adminArea = document.querySelector('.admin-area');
+  adminArea.style.margin = '65px 80px';
 });
 sidebarExpand.addEventListener("click", () => {
   sidebar.classList.remove("close", "hoverable");
+  const adminArea = document.querySelector('.admin-area');
+  adminArea.style.margin= '65px 260px';
 });
 
 sidebar.addEventListener("mouseenter", () => {

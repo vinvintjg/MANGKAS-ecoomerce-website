@@ -4,60 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href={{asset('css/form-admin.css')}}?t={{ env('VERSION_TIME') }}>
     <title>Create Page</title>
 </head>
 
+<div class="section-formulir-admin">
+    
+    <div class="big-title"><i class='bx bx-calendar'></i>&nbsp;Agenda</div>
     <form action="{{ route('createAgenda') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <label for="">hairstylist</label>
-        <select name="hairstylist_id" id="hairstylist_id">
-            @foreach ($hairstylists as $hairstylist)
-            <option value="<?= $hairstylist['id'] ?>" name="hairstylist_id"><?= $hairstylist['hairstylist_name'] ?></option>
-            @endforeach
-        </select>
+            <div class="form-column">
+                <label for="hairstylist_id" class="form-label">Hairstylist</label>
+                <div class="select-wrapper">
+                    <select name="hairstylist_id" id="hairstylist_id" class="form-input">
+                        @foreach ($hairstylists as $hairstylist)
+                        <option value="<?= $hairstylist['id'] ?>" name="hairstylist_id"><?= $hairstylist['hairstylist_name'] ?></option>
+                        @endforeach
+                    </select>
+                </div>
+                @error('hairstylist_id')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-input" name="date" value="{{ old('date') }}" placeholder="Enter Your Date">
+                @error('date')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+                <label for="hour" class="form-label">Hour</label>
+                <input type="time" class="form-input" name="hour" value="{{ old('date') }}" placeholder="Enter Your Hour">
+                @error('date')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+                <label for="status" class="form-label">Status</label>
+                <div class="select-wrapper">
+                    <select name="status" id="status" class="form-input">
+                        <option value="Availabe" name="status">Availabe</option>
+                        <option value="Unavailabe" name="status">Unavailabe</option>
+                    </select>
+                </div>
+                @error('status')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
 
-        <label for="">date</label>
-        <input type="date" name="date">
-        <label for="">hour</label>
-        <input type="time" name="hour">
-        <label for="">status</label>
-        <input type="text" name="status">
+        <div class="button-form button-width">
+            <button type="submit">SUBMIT</button>
+        </div>
 
-        <button type="submit">Insert</button>
     </form>
+    
 
-    <table class="table">
+
+    <table class="table-container unfixed-table rounded-corners">
         <thead>
         <tr>
-            <th scope="col">agenda id</th>
-            <th scope="col">hairstylist_id</th>
-            <th scope="col">hairstylist_name</th>
-            <th scope="col">agenda date</th>
-            <th scope="col">agenda hour</th>
-            <th scope="col">agenda status</th>
-            <th scope="col">delete</th>
+            <th scope="col">Agenda_id</th>
+            <th scope="col">Hairstylist_id</th>
+            <th scope="col">Hairstylist_name</th>
+            <th scope="col">Agenda date</th>
+            <th scope="col">Agenda hour</th>
+            <th scope="col">Agenda status</th>
+            <th scope="col">Delete</th>
         </tr>
         </thead>
         <tbody>
             @foreach ($agendas as $agenda)
                 <tr>
-
-                <th scope="row">{{ $agenda->id }}</th>
+                <td scope="row">{{ $agenda->id }}</td>
                 <td>{{ $agenda->hairstylist_id }}</td>
                 <td>{{ $agenda->hairstylist->hairstylist_name }}</td>
-                <td>Rp. {{ $agenda->date }}</td>
+                <td>{{ $agenda->date }}</td>
                 <td>{{ $agenda->hour }}</td>
                 <td>{{ $agenda->status }}</td>
                 <td>
                     <form action="{{route('deleteAgenda', ['id' => $agenda->id])}}" method="post">
                     @csrf
                     @method('delete')
-                    <button type="submit" class="btn btn-danger col-md">Delete</button>
+                    <button type="submit" class="btn-delete"><i class='bx bxs-trash bx-flip-horizontal' style='color:#ff0000;font-size: 20px;'  ></i></button>
                     </form>
                 </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+
+
+
+
+    
 
     @endsection

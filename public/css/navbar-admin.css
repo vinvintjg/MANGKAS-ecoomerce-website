@@ -8,23 +8,26 @@
 }
 
 :root {
-  --white-color: #fff;
-  --blue-color: #ab8856;
-  --grey-color: #785f3c;
-  --grey-color-light: #aaa;
-}
-body {
-  background-color: #f8f8f8;
-  transition: all 0.5s ease;
-}
-body.dark {
-  background-color: #333;
-}
-body.dark {
   --white-color: #12110a;
   --blue-color: #ab8856;
   --grey-color: #ab8856;
   --grey-color-light: #aaa;
+}
+
+body {
+  background-color: #333;
+  transition: all 0.5s ease;
+}
+
+body.dark {
+  background-color: #f8f8f8;
+}
+
+body.dark {
+--white-color: #fff;
+--blue-color: #ab8856;
+--grey-color: #785f3c;
+--grey-color-light: #aaa;
 }
 
 /* navbar */
@@ -117,9 +120,11 @@ body.dark {
   white-space: nowrap;
 }
 .menu_dahsboard::before {
+  font-weight: 800;
   content: "Dashboard";
 }
 .menu_editor::before {
+  font-weight: 800;
   content: "Shop";
 }
 
@@ -255,4 +260,17 @@ body.dark {
   .sidebar.close .bottom_content {
     left: -100%;
   }
+}
+
+
+.admin-area{
+  margin: 65px 65px 0px 260px;
+  width: auto;
+}
+
+.btn-delete{
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
 }
