@@ -5,6 +5,7 @@
     --coklat-color: #ab8856;
     --tbody-odd: #333;
     --tbody-even: #484848;
+    --icon-color:#ab8856;
 }
 
 body.dark {
@@ -14,6 +15,7 @@ body.dark {
     --coklat-color: #ab8856;
     --tbody-odd: #f8f8f8;
     --tbody-even: #eeeeee;
+    --icon-color:#f8f8f8;
 }
 
 .section-formulir-admin {
@@ -136,7 +138,6 @@ option {
     /* color: #F8F8F8; */
     color: #12110a;
 }
-
 .serv-1-line {
     display: flex;
     justify-content: center;
@@ -374,6 +375,11 @@ input[type="radio"]:checked + label {
     position: relative;
     display: inline-block;
     width: 100%;
+    cursor: pointer;
+}
+
+.select-wrapper select {
+    appearance: none;
 }
 
 .button-form {
@@ -403,17 +409,28 @@ input[type="radio"]:checked + label {
 table{
     margin-top: 3rem;
     margin-bottom: 3rem;
-}
-table.rounded-corners {
+    border-collapse: collapse;
     border-spacing: 0;
-    border-collapse: separate;
+    overflow: auto;
+}
+
+.table-container{
+    width: 100%;
 }
 
 td,
 th {
-    padding: 15px 20px;
+    padding: 15px 0;
     text-align: center;
     color: var(--placeholder-color-2);
+}
+
+th:first-child {
+    border-top-left-radius: 15px;
+}
+
+th:last-child {
+    border-top-right-radius: 15px;
 }
 
 th {
@@ -423,12 +440,30 @@ th {
     font-weight: 300;
     text-transform: uppercase;
 }
+
 tr {
     width: 100%;
     background-color: var(--tbody-odd);
-    font-family: "Montserrat", sans-serif;
 }
 
 tr:nth-child(even) {
     background-color: var(--tbody-even);
+}
+
+::-webkit-calendar-picker-indicator{
+    background-color: var(--icon-color);
+    border-radius: 24px;
+    margin: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+
+.select-wrapper .dropdown-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #ab8856;
 }

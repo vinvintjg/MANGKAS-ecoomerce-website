@@ -21,6 +21,7 @@
                         <option value="<?= $hairstylist['id'] ?>" name="hairstylist_id"><?= $hairstylist['hairstylist_name'] ?></option>
                         @endforeach
                     </select>
+                    <span class="dropdown-icon" for="booking_gender">&#9660;</span>
                 </div>
                 @error('hairstylist_id')
                     <div class="text-danger">
@@ -47,6 +48,7 @@
                         <option value="Availabe" name="status">Availabe</option>
                         <option value="Unavailabe" name="status">Unavailabe</option>
                     </select>
+                    <span class="dropdown-icon" for="booking_gender">&#9660;</span>
                 </div>
                 @error('status')
                     <div class="text-danger">
@@ -63,7 +65,7 @@
     
 
 
-    <table class="table-container unfixed-table rounded-corners">
+    <table class="table-container">
         <thead>
         <tr>
             <th scope="col">Agenda_id</th>
@@ -88,7 +90,7 @@
                     <form action="{{route('deleteAgenda', ['id' => $agenda->id])}}" method="post">
                     @csrf
                     @method('delete')
-                    <button type="submit" class="btn-delete"><i class='bx bxs-trash bx-flip-horizontal' style='color:#ff0000;font-size: 20px;'  ></i></button>
+                    <button type="submit" class="btn-delete"><i class='bx bxs-trash bx-tada-hover bx-flip-horizontal' style='color:#ff0000;font-size: 20px;'  ></i></button>
                     </form>
                 </td>
                 </tr>

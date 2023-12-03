@@ -29,6 +29,12 @@
             <a href="{{ route('getCreateShop') }}"><li>SHOP</li></a>
             <a href="{{ route('getFaqsMangkas') }}"><li>FAQ</li></a>
             <a href="{{ route('mangkas-contact') }}"><li>CONTACT</li></a>
+            @if (Auth::user()->role == 'staff')
+            <a href="/create-agenda"><li>STAFF</li></a>
+            @endif
+            @if (Auth::user()->role == 'admin')
+            <a href="/create-agenda"><li>ADMIN</li></a>
+            @endif
             @if (Auth::check())
             <form method="POST" action="{{ route('logout') }}">
                 @csrf

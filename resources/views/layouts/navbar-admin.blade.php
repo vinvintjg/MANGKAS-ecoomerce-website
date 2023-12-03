@@ -35,7 +35,6 @@
           <li class="item">
             <a href="/create-product" class="nav_link">
               <span class="navlink_icon">
-                {{-- <i class="bx bx-cube"></i> --}}
                 <i class='bx bx-gift'></i>
               </span>
               <span class="navlink">Product</span>
@@ -53,7 +52,6 @@
             <a href="/create-chat" class="nav_link">
               <span class="navlink_icon">
                 <i class='bx bx-conversation'></i>
-                {{-- <i class='bx bx-support'></i> --}}
               </span>
               <span class="navlink">Live Chat</span>
             </a>
@@ -61,7 +59,6 @@
           <li class="item">
             <a href="/create-membership" class="nav_link">
               <span class="navlink_icon">
-                {{-- <i class='bx bx-group'></i> --}}
                 <i class='bx bx-id-card'></i>
               </span>
               <span class="navlink">Membership</span>
@@ -145,7 +142,6 @@
           </li>
         </ul>
         
-
         <!-- Sidebar Open / Close -->
         <div class="bottom_content">
           <div class="bottom expand_sidebar">
