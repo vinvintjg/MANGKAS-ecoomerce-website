@@ -15,10 +15,28 @@ use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
+
     public function getCreateBookingPage(){
-        $bookings = Booking::all();
-        return view('user-booking', ['bookings' => $bookings]);
+        $user_id = Auth::user()->id;
+        $bookings = Booking::where('user_id', $user_id)->get();
+        // $agendas = Agenda::where('user_id', $user_id)->get();
+        // $hairstylists = Hairstylist::where('user_id', $user_id)->get();
+        // $users = User::where('user_id', $user_id)->get();
+
+        // $bookings = Booking::all();
+        $agendas = Agenda::all();
+        $hairstylists = Hairstylist::all();
+        // $users = User::all();
+        // $shops = Shop::all();
+
+        return view('create-booking',
+        ['bookings' => $bookings,
+        'agendas' => $agendas,
+        'hairstylists' => $hairstylists
+        // 'users' => $users,
+    ]);
     }
+
 
     public function createBooking(BookingRequest $request){
         $services = Service::all();

@@ -1,60 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create Page</title>
-</head>
-<body>
-    <form action="{{ route('createProduct') }}" method="POST" enctype="multipart/form-data">
-        @csrf
+@extends('layouts.navbar-admin')
+@section('content')
 
-        <label for="">product name</label>
-        <input type="text" name="product_name">
-        <label for="">product price</label>
-        <input type="numeric" name="product_price">
-        <label for="">product rate</label>
-        <input type="numeric" name="product_rate">
-        <label for="">product logo</label>
-        <input type="file" name="product_logo">
+    <head>
+        <title>Product Page</title>
+    </head>
 
-        <button type="submit">Insert</button>
-    </form>
+    <div class="section-formulir-admin">
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">product id</th>
-            <th scope="col">product name</th>
-            <th scope="col">product price</th>
-            <th scope="col">product rate</th>
-            <th scope="col">product logo</th>
-            <th scope="col">delete</th>
-        </tr>
-        </thead>
-        <tbody>
-            @foreach ($products as $product)
+        <div class="big-title"><i class='bx bx-gift'></i>&nbsp;Product</div>
+        <form action="{{ route('createProduct') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="form-column">
+                <label for="product_name" class="form-label">Product Name</label>
+                <input type="text" class="form-input" name="product_name" value="{{ old('product_name') }}"
+                    placeholder="Enter Your Product Name">
+                @error('product_name')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+                <label for="product_price" class="form-label">Product Price</label>
+                <input type="numeric" class="form-input" name="product_price" value="{{ old('product_price') }}"
+                    placeholder="Enter Your Product Price">
+                @error('product_price')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+                <label for="product_rate" class="form-label">Product Rate</label>
+                <input type="numeric" class="form-input" name="product_rate" value="{{ old('product_rate') }}"
+                    placeholder="Enter Your Product Rate">
+                @error('product_rate')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+                <label for="product_logo" class="form-label">Product Logo</label>
+                <input type="file" class="form-input-2 custom-file-input" name="product_logo"
+                    value="{{ old('product_logo') }}" placeholder="Enter Your Product Logo">
+                @error('product_logo')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+
+            <div class="button-form button-width">
+                <button type="submit">SUBMIT</button>
+            </div>
+
+        </form>
+
+
+
+        <table class="table-container">
+            <thead>
                 <tr>
-
-                <th scope="row">{{ $product->id }}</th>
-                <td>{{ $product->product_name }}</td>
-                <td>Rp. {{ $product->product_price }}</td>
-                <td>{{ $product->product_rate }}</td>
-                <td>
-                    <img src="{{asset('storage/image/'.$product->product_logo)}}" alt="Error" style="height: 90px" >
-                </td>
-                <td>
-                    <form action="{{route('deleteProduct', ['id' => $product->id])}}" method="post">
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="btn btn-danger col-md">Delete</button>
-                    </form>
-                </td>
+                    <th scope="col">Product Id</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Price</th>
+                    <th scope="col">Product Rate</th>
+                    <th scope="col">Product Logo</th>
+                    <th scope="col">Delete</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
-
-</body>
-</html>
+            </thead>
+            <tbody>
+                @foreach ($products as $product)
+                    <tr>
+                        <td scope="row">{{ $product->id }}</td>
+                        <td>{{ $product->product_name }}</td>
+                        <td>Rp {{ $product->product_price }}</td>
+                        <td>{{ $product->product_rate }}</td>
+                        <td>
+                            <img src="{{ asset('storage/image/' . $product->product_logo) }}" alt="Error"
+                                style="height: 90px">
+                        </td>
+                        <td>
+                            <form action="{{ route('deleteProduct', ['id' => $product->id]) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn-delete"><i
+                                        class='bx bxs-trash bx-tada-hover bx-flip-horizontal'
+                                        style='color:#ff0000;font-size: 20px;'></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+@endsection

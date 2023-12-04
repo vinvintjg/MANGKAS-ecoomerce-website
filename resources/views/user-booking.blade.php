@@ -16,14 +16,16 @@
                     </div>
                     <hr>
                     <label for="booking_name" class="form-label">Name</label>
-                    <input type="text" class="form-input"  name="booking_name" value="{{ old('booking_name') }}" placeholder="Enter Your Name">
+                    <input type="text" class="form-input" name="booking_name" value="{{ old('booking_name') }}"
+                        placeholder="Enter Your Name">
                     @error('booking_name')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
                     @enderror
                     <label for="booking_phone" class="form-label">Phone</label>
-                    <input type="text" class="form-input" name="booking_phone" value="{{ old('booking_phone') }}" placeholder="Enter Your Phone">
+                    <input type="text" class="form-input" name="booking_phone" value="{{ old('booking_phone') }}"
+                        placeholder="Enter Your Phone">
                     @error('booking_phone')
                         <div class="text-danger">
                             {{ $message }}
@@ -33,8 +35,10 @@
                     <div class="select-wrapper">
                         <select name="booking_gender" id="booking_gender" class="form-input">
                             <option value="-1" name="booking_gender">Choose Your Gender</option>
-                            <option value="Male" name="booking_gender" {{ old('booking_gender') == 'Male' ? 'selected' : '' }}>Male</option>
-                            <option value="Female" name="booking_gender" {{ old('booking_gender') == 'Female' ? 'selected' : '' }}>Female</option>
+                            <option value="Male" name="booking_gender"
+                                {{ old('booking_gender') == 'Male' ? 'selected' : '' }}>Male</option>
+                            <option value="Female" name="booking_gender"
+                                {{ old('booking_gender') == 'Female' ? 'selected' : '' }}>Female</option>
                         </select>
                         <span class="dropdown-icon" for="booking_gender">&#9660;</span>
                     </div>
@@ -68,15 +72,16 @@
                             <div class="serv-1-baris">
                                 <label class="container">{{ $service['service_name'] }}
                                     <input type="checkbox" value="{{ $service['id'] }}" name="booking_service[]"
-                                        class="service-checkbox" {{ in_array($service['id'], old('booking_service', [])) ? 'checked' : '' }}>
+                                        class="service-checkbox"
+                                        {{ in_array($service['id'], old('booking_service', [])) ? 'checked' : '' }}>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
                         @endforeach
                         @error('booking_service')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
                         @enderror
                     </div>
                 </div>
@@ -91,10 +96,12 @@
                 <div class="form-column">
                     <label for="booking_haircut" class="form-label">Haircut Style</label>
                     <div class="select-wrapper">
-                        <select name="booking_haircut" id="booking_haircut" class="form-input" placeholder="Enter Your Haircut Style">
+                        <select name="booking_haircut" id="booking_haircut" class="form-input"
+                            placeholder="Enter Your Haircut Style">
                             <option value="-1" name="">Choose Haircut</option>
                             @foreach ($haircuts as $haircut)
-                                <option value="{{ $haircut['id'] }}" name="booking_haircut" {{ old('booking_haircut') == $haircut['id'] ? 'selected' : '' }}>
+                                <option value="{{ $haircut['id'] }}" name="booking_haircut"
+                                    {{ old('booking_haircut') == $haircut['id'] ? 'selected' : '' }}>
                                     {{ $haircut['haircut_name'] }}
                                 </option>
                             @endforeach
@@ -105,9 +112,10 @@
                         <div class="text-danger">
                             {{ $message }}
                         </div>
-                        @enderror
+                    @enderror
                     <label for="booking_note" class="form-label">Note</label>
-                    <input type="text" class="form-input" name="booking_note" placeholder="Enter Your Note" value="{{old('booking_note')}}">
+                    <input type="text" class="form-input" name="booking_note" placeholder="Enter Your Note"
+                        value="{{ old('booking_note') }}">
                     @error('booking_note')
                         <div class="text-danger">
                             {{ $message }}
@@ -120,15 +128,18 @@
 
                     <table class="table_agenda" id="agenda_table">
                         @foreach ($agendas as $agenda)
-                        @if ($agenda->status !== 'Unavailable')
-                            <td class="agenda_row" data-date="{{ date('Y-m-d', strtotime($agenda->date)) }}">
-                                <input type="radio" name="agenda_id" id="{{ $agenda->id }}" value="{{ $agenda->id }}" {{ old('agenda_id') == $agenda->id ? 'checked' : '' }}>
-                                <label for="{{ $agenda->id }}" class="label_agenda">
-                                    <h4>{{ $agenda->hairstylist->hairstylist_name }}</h4>
-                                    <p>{{ date('H:i', strtotime($agenda->hour)) }} | {{ date('d M', strtotime($agenda->date)) }}</p>
-                                </label>
-                            </td>
-                        @endif
+                            @if ($agenda->status !== 'Unavailable')
+                                <td class="agenda_row" data-date="{{ date('Y-m-d', strtotime($agenda->date)) }}">
+                                    <input type="radio" name="agenda_id" id="{{ $agenda->id }}"
+                                        value="{{ $agenda->id }}"
+                                        {{ old('agenda_id') == $agenda->id ? 'checked' : '' }}>
+                                    <label for="{{ $agenda->id }}" class="label_agenda">
+                                        <h4>{{ $agenda->hairstylist->hairstylist_name }}</h4>
+                                        <p>{{ date('H:i', strtotime($agenda->hour)) }} |
+                                            {{ date('d M', strtotime($agenda->date)) }}</p>
+                                    </label>
+                                </td>
+                            @endif
                         @endforeach
                     </table>
                     @error('agenda_id')
@@ -156,12 +167,13 @@
                 </div>
                 <div class="form-column">
                     <label for="booking_payment_method" class="form-label">Transaction Method</label>
-                    <input type="text" class="form-input" name="booking_payment_method" placeholder="Enter Your Transaction Method" value="{{ old('booking_payment_method') }}">
+                    <input type="text" class="form-input" name="booking_payment_method"
+                        placeholder="Enter Your Transaction Method" value="{{ old('booking_payment_method') }}">
                     @error('booking_payment_method')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
-                    @enderror    
+                    @enderror
                 </div>
             </div>
             <div class="form-pay-section">
@@ -175,10 +187,10 @@
                     <input type="file" class="custom-file-input" name="booking_payment_photo">
                 </div>
                 @error('booking_payment_photo')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
-                    @enderror
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="button-form button-width">

@@ -39,18 +39,36 @@
             </div>
             <div class="hamburger" id="nav-icon">&#9776;</div>
             <div class="nav-font" id="nav-mobile">
-                <a href="/"><li>HOME</li></a>
-                <a href="/#aboutscroll"><li>ABOUT</li></a>
-                <a href="{{ route('getProductsMangkas') }}"><li>PRODUCT</li></a>
-                <a href="{{ route('getCreateShop') }}"><li>SHOP</li></a>
-                <a href="{{ route('getFaqsMangkas') }}"><li>FAQ</li></a>
-                <a href="{{ route('mangkas-contact') }}"><li>CONTACT</li></a>
-                @if (Auth::user()->role == 'staff')
-                <a href="/create-agenda"><li>STAFF</li></a>
-                @endif
-                @if (Auth::user()->role == 'admin')
-                <a href="/create-agenda"><li>ADMIN</li></a>
-                @endif
+                <a href="/">
+                    <li>HOME</li>
+                </a>
+                <a href="/#aboutscroll">
+                    <li>ABOUT</li>
+                </a>
+                <a href="{{ route('getProductsMangkas') }}">
+                    <li>PRODUCT</li>
+                </a>
+                <a href="{{ route('getCreateShop') }}">
+                    <li>SHOP</li>
+                </a>
+                <a href="{{ route('getFaqsMangkas') }}">
+                    <li>FAQ</li>
+                </a>
+                <a href="{{ route('mangkas-contact') }}">
+                    <li>CONTACT</li>
+                </a>
+                @auth
+                    @if (Auth::user()->role == 'staff')
+                        <a href="/create-agenda">
+                            <li>STAFF</li>
+                        </a>
+                    @endif
+                    @if (Auth::user()->role == 'admin')
+                        <a href="/create-agenda">
+                            <li>ADMIN</li>
+                        </a>
+                    @endif
+                @endauth
                 @if (Auth::check())
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -77,13 +95,14 @@
                 <span class="">WELCOME TO MANGKAS</span>
                 <h1>Look Sharp Feel Sharper With Our Cuts</h1>
                 @if (Auth::check())
-                <div class="member-btn">
-                    <button type="submit" onclick="window.location.href = '#member-mangkas';">MEMBERSHIP NOW</button>
-                </div>
+                    <div class="member-btn">
+                        <button type="submit" onclick="window.location.href = '#member-mangkas';">MEMBERSHIP
+                            NOW</button>
+                    </div>
                 @else
-                <div class="member-btn">
-                    <button type="submit" onclick="window.location.href = '/login';">MEMBERSHIP NOW</button>
-                </div>
+                    <div class="member-btn">
+                        <button type="submit" onclick="window.location.href = '/login';">MEMBERSHIP NOW</button>
+                    </div>
                 @endif
             </div>
         </div>
@@ -177,7 +196,8 @@
                 Product
             </div>
             <div class="pro-more login-btn">
-                <button type="submit" onclick="window.location.href = '{{ route('getProductsMangkas') }}';">See More...</button>
+                <button type="submit" onclick="window.location.href = '{{ route('getProductsMangkas') }}';">See
+                    More...</button>
             </div>
         </div>
         <div class="swiper-wrapper">
@@ -276,7 +296,8 @@
                 Shop
             </div>
             <div class="pro-more login-btn">
-                <button type="submit" onclick="window.location.href = '{{ route('getCreateShop') }}';">See More...</button>
+                <button type="submit" onclick="window.location.href = '{{ route('getCreateShop') }}';">See
+                    More...</button>
             </div>
         </div>
         <button class="pre-btn"><img src="assets/arrow-right.png" alt=""></button>
@@ -450,71 +471,74 @@
     </section>
 
     @if (Auth::check())
-    <section class="member" id="member-mangkas">
-        <div class="member-title">Membership</div>
-        <div class="member-form">
-            <form action="{{ route('createMembership') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="form-label" id="">Name</div>
-                <div class="form-input" for="membership_name">
-                    <input type="text" name="membership_name" placeholder="Fill Your Name" value="{{ old('membership_name') }}">
-                    @error('membership_name')
+        <section class="member" id="member-mangkas">
+            <div class="member-title">Membership</div>
+            <div class="member-form">
+                <form action="{{ route('createMembership') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-label" id="">Name</div>
+                    <div class="form-input" for="membership_name">
+                        <input type="text" name="membership_name" placeholder="Fill Your Name"
+                            value="{{ old('membership_name') }}">
+                        @error('membership_name')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-label" id="">Membership Type</div>
+                    <div class="select-wrapper">
+                        <select name="membership_type" class="form-input" id="membership_type">
+                            <option value="-1" name="membership_type" class="form-input" for="membership_type"
+                                @if (old('membership_type') == -1) selected @endif>
+                                Choose...</option>
+                            <option value="silver" name="membership_type" class="form-input" for="membership_type"
+                                @if (old('membership_type') == 'silver') selected @endif>
+                                silver</option>
+                            <option value="bronze" name="membership_type" class="form-input" for="membership_type"
+                                @if (old('membership_type') == 'bronze') selected @endif>
+                                bronze</option>
+                            <option value="gold" name="membership_type" for="membership_type"
+                                @if (old('membership_type') == 'gold') selected @endif>
+                                gold</option>
+                            <option value="platinum" name="membership_type" for="membership_type"
+                                @if (old('membership_type') == 'platinum') selected @endif>
+                                platinum</option>
+                        </select>
+                        <span class="dropdown-icon">&#9660;</span>
+
+                    </div>
+                    @error('membership_type')
                         <div class="text-danger">
                             {{ $message }}
                         </div>
                     @enderror
-                </div>
-                <div class="form-label" id="">Membership Type</div>
-                <div class="select-wrapper">
-                    <select name="membership_type" class="form-input" id="membership_type">
-                        <option value="-1" name="membership_type" class="form-input" for="membership_type"
-                            @if(old('membership_type') == -1) selected @endif>
-                            Choose...</option>
-                        <option value="silver" name="membership_type" class="form-input" for="membership_type"
-                            @if(old('membership_type') == 'silver') selected @endif>
-                            silver</option>
-                        <option value="bronze" name="membership_type" class="form-input" for="membership_type"
-                            @if(old('membership_type') == 'bronze') selected @endif>
-                            bronze</option>
-                        <option value="gold" name="membership_type" for="membership_type"
-                            @if(old('membership_type') == 'gold') selected @endif>
-                            gold</option>
-                        <option value="platinum" name="membership_type" for="membership_type"
-                            @if(old('membership_type') == 'platinum') selected @endif>
-                            platinum</option>
-                    </select>
-                    <span class="dropdown-icon">&#9660;</span>
-                    
-                </div>
-                @error('membership_type')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                <div class="form-label" id="membership_phone">Phone</div>
-                <div class="form-input" for="membership_phone">
-                    <input type="text" name="membership_phone" placeholder="Fill Your Phone" value="{{ old('membership_phone') }}">
-                    @error('membership_phone')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-                <div class="form-label" id="membership_email">Email</div>
-                <div class="form-input" for="membership_email">
-                    <input type="text" name="membership_email" placeholder="Fill Your Email" value="{{ old('membership_email') }}">
-                    @error('membership_email')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-                <div class="button-form">
-                    <button type="submit">Join Now</button>
-                </div>
-            </form>
-        </div>
-    </section>
+                    <div class="form-label" id="membership_phone">Phone</div>
+                    <div class="form-input" for="membership_phone">
+                        <input type="text" name="membership_phone" placeholder="Fill Your Phone"
+                            value="{{ old('membership_phone') }}">
+                        @error('membership_phone')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-label" id="membership_email">Email</div>
+                    <div class="form-input" for="membership_email">
+                        <input type="text" name="membership_email" placeholder="Fill Your Email"
+                            value="{{ old('membership_email') }}">
+                        @error('membership_email')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="button-form">
+                        <button type="submit">Join Now</button>
+                    </div>
+                </form>
+            </div>
+        </section>
     @endif
 
     <footer class="footer">
@@ -582,7 +606,7 @@
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
     </script>
     <script src="{{ url('js/navbar.js') }}?t={{ env('VERSION_TIME') }}"></script>
-    
+
 </body>
 
 </html>

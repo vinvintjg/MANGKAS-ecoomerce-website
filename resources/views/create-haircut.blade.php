@@ -1,52 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create Page</title>
-</head>
-<body>
-    <form action="{{ route('createHaircut') }}" method="POST" enctype="multipart/form-data">
-        @csrf
+@extends('layouts.navbar-admin')
+@section('content')
 
-        <label for="">haircut name</label>
-        <input type="text" name="haircut_name">
-        <label for="">haircut logo</label>
-        <input type="file" name="haircut_logo">
+    <head>
+        <title>Haircut Page</title>
+    </head>
 
-        <button type="submit">Insert</button>
-    </form>
+    <div class="section-formulir-admin">
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">haircut id</th>
-            <th scope="col">haircut name</th>
-            <th scope="col">haircut logo</th>
-            <th scope="col">delete</th>
-        </tr>
-        </thead>
-        <tbody>
-            @foreach ($haircuts as $haircut)
+        <div class="big-title"><i class='bx bx-cut'></i>&nbsp;Haircut</div>
+        <form action="{{ route('createHaircut') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="form-column">
+                <label for="haircut_name" class="form-label">Haircut Name</label>
+                <input type="text" class="form-input" name="haircut_name" value="{{ old('haircut_name') }}"
+                    placeholder="Enter Your Facility Name">
+                @error('haircut_name')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+                <label for="haircut_logo" class="form-label">Haircut Logo</label>
+                <input type="file" class="form-input-2 custom-file-input" name="haircut_logo"
+                    value="{{ old('haircut_logo') }}" placeholder="Enter Your Facility Logo">
+                @error('haircut_logo')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="button-form button-width">
+                <button type="submit">SUBMIT</button>
+            </div>
+        </form>
+
+        <table class="table-container">
+            <thead>
                 <tr>
-
-                <th scope="row">{{ $haircut->id }}</th>
-                <td>{{ $haircut->haircut_name }}</td>
-                <td>
-                    <img src="{{asset('storage/image/'.$haircut->haircut_logo)}}" alt="Error" style="height: 90px" >
-                </td>
-                <td>
-                    <form action="{{route('deleteHaircut', ['id' => $haircut->id])}}" method="post">
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="btn btn-danger col-md">Delete</button>
-                    </form>
-                </td>
+                    <th scope="col">Haircut Id</th>
+                    <th scope="col">Haircut Name</th>
+                    <th scope="col">Haircut Logo</th>
+                    <th scope="col">Delete</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
-
-</body>
-</html>
+            </thead>
+            <tbody>
+                @foreach ($haircuts as $haircut)
+                    <tr>
+                        <td scope="row">{{ $haircut->id }}</td>
+                        <td>{{ $haircut->haircut_name }}</td>
+                        <td>
+                            <img src="{{ asset('storage/image/' . $haircut->haircut_logo) }}" alt="Error"
+                                style="height: 32px">
+                        </td>
+                        <td>
+                            <form action="{{ route('deleteHaircut', ['id' => $haircut->id]) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn-delete"><i
+                                        class='bx bxs-trash bx-tada-hover bx-flip-horizontal'
+                                        style='color:#ff0000;font-size: 20px;'></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+@endsection

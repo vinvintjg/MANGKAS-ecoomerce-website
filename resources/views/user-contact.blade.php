@@ -13,12 +13,12 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
 
-        <div class="section-faq">
-            <div class="big-title">Contact Us</div>
-            <div class="faq-content">
+    <div class="section-faq">
+        <div class="big-title">Contact Us</div>
+        <div class="faq-content">
             <div class="card-faq">
                 <div class="faq-img">
-                    <img src="{{asset('assets/contact-phone.png')}}" alt="logo">
+                    <img src="{{ asset('assets/contact-phone.png') }}" alt="logo">
                 </div>
                 <div class="faq-text-m">
                     By Phone
@@ -32,7 +32,7 @@
             </div>
             <div class="card-faq">
                 <div class="faq-img">
-                    <img src="{{asset('assets/contact-chat.png')}}" alt="logo">
+                    <img src="{{ asset('assets/contact-chat.png') }}" alt="logo">
                 </div>
                 <div class="faq-text-m">
                     Live Chat
@@ -44,7 +44,7 @@
             </div>
             <div class="card-faq">
                 <div class="faq-img">
-                    <img src="{{asset('assets/contact-mail.png')}}" alt="logo">
+                    <img src="{{ asset('assets/contact-mail.png') }}" alt="logo">
                 </div>
                 <div class="faq-text-m">
                     Gmail
@@ -58,6 +58,5 @@
                 </div>
             </div>
         </div>
-        </div>
-    
+    </div>
 @endsection

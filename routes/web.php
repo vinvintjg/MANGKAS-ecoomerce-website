@@ -5,7 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ShopController;
-
+use App\Http\Controllers\ChattingController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\HaircutController;
@@ -59,6 +59,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['admin', 'staff'])->group(function() {
+
+Route::get('/create-chat', [ChattingController::class, 'getChatPage'])->name('getChatPage');
 
 Route::get('/create-shop', [ShopController::class, 'getCreateShopPage'])->name('getCreateShopPage');
 Route::post('/create-shop', [ShopController::class, 'createShop'])->name('createShop');
@@ -137,10 +139,9 @@ Route::get('/mangkas-faq', [FaqController::class, 'getFaqsMangkas'])->name('getF
 
 require __DIR__.'/auth.php';
 
-
-use App\Http\Controllers\ChattingController;
-
 Route::get('/mangkas-chatting', [ChattingController::class, 'getCreateChattingPage'])->name('getCreateChattingPage');
+
 Route::post('/mangkas-chatting', [ChattingController::class, 'createChatting'])->name('createChatting');
+
 Route::get('/mangkas-chatting', [ChattingController::class, 'getChattings'])->name('getChattings');
  

@@ -13,6 +13,11 @@ class ChattingController extends Controller
         return view('components.live-chat', ['chattings' => $chattings]);
     }
 
+    public function getChatPage(){
+        $chattings = Chatting::all();
+        return view('create-live-chat', ['chattings' => $chattings]);
+    }
+
     public function createChatting(ChattingRequest $request){
 
         Chatting::create([

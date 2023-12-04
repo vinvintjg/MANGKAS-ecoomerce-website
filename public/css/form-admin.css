@@ -133,6 +133,40 @@ input .form-input:active {
     border: 2px solid #ab8856;
 }
 
+.form-input-2 {
+    width: 100%;
+    color: var(--placeholder-color-2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: none;
+    height: 40px;
+    border: 2px solid #ab8856;
+    width: 100%;
+}
+
+.form-input-2::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 31px;
+    text-align: start;
+    color: var(--placeholder-color);
+}
+
+input .form-input-2:focus {
+    /* border-color: brown; */
+    color: var(--placeholder-color-2);
+    border: 2px solid #ab8856;
+    border-radius: 15px;
+}
+
+input .form-input-2:active {
+    /* border-color: brown; */
+    color: var(--placeholder-color-2);
+    border: 2px solid #ab8856;
+
+    border-radius: 15px;
+}
+
 option {
     background-color: #2a2922;
     /* color: #F8F8F8; */
@@ -269,37 +303,20 @@ input[type="file"] {
 }
 
 .custom-file-input::-webkit-file-upload-button {
-    visibility: hidden;
-}
-.custom-file-input::before {
-    content: "Input File";
-    display: inline-block;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        #ab8856;
-    border-radius: 15px;
+    /* visibility: hidden; */
+    color: white;
+    box-shadow: none;
     border: none;
-    padding: 5px 99px;
-    outline: none;
-    width: 100%;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 10pt;
-    text-align: center;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    color: #ffffff;
-    margin-top: 19px;
+    padding: 0.7rem;
+    background: var(--coklat-color);
 }
+
 .custom-file-input:hover::before {
     background: #f8f8f8;
-    color: #785f3c;
+    color: #ab8856;
 }
 .custom-file-input:active {
     outline: 0;
-}
-.custom-file-input:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 
 input[type="radio"] {
@@ -420,7 +437,7 @@ table{
 
 td,
 th {
-    padding: 15px 0;
+    padding: 15px 10px;
     text-align: center;
     color: var(--placeholder-color-2);
 }
@@ -444,6 +461,7 @@ th {
 tr {
     width: 100%;
     background-color: var(--tbody-odd);
+    vertical-align: baseline;
 }
 
 tr:nth-child(even) {
@@ -457,8 +475,6 @@ tr:nth-child(even) {
     padding: 5px;
     cursor: pointer;
 }
-
-
 
 .select-wrapper .dropdown-icon {
     position: absolute;
