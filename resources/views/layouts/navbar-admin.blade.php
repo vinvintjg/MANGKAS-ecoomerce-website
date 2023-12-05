@@ -32,6 +32,7 @@
     <!-- sidebar -->
     <nav class="sidebar">
       <div class="menu_content">
+        @if (Auth::user()->role == 'admin')
         <ul class="menu_items">
           <div class="menu_title menu_dahsboard"></div>
 
@@ -84,17 +85,23 @@
             </ul>
           </li> --}}
         </ul>
+        @endif
 
         <ul class="menu_items">
           <div class="menu_title menu_editor"></div>
           <li class="item">
-            <a href="/create-shop" class="nav_link">
+            @if (Auth::user()->role == 'staff')
+              <a href="/create-shop" class="nav_link">
+            @else
+              <a href="/create-shop-admin" class="nav_link">
+            @endif
               <span class="navlink_icon">
                 <i class='bx bx-store-alt'></i>
               </span>
               <span class="navlink">Shop</span>
             </a>
           </li>
+        @if (Auth::user()->role == 'staff')
           <li class="item">
             <a href="/create-service" class="nav_link">
               <span class="navlink_icon">
@@ -143,6 +150,7 @@
               <span class="navlink">Booking</span>
             </a>
           </li>
+        @endif
         </ul>
         
         <!-- Sidebar Open / Close -->

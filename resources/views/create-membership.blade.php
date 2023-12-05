@@ -7,7 +7,7 @@
 
     <div class="section-formulir-admin">
 
-        <div class="big-title"><i class='bx bx-id-card'></i>&nbsp;FAQ</div>
+        <div class="big-title"><i class='bx bx-id-card'></i>&nbsp;Membership</div>
 
 
         <table class="table-container">

@@ -15,9 +15,9 @@ class ShopController extends Controller
 {
     //
 
-    public function getCreateShopPage(){
+    public function getCreateShopPageAdmin(){
         $shops = Shop::all();
-        return view('create-shop', ['shops' => $shops]);
+        return view('create-shop-admin', ['shops' => $shops]);
     }
 
     public function getCreateShop(){
@@ -104,5 +104,76 @@ class ShopController extends Controller
             'hairstylists' => $hairstylists,
             'haircuts' => $haircuts,
             'facilities' => $facilities]);
+    }
+
+    public function updateShop(Request $request, $id)
+    {
+        $shops = Shop::find($id);
+    
+        $fileName1 = $shops->shop_photo_1;
+        $fileName2 = $shops->shop_photo_2;
+        $fileName3 = $shops->shop_photo_3;
+        $fileName4 = $shops->shop_photo_4;
+
+
+        if ($request->hasFile('shop_photo_1')) {
+            $extension1 = $request->file('shop_photo_1')->getClientOriginalExtension();
+            $fileName1 = $request->shop_name . '_photo_1.' . $extension1; //rename
+            $request->file('shop_photo_1')->storeAs('public/image/', $fileName1); //save
+        }
+
+        if ($request->hasFile('shop_photo_2')) {
+        $extension2 = $request->file('shop_photo_2')->getClientOriginalExtension();
+        $fileName2 = $request->shop_name . '_photo_2.' . $extension2; //rename
+        $request->file('shop_photo_2')->storeAs('public/image/', $fileName2); //save
+        }
+
+        if ($request->hasFile('shop_photo_3')) {
+        $extension3 = $request->file('shop_photo_3')->getClientOriginalExtension();
+        $fileName3 = $request->shop_name . '_photo_3.' . $extension3; //rename
+        $request->file('shop_photo_3')->storeAs('public/image/', $fileName3); //save
+        }
+
+        if ($request->hasFile('shop_photo_4')) {
+        $extension4 = $request->file('shop_photo_4')->getClientOriginalExtension();
+        $fileName4 = $request->shop_name . '_photo_4.' . $extension4; //rename
+        $request->file('shop_photo_4')->storeAs('public/image/', $fileName4); //save
+        }
+
+        Shop::create([
+            'shop_name' => $request->shop_name,
+            'shop_photo_1' => $fileName1,
+            'shop_photo_2' => $fileName2,
+            'shop_photo_3' => $fileName3,
+            'shop_photo_4' => $fileName4,
+            'shop_price_low' => $request->shop_price_low,
+            'shop_price_high' => $request->shop_price_high,
+            'shop_rate' => $request->shop_rate,
+            'shop_location' => $request->shop_location,
+            'shop_description' => $request->shop_description,
+            'shop_address' => $request->shop_address,
+            'shopid' => $request->shopid,
+        ]);
+
+        return redirect(route('getCreateShopPageAdmin'));
+    }
+
+    public function getShopByIdAdmin($id) {
+
+        $shop = Shop::find($id);
+        // $shopId = $shops->shopid;
+
+        // $services = Service::where('shop_id', $shopId)->get();
+        // $hairstylists = Hairstylist::where('shop_id', $shopId)->get();
+        // $haircuts = Haircut::where('shop_id', $shopId)->get();
+        // $facilities = Facility::where('shop_id', $shopId)->get();
+
+        return view('edit-shop', [
+            'shop' => $shop,
+            // 'services' => $services,
+            // 'hairstylists' => $hairstylists,
+            // 'haircuts' => $haircuts,
+            // 'facilities' => $facilities
+        ]);
     }
 }
